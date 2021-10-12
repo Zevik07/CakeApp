@@ -1,20 +1,16 @@
 ## Set up project
 
-```
-git clone https://github.com/Zevik07/CakeApp.git
+    git clone https://github.com/Zevik07/CakeApp.git
 
-```
 ## Tạo nhánh mới với tên của mình
-
-    ex: git branch -M trungnhan
+    
+    cd ./CakeApp
+    
+    git branch -M trungnhan
     
 ## Cài nodejs, composer, mysql, php, hoặc nhanh thì tải Laragon.
 
-## Start project admin-api
-
-Switch to the repo folder
-
-    cd ./CakeApp
+## Start project
 
 Install all the dependencies using composer, npm
 
@@ -33,7 +29,7 @@ Run the database migrations (**Set the database connection in .env before migrat
 
     php artisan migrate
     
-Compile CSS
+Compile assets
     
     npm run watch
 
