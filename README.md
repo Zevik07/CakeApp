@@ -4,6 +4,10 @@
 git clone https://github.com/Zevik07/CakeApp.git
 
 ```
+## Tạo nhánh mới với tên của mình
+
+    vd git branch -M trungnhan
+    
 ## Cài nodejs, composer, mysql, php, hoặc nhanh thì tải Laragon.
 
 ## Start project admin-api
