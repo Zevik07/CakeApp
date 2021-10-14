@@ -13,20 +13,20 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link href="#top" :active="request()->routeIs('/')">
-                        Home
+                        Trang chủ
                     </x-nav-link>
                     <x-nav-link href="#about">
-                        About
+                        Về chúng tôi
                     </x-nav-link>
                     <x-nav-link href="#menu">
-                        Menu
+                        Danh sách bánh
                     </x-nav-link>
-                    <x-nav-link href="#reservation">
-                        Contact Us
-                    </x-nav-link>
+
                 </div>
             </div>
-
+            <div class="flex items-center">
+                Giò hàng
+            </div>
             @auth
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ml-6">
@@ -58,7 +58,7 @@
                 </x-dropdown>
             </div>
             @endauth
-            @guest
+            <!-- @guest
                 @if (Route::has('login'))
                     <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                         @auth
@@ -72,7 +72,7 @@
                         @endauth
                     </div>
                 @endif
-            @endguest
+            @endguest -->
 
 
             <!-- Hamburger -->
