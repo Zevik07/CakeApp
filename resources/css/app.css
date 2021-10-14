@@ -1,3 +1,7 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+@import './cake-detail.css';
+@import './cart.css';
+
+/* Dont code here */
