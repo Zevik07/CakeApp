@@ -28,7 +28,9 @@ Table of contents
 font & reset css
 --------------------------------------------- 
 */
-@import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
+
+  /* @import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900"); */
+
 /* 
 ---------------------------------------------
 reset
@@ -209,7 +211,7 @@ header
 
 .background-header {
   background-color: #fff;
-  height: 80px!important;
+  height: 64px!important;
   position: fixed!important;
   top: 0px;
   left: 0px;
@@ -516,7 +518,7 @@ header
 }
 
 .header-area.header-sticky {
-  /* min-height: 80px; */
+  min-height: 64px;
 }
 
 .header-area .nav {
@@ -552,7 +554,6 @@ header
   .header-area {
     background-color: #f7f7f7;
     padding: 0px 15px;
-    height: 100px;
     box-shadow: none;
     text-align: center;
   }

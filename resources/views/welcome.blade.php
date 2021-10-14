@@ -1,15 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <title>{{ config('app.name', 'CakeApp') }}</title>
 
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
+
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Additional CSS Files -->
@@ -32,7 +35,6 @@
 </head>
     
 <body>
-
     <!-- ***** Preloader Start ***** -->
     <div id="preloader">
         <div class="jumper">
@@ -66,7 +68,7 @@
                             <h4>CasyCake</h4>
                             <h6>THE BEST EXPERIENCE</h6>
                             <div class="main-white-button scroll-to-section">
-                                <a href="#reservation">Make A Reservation</a>
+                                <a href="#reservation">Buy a cake</a>
                             </div>
                         </div>
                     </div>
