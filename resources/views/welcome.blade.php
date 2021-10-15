@@ -126,88 +126,136 @@
         </div>
         <div class="menu-item-carousel">
             <div class="col-lg-12">
-                <div class="row">
-                    <div class="col-xl-3 col-md-4 col-sm-12">
-                        <div class="item">
-                            <div class='card card1'>
-                                <div class="price"><h6>$14</h6></div>
-                                <div class='info'>
+                <div class="owl-menu-item owl-carousel">
+                    <div class="item slide" data-slide-index="0">
+                        <div class='card card1'>
+                            <div class="price"><h6>$14</h6></div>
+                            <div class='info'>
                                 <h1 class='title'>Chocolate Cake</h1>
-                                <p class='description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedii do eiusmod teme.</p>
+                                <p class='description'>
+                                Đây là một loại bánh
+                                Đây là một loại bánh
+                                Đây là một loại bánh
+                                Đây là một loại bánh
+                            </p>
                                 <div class="main-text-button">
-                                    <div class="scroll-to-section"><a href="#reservation">Make Reservation <i class="fa fa-angle-down"></i></a></div>
-                                </div>
+                                    <div class="scroll-to-section">
+                                        <a href="#reservation">
+                                            Thêm vào giỏ bánh
+                                            <i class="fa fa-angle-down"></i>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                    
-                    <div class="col-xl-3 col-md-4 col-sm-12">
-                        <div class="item">
-                            <div class='card card2'>
-                                <div class="price"><h6>$22</h6></div>
-                                <div class='info'>
-                                  <h1 class='title'>CasyCake Pancake</h1>
-                                  <p class='description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedii do eiusmod teme.</p>
-                                  <div class="main-text-button">
-                                      <div class="scroll-to-section"><a href="#reservation">Make Reservation <i class="fa fa-angle-down"></i></a></div>
-                                  </div>
+                    <div class="item slide" data-slide-index="1">
+                        <div class='card card2'>
+                            <div class="price"><h6>$22</h6></div>
+                            <div class='info'>
+                                <h1 class='title'>CasyCake Pancake</h1>
+                                <p class='description'>
+                                    Đây là một loại bánh
+                                    Đây là một loại bánh
+                                    Đây là một loại bánh
+                                    Đây là một loại bánh
+                                </p>
+                                <div class="main-text-button">
+                                    <div class="scroll-to-section">
+                                        <a href="#reservation">
+                                            Thêm vào giỏ bánh
+                                            <i class="fa fa-angle-down"></i>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-4 col-sm-12">
-                        <div class="item">
-                            <div class='card card3'>
-                                <div class="price"><h6>$18</h6></div>
-                                <div class='info'>
-                                  <h1 class='title'>Tall CasyCake Bread</h1>
-                                  <p class='description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedii do eiusmod teme.</p>
-                                  <div class="main-text-button">
-                                      <div class="scroll-to-section"><a href="#reservation">Make Reservation <i class="fa fa-angle-down"></i></a></div>
-                                  </div>
+                    <div class="item slide" data-slide-index="2">
+                        <div class='card card3'>
+                            <div class="price"><h6>$18</h6></div>
+                            <div class='info'>
+                                <h1 class='title'>Tall CasyCake Bread</h1>
+                                <p class='description'>
+                                    Đây là một loại bánh
+                                    Đây là một loại bánh
+                                    Đây là một loại bánh
+                                    Đây là một loại bánh
+                                </p>
+                                <div class="main-text-button">
+                                    <div class="scroll-to-section">
+                                        <a href="#reservation">
+                                            Thêm vào giỏ bánh
+                                            <i class="fa fa-angle-down"></i>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-4 col-sm-12">
-                        <div class="item">
-                            <div class='card card4'>
-                                <div class="price"><h6>$10</h6></div>
-                                <div class='info'>
-                                  <h1 class='title'>Blueberry CheeseCake</h1>
-                                  <p class='description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedii do eiusmod teme.</p>
-                                  <div class="main-text-button">
-                                      <div class="scroll-to-section"><a href="#reservation">Make Reservation <i class="fa fa-angle-down"></i></a></div>
-                                  </div>
+                    <div class="item slide" data-slide-index="3">
+                        <div class='card card4'>
+                            <div class="price"><h6>$10</h6></div>
+                            <div class='info'>
+                                <h1 class='title'>Blueberry CheeseCake</h1>
+                                <p class='description'>
+                                    Đây là một loại bánh
+                                    Đây là một loại bánh
+                                    Đây là một loại bánh
+                                    Đây là một loại bánh
+                                </p>
+                                <div class="main-text-button">
+                                    <div class="scroll-to-section">
+                                        <a href="#reservation">
+                                            Thêm vào giỏ bánh
+                                            <i class="fa fa-angle-down"></i>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-4 col-sm-12">
-                        <div class="item">
-                            <div class='card card5'>
-                                <div class="price"><h6>$8.50</h6></div>
-                                <div class='info'>
-                                  <h1 class='title'>CasyCake Cup Cake</h1>
-                                  <p class='description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedii do eiusmod teme.</p>
-                                  <div class="main-text-button">
-                                      <div class="scroll-to-section"><a href="#reservation">Make Reservation <i class="fa fa-angle-down"></i></a></div>
-                                  </div>
+                    <div class="item slide" data-slide-index="4">
+                        <div class='card card5'>
+                            <div class="price"><h6>$8.50</h6></div>
+                            <div class='info'>
+                                <h1 class='title'>CasyCake Cup Cake</h1>
+                                <p class='description'>
+                                    Đây là một loại bánh
+                                    Đây là một loại bánh
+                                    Đây là một loại bánh
+                                    Đây là một loại bánh
+                                </p>
+                                <div class="main-text-button">
+                                    <div class="scroll-to-section">
+                                        <a href="#reservation">
+                                            Thêm vào giỏ bánh
+                                            <i class="fa fa-angle-down"></i>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-4 col-sm-12">
-                        <div class="item">
-                            <div class='card card3'>
-                                <div class="price"><h6>$7.25</h6></div>
-                                <div class='info'>
-                                  <h1 class='title'>Klassic Cake</h1>
-                                  <p class='description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedii do eiusmod teme.</p>
-                                  <div class="main-text-button">
-                                      <div class="scroll-to-section"><a href="#reservation">Make Reservation <i class="fa fa-angle-down"></i></a></div>
-                                  </div>
+                    <div class="item slide" data-slide-index="5">
+                        <div class='card card1'>
+                            <div class="price"><h6>$7.25</h6></div>
+                            <div class='info'>
+                                <h1 class='title'>Klassic Cake</h1>
+                                <p class='description'>
+                                    Đây là một loại bánh
+                                    Đây là một loại bánh
+                                    Đây là một loại bánh
+                                    Đây là một loại bánh
+                                </p>
+                                <div class="main-text-button">
+                                    <div class="scroll-to-section">
+                                        <a href="#reservation">
+                                            Thêm vào giỏ bánh
+                                            <i class="fa fa-angle-down"></i>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -226,18 +274,20 @@
                     <div class="left-text-content">
                         <div class="section-heading">
                             <h6>Về chúng tôi</h6>
-                            <h2>We Leave A Delicious Memory For You</h2>
+                            <h2>Mang đến những chiếc bánh thật ngon</h2>
                         </div>
-                        <p>CasyCake is one of the best <a href="https://templatemo.com/tag/restaurant" target="_blank" rel="sponsored">restaurant HTML templates</a> with Bootstrap v4.5.2 CSS framework. You can download and feel free to use this website template layout for your restaurant business. You are allowed to use this template for commercial purposes. <br><br>You are NOT allowed to redistribute the template ZIP file on any template donwnload website. Please contact us for more information.</p>
+                        <p>
+                            CasyCake được thành lập vào 2021
+                        </p>
                         <div class="row">
                             <div class="col-4">
-                                <img src="homeui/assets/images/about-thumb-01.jpg" alt="">
+                                <img src="/homeui/assets/images/menu-item-01.jpg" alt="">
                             </div>
                             <div class="col-4">
-                                <img src="homeui/assets/images/about-thumb-02.jpg" alt="">
+                                <img src="/homeui/assets/images/menu-item-02.jpg" alt="">
                             </div>
                             <div class="col-4">
-                                <img src="homeui/assets/images/about-thumb-03.jpg" alt="">
+                                <img src="/homeui/assets/images/menu-item-03.jpg" alt="">
                             </div>
                         </div>
                     </div>
