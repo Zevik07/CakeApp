@@ -23,7 +23,6 @@ class CreateOrderItemsTable extends Migration
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
             $table->integer('quantity');
-            $table->rememberToken();
             $table->timestamps();
         });
     }

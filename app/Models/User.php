@@ -17,6 +17,7 @@ class User extends Authenticatable
      *
      * @var string[]
      */
+    protected $table = 'users';
     protected $fillable = [
         'name',
         'address',
@@ -34,4 +35,5 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
+    public $timestamp = true;
 }
