@@ -3,15 +3,21 @@
 	"use strict";
 
 	$(window).scroll(function() {
-	  var scroll = $(window).scrollTop();
-	  var box = $('.header-text').height();
-	  var header = $('header').height();
+		var scroll = $(window).scrollTop();
+		var box = $('.header-text').height();
+		var header = $('header').height();
 
-	  if (scroll >= box - header) {
-	    $("header").addClass("background-header");
-	  } else {
-	    $("header").removeClass("background-header");
-	  }
+		if (scroll >= box - header) {
+			$("header").addClass("background-header");
+			$("header").removeClass("background-header--hide");
+		} 
+		else if (scroll > header){
+			$("header").removeClass("background-header");
+			$("header").addClass("background-header--hide")
+		}
+		else {
+			$("header").removeClass("background-header--hide")
+		}
 	});
 	
 	$('.input-group.date').datepicker({format: "dd.mm.yyyy"});
@@ -37,11 +43,11 @@
 
 	$(".Modern-Slider").slick({
 	    autoplay:true,
-	    autoplaySpeed:10000,
-	    speed:600,
+	    autoplaySpeed:7000,
+	    speed:500,
 	    slidesToShow:1,
 	    slidesToScroll:1,
-	    pauseOnHover:false,
+	    pauseOnHover:true,
 	    dots:true,
 	    pauseOnDotsHover:true,
 	    cssEase:'linear',
@@ -80,7 +86,7 @@
 
 	$('.owl-menu-item').owlCarousel({
 		items:5,
-		loop:true,
+		loop:false,
 		dots: true,
 		nav: true,
 		autoplay: true,
@@ -90,7 +96,7 @@
 				  items:1
 			  },
 			  600:{
-				  items:2
+				  items:3
 			  },
 			  1000:{
 				  items:5
