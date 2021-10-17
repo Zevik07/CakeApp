@@ -18,6 +18,6 @@ class DatabaseSeeder extends Seeder
         $this->call(CakeSeeder::class);
         $this->call(OrderSeeder::class);
         $this->call(OrderItemSeeder::class);
-        $this->call(CartSeeder::class);
+        
     }
 }

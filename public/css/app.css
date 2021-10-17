@@ -32137,6 +32137,17 @@ select {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Style for cake details page */
+
+/* #mainImg{
+    background-image:url('http://4.bp.blogspot.com/-sbpJrKlHCXA/VOmV6vxWpXI/AAAAAAAAAQY/7jPzIfW5HA0/s1600/4.jpg');
+    background-size:384px 384px;
+} */
+
+/* Style for cart page */
+
+/* Dont code here */
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;

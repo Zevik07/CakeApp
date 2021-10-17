@@ -20,7 +20,6 @@ class CreateOrdersTable extends Migration
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
             $table->string('status');
-            $table->rememberToken();
             $table->timestamps();
         });
     }
