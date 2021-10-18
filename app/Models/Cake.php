@@ -23,6 +23,9 @@ class Cake extends Model
     ];
     // public $timestamp = true;
 
+    /**
+     * Get all of the user's image.
+     */
     public function images()
     {
         return $this->morphMany(Image::class, 'imageable');

@@ -559,9 +559,14 @@ menu
   color: #fff;
 }
 
+.info .main-text-button i{
+  font-size: 2rem;
+  color: #fff;
+}
+
 #menu .price h6 {
   position: absolute;
-  width: 70px;
+  padding: 0 10px;
   height: 70px;
   background-color: #842029;
   font-size: 20px;
@@ -578,74 +583,24 @@ menu
   padding-bottom: 30px;
 }
 
-#menu .owl-menu-item {
-  position: relative;
-  margin-bottom: 100px;
+/* Custom owl */
+#menu .owl-nav button span {
+  font-size: 30px;
+  padding: 30px;
 }
 
-#menu .owl-nav {
-  text-align: center;
-  position: absolute;
-  width: 100%;
-  bottom: -80px;
-  transform: translateY(5px);
+#menu .owl-nav button {
+  outline-color: #842029;
 }
 
-#menu .owl-dots {
-  display: none;
-}
-    
-#menu .owl-nav .owl-prev{
-  margin-right: 10px;
-  outline: none;
+#menu .owl-dots span {
+  width: 12px;
+  height: 12px;
 }
 
-#menu .owl-nav .owl-prev span,
-#menu .owl-nav .owl-next span {
-  opacity: 0;
+#menu .item.slide {
+  padding-bottom: 20px;
 }
-
-#menu .owl-nav .owl-prev:before {
-  display: inline-block;
-  font-family: 'FontAwesome';
-  color: #842029;
-  font-size: 25px;
-  font-weight: 700;
-  content: '\f104';
-}
-
-#menu .owl-nav .owl-prev {
-  opacity: 0.75;
-  transition: all .5s;
-}
-
-#menu .owl-nav .owl-prev:hover {
-  opacity: 1;
-}
-
-#menu .owl-nav .owl-next {
-  opacity: 0.75;
-  transition: all .5s;
-}
-
-#menu .owl-nav .owl-next:hover {
-  opacity: 1;
-}
-
-#menu .owl-nav .owl-next{
-  margin-left: 10px;
-  outline: none;
-}
-
-#menu .owl-nav .owl-next:before {
-  display: inline-block;
-  font-family: 'FontAwesome';
-  color: #842029;
-  font-size: 25px;
-  font-weight: 700;
-  content: '\f105';
-}
-
 
 /*
 ---------------------------------------------
