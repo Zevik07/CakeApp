@@ -13,12 +13,20 @@ class Image extends Model
      *
      * @var string[]
      */
-    protected $table = 'images';
+    // protected $table = 'images';
     protected $fillable = [
         'type',
         'url',
         'imageable_id',
         'imageable_type'
     ];
-    public $timestamp = true;
+    // public $timestamp = true;
+
+     /**
+     * Get the parent imageable model;
+     */
+    public function imageable()
+    {
+        return $this->morphTo();
+    }
 }
