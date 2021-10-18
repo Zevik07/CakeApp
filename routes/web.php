@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\CakeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +18,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/cake-detail', function () {
-    return view('cake-detail');
-});
+// Route::get('/cake-detail', function () {
+//     return view('cake-detail');
+// });
+
+Route::resource('cake', CakeController::class);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
