@@ -22,6 +22,10 @@ class Image extends Model
         'imageable_type'
     ];
     // public $timestamp = true;
+
+     /**
+     * Get the parent imageable model;
+     */
     public function imageable()
     {
         return $this->morphTo();
