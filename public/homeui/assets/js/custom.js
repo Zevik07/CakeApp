@@ -109,20 +109,22 @@
 	var el = $('.owl-menu-item');
 	var carousel;
 	var carouselOptions = {
-		loop:true,
 		nav: true,
 		autoplay: true,
-		margin: 30,
+		margin: 20,
 		dots: true,
 		slideBy: 'page',
+		lazyLoad: true,
+		lazyLoadEager: 2,
+		autoplayHoverPause: true,
 		responsive: {
 			0: {
 				items: 1,
-				rows: 2 //custom option not used by Owl Carousel, but used by the algorithm below
+				rows: 3 //custom option not used by Owl Carousel, but used by the algorithm below
 			},
 			500: {
 				items: 2,
-				rows: 3 //custom option not used by Owl Carousel, but used by the algorithm below
+				rows: 2 //custom option not used by Owl Carousel, but used by the algorithm below
 			},
 			1000: {
 				items: 5,

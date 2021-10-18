@@ -22,7 +22,9 @@
 
     <link rel="stylesheet" href="homeui/assets/css/templatemo-klassy-cafe.css">
 
+    <!-- Owl slider -->
     <link rel="stylesheet" href="homeui/assets/css/owl-carousel.css">
+    <link rel="stylesheet" href="homeui/assets/css/owl.theme.default.min.css">
 
     <link rel="stylesheet" href="homeui/assets/css/lightbox.css">
 
@@ -126,7 +128,7 @@
         </div>
         <div class="menu-item-carousel">
             <div class="col-lg-12">
-                <div class="owl-menu-item owl-carousel">
+                <div class="owl-menu-item owl-carousel owl-theme">
                     <div class="item slide" data-slide-index="0">
                         <div class='card card1'>
                             <div class="price"><h6>$14</h6></div>
@@ -149,7 +151,6 @@
                             </div>
                         </div>
                     </div>
-                   
                     <div class="item slide" data-slide-index="1">
                         <div class='card card2'>
                             <div class="price"><h6>$22</h6></div>
@@ -239,6 +240,138 @@
                         </div>
                     </div>
                     <div class="item slide" data-slide-index="5">
+                        <div class='card card1'>
+                            <div class="price"><h6>$7.25</h6></div>
+                            <div class='info'>
+                                <h1 class='title'>Klassic Cake</h1>
+                                <p class='description'>
+                                    Đây là một loại bánh
+                                    Đây là một loại bánh
+                                    Đây là một loại bánh
+                                    Đây là một loại bánh
+                                </p>
+                                <div class="main-text-button">
+                                    <div class="scroll-to-section">
+                                        <a href="#reservation">
+                                            Thêm vào giỏ bánh
+                                            <i class="fa fa-angle-down"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item slide" data-slide-index="6">
+                        <div class='card card1'>
+                            <div class="price"><h6>$14</h6></div>
+                            <div class='info'>
+                                <h1 class='title'>Chocolate Cake</h1>
+                                <p class='description'>
+                                Đây là một loại bánh
+                                Đây là một loại bánh
+                                Đây là một loại bánh
+                                Đây là một loại bánh
+                            </p>
+                                <div class="main-text-button">
+                                    <div class="scroll-to-section">
+                                        <a href="#reservation">
+                                            Thêm vào giỏ bánh
+                                            <i class="fa fa-angle-down"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item slide" data-slide-index="7">
+                        <div class='card card2'>
+                            <div class="price"><h6>$22</h6></div>
+                            <div class='info'>
+                                <h1 class='title'>CasyCake Pancake</h1>
+                                <p class='description'>
+                                    Đây là một loại bánh
+                                    Đây là một loại bánh
+                                    Đây là một loại bánh
+                                    Đây là một loại bánh
+                                </p>
+                                <div class="main-text-button">
+                                    <div class="scroll-to-section">
+                                        <a href="#reservation">
+                                            Thêm vào giỏ bánh
+                                            <i class="fa fa-angle-down"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item slide" data-slide-index="8">
+                        <div class='card card3'>
+                            <div class="price"><h6>$18</h6></div>
+                            <div class='info'>
+                                <h1 class='title'>Tall CasyCake Bread</h1>
+                                <p class='description'>
+                                    Đây là một loại bánh
+                                    Đây là một loại bánh
+                                    Đây là một loại bánh
+                                    Đây là một loại bánh
+                                </p>
+                                <div class="main-text-button">
+                                    <div class="scroll-to-section">
+                                        <a href="#reservation">
+                                            Thêm vào giỏ bánh
+                                            <i class="fa fa-angle-down"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item slide" data-slide-index="9">
+                        <div class='card card4'>
+                            <div class="price"><h6>$10</h6></div>
+                            <div class='info'>
+                                <h1 class='title'>Blueberry CheeseCake</h1>
+                                <p class='description'>
+                                    Đây là một loại bánh
+                                    Đây là một loại bánh
+                                    Đây là một loại bánh
+                                    Đây là một loại bánh
+                                </p>
+                                <div class="main-text-button">
+                                    <div class="scroll-to-section">
+                                        <a href="#reservation">
+                                            Thêm vào giỏ bánh
+                                            <i class="fa fa-angle-down"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item slide" data-slide-index="10">
+                        <div class='card card5'>
+                            <div class="price"><h6>$8.50</h6></div>
+                            <div class='info'>
+                                <h1 class='title'>CasyCake Cup Cake</h1>
+                                <p class='description'>
+                                    Đây là một loại bánh
+                                    Đây là một loại bánh
+                                    Đây là một loại bánh
+                                    Đây là một loại bánh
+                                </p>
+                                <div class="main-text-button">
+                                    <div class="scroll-to-section">
+                                        <a href="#reservation">
+                                            Thêm vào giỏ bánh
+                                            <i class="fa fa-angle-down"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item slide" data-slide-index="11">
                         <div class='card card1'>
                             <div class="price"><h6>$7.25</h6></div>
                             <div class='info'>
