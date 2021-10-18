@@ -61,7 +61,7 @@ class CakeController extends Controller
             // $price,
             // $images
             'cake' =>Cake::findOrFail($id),
-            'images' =>Cake::findOrFail($id)->images()->get()
+            'images' =>Cake::findOrFail($id)->images
         ]);
         
     }

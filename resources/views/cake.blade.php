@@ -17,15 +17,13 @@
                                 @foreach($images as $image)
                                 <div class="carousel-item active">
                                     <!-- <img class="w-96 h-96 mb-3 mx-auto rounded-lg object-fill" src="http://4.bp.blogspot.com/-sbpJrKlHCXA/VOmV6vxWpXI/AAAAAAAAAQY/7jPzIfW5HA0/s1600/4.jpg" alt=""> -->
-                                    <img class="w-96 h-96 mb-3 mx-auto rounded-lg object-fill" src="{{$images->url}}" alt="">
+                                    <img class="w-96 h-96 mb-3 mx-auto rounded-lg object-fill" src="{{$image['url']}}" alt="">
                                     <div class="carousel-caption d-none d-md-block">
                                         <h4 class="text-semibold text-white">Cupcake Strawberry</h4>      
                                     </div>
                                 </div>  
                                 @endforeach
-                                <?php 
-                                    var_dump($images);
-                                ?>
+                                
                                 <!-- <div class="carousel-item">
                                     <img class="w-96 h-96 mb-3 mx-auto rounded-lg object-fill" src="http://image.optcdn.me/744b17cdad41f1bf8042ca091bef4316-moist-chocolate-cupcakes-5.jpg" alt="">
                                     <div class="carousel-caption d-none d-md-block">
@@ -57,7 +55,7 @@
                             <img class="sub-img w-full h-full mb-3 mx-auto overflow-auto rounded-lg object-cover border-2" src="http://image.optcdn.me/744b17cdad41f1bf8042ca091bef4316-moist-chocolate-cupcakes-5.jpg" alt="">
                             <img class="sub-img w-full h-full mb-3 mx-auto overflow-auto rounded-lg object-cover border-2" src="https://cdn.tgdd.vn/2021/07/CookRecipe/GalleryStep/thanh-pham-1049.jpg" alt="">
                             <img class="sub-img w-full h-full mb-3 mx-auto overflow-auto rounded-lg object-cover border-2" src="https://www.cookingclassy.com/wp-content/uploads/2014/01/cherry-almond-cupcakes-edit+srgb+text..jpg" alt=""> --}}
-                            <img class="sub-img w-full h-full mb-3 mx-auto overflow-auto rounded-lg object-cover border-2" src="{{$image->url}}" alt="">                           
+                            <img class="sub-img w-full h-full mb-3 mx-auto overflow-auto rounded-lg object-cover border-2" src="{{$image['url']}}" alt="">                           
                             @endforeach
                         </div>
                         <!--Other Imange end-->
