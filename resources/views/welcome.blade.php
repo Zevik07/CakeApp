@@ -18,7 +18,8 @@
     <!-- Additional CSS Files -->
     <link rel="stylesheet" type="text/css" href="homeui/assets/css/bootstrap.min.css">
 
-    <link rel="stylesheet" type="text/css" href="homeui/assets/css/font-awesome.css">
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="homeui/assets/css/templatemo-klassy-cafe.css">
 
@@ -135,7 +136,7 @@
                             <div class='info'>
                                 <h1 class='title'>Chocolate Cake</h1>
                                 <p class='description'>
-                                Đây là một loại bánh
+                                Đây là một loại bánh1
                                 Đây là một loại bánh
                                 Đây là một loại bánh
                                 Đây là một loại bánh
@@ -144,7 +145,7 @@
                                     <div class="scroll-to-section">
                                         <a href="#reservation">
                                             Thêm vào giỏ bánh
-                                            <i class="fa fa-angle-down"></i>
+                                            <i class="fas fa-shopping-cart"></i> 
                                         </a>
                                     </div>
                                 </div>
@@ -157,7 +158,7 @@
                             <div class='info'>
                                 <h1 class='title'>CasyCake Pancake</h1>
                                 <p class='description'>
-                                    Đây là một loại bánh
+                                    Đây là một loại bánh1
                                     Đây là một loại bánh
                                     Đây là một loại bánh
                                     Đây là một loại bánh
@@ -166,7 +167,7 @@
                                     <div class="scroll-to-section">
                                         <a href="#reservation">
                                             Thêm vào giỏ bánh
-                                            <i class="fa fa-angle-down"></i>
+                                            <i class="fas fa-shopping-cart"></i> 
                                         </a>
                                     </div>
                                 </div>
@@ -188,7 +189,7 @@
                                     <div class="scroll-to-section">
                                         <a href="#reservation">
                                             Thêm vào giỏ bánh
-                                            <i class="fa fa-angle-down"></i>
+                                            <i class="fas fa-shopping-cart"></i>    
                                         </a>
                                     </div>
                                 </div>
@@ -210,7 +211,7 @@
                                     <div class="scroll-to-section">
                                         <a href="#reservation">
                                             Thêm vào giỏ bánh
-                                            <i class="fa fa-angle-down"></i>
+                                            <i class="fas fa-shopping-cart"></i>    
                                         </a>
                                     </div>
                                 </div>
@@ -232,7 +233,7 @@
                                     <div class="scroll-to-section">
                                         <a href="#reservation">
                                             Thêm vào giỏ bánh
-                                            <i class="fa fa-angle-down"></i>
+                                            <i class="fas fa-shopping-cart"></i>    
                                         </a>
                                     </div>
                                 </div>
@@ -254,7 +255,7 @@
                                     <div class="scroll-to-section">
                                         <a href="#reservation">
                                             Thêm vào giỏ bánh
-                                            <i class="fa fa-angle-down"></i>
+                                            <i class="fas fa-shopping-cart"></i>    
                                         </a>
                                     </div>
                                 </div>
@@ -276,7 +277,7 @@
                                     <div class="scroll-to-section">
                                         <a href="#reservation">
                                             Thêm vào giỏ bánh
-                                            <i class="fa fa-angle-down"></i>
+                                            <i class="fas fa-shopping-cart"></i>    
                                         </a>
                                     </div>
                                 </div>
@@ -298,7 +299,7 @@
                                     <div class="scroll-to-section">
                                         <a href="#reservation">
                                             Thêm vào giỏ bánh
-                                            <i class="fa fa-angle-down"></i>
+                                            <i class="fas fa-shopping-cart"></i>    
                                         </a>
                                     </div>
                                 </div>
@@ -320,7 +321,7 @@
                                     <div class="scroll-to-section">
                                         <a href="#reservation">
                                             Thêm vào giỏ bánh
-                                            <i class="fa fa-angle-down"></i>
+                                            <i class="fas fa-shopping-cart"></i>    
                                         </a>
                                     </div>
                                 </div>
@@ -342,7 +343,7 @@
                                     <div class="scroll-to-section">
                                         <a href="#reservation">
                                             Thêm vào giỏ bánh
-                                            <i class="fa fa-angle-down"></i>
+                                            <i class="fas fa-shopping-cart"></i>    
                                         </a>
                                     </div>
                                 </div>
@@ -364,7 +365,7 @@
                                     <div class="scroll-to-section">
                                         <a href="#reservation">
                                             Thêm vào giỏ bánh
-                                            <i class="fa fa-angle-down"></i>
+                                            <i class="fas fa-shopping-cart"></i>    
                                         </a>
                                     </div>
                                 </div>
@@ -386,7 +387,7 @@
                                     <div class="scroll-to-section">
                                         <a href="#reservation">
                                             Thêm vào giỏ bánh
-                                            <i class="fa fa-angle-down"></i>
+                                            <i class="fas fa-shopping-cart"></i>    
                                         </a>
                                     </div>
                                 </div>

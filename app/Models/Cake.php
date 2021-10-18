@@ -13,12 +13,20 @@ class Cake extends Model
      *
      * @var string[]
      */
-    protected $table = 'cakes';
+    // protected $table = 'cakes';
     protected $fillable = [
         'name',
         'desc',
         'price',
         'quantity'
     ];
-    public $timestamp = true;
+    // public $timestamp = true;
+
+    /**
+     * Get all of the user's image.
+     */
+    public function images()
+    {
+        return $this->morphMany(Image::class, 'imageable');
+    }
 }

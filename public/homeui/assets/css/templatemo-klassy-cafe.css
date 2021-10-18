@@ -559,9 +559,14 @@ menu
   color: #fff;
 }
 
+.info .main-text-button i{
+  font-size: 2rem;
+  color: #fff;
+}
+
 #menu .price h6 {
   position: absolute;
-  width: 70px;
+  padding: 0 10px;
   height: 70px;
   background-color: #842029;
   font-size: 20px;
