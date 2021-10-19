@@ -85,8 +85,11 @@
                             <button class="inline-lock px-6 py-1 m-1 text-gray-700 focus:bg-gray-300 rounded-lg border-2" >
                                 Cherry
                             </button> --}}
-                        <span>Số lượng</span>
-                        <input class="w-20 h-10 mx-3 rounded-lg" type="number" min="0">
+                        <label for="quantity">Số lượng</label>
+                        <input class="w-20 h-10 mx-3 rounded-lg" name="quantity" type="number" min="0">
+                        <br>
+                        <label for="note">Ghi chú</label>
+                        <textarea class="mx-3 mt-3 rounded-lg" name="note" type="text" rows="3" cols="30"></textarea>
                         <button class="block px-6 py-3 m-3 text-white bg-red-400 hover:bg-red-500 rounded-lg transition-colors">Thêm vào giỏ hàng</button>
                         <hr>
                         <span class="block pt-4 font-light text-sm text-gray-400">Shop đảm bảo giao hàng không quá 24 giờ, miễn phí trả hàng nếu không đúng yêu cầu</span>

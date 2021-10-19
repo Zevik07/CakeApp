@@ -16,7 +16,7 @@ class OrderItem extends Model
     protected $table = 'order_items';
     protected $fillable = [
         'order_id',
-        'cake_id',
+        'cake_detail_id',
         'quantity',
         'note'
     ];

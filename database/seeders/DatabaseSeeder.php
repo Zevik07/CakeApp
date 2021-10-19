@@ -16,10 +16,10 @@ class DatabaseSeeder extends Seeder
         $this->call(RoleSeeder::class);
         $this->call(UserSeeder::class);
         $this->call(CakeSeeder::class);
+        $this->call(CakeDetailSeeder::class);
         $this->call(OrderSeeder::class);
         $this->call(OrderItemSeeder::class);
-        $this->call(ImageSeeder::class);
-        $this->call(CakeDetailSeeder::class);
+        $this->call(ImageSeeder::class); 
         
     }
 }
