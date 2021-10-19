@@ -599,9 +599,18 @@ menu
 }
 
 #menu .item.slide {
+  display: block;
   padding-bottom: 20px;
+  cursor: pointer;
 }
 
+#menu .item.slide .card{
+  padding-bottom: 20px;
+  cursor: pointer;
+}
+#menu .item.slide .card a{
+  display: block;
+}
 /*
 ---------------------------------------------
 chefs
