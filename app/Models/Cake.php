@@ -30,4 +30,5 @@ class Cake extends Model
     {
         return $this->morphMany(Image::class, 'imageable');
     }
+    
 }

@@ -18,9 +18,10 @@
                                 <div class="carousel-item active">
                                     <!-- <img class="w-96 h-96 mb-3 mx-auto rounded-lg object-fill" src="http://4.bp.blogspot.com/-sbpJrKlHCXA/VOmV6vxWpXI/AAAAAAAAAQY/7jPzIfW5HA0/s1600/4.jpg" alt=""> -->
                                     <img class="w-96 h-96 mb-3 mx-auto rounded-lg object-fill" src="{{$image['url']}}" alt="">
-                                    <div class="carousel-caption d-none d-md-block">
-                                        <h4 class="text-semibold text-white">Cupcake Strawberry</h4>      
-                                    </div>
+                                    {{-- <div class="carousel-caption d-none d-md-block">
+                                        
+                                        <h4 class="text-semibold text-white">{{  }}</h4>      
+                                    </div> --}}
                                 </div>  
                                 @endforeach
                                 
@@ -64,12 +65,18 @@
                         <h4 class="font-semibold text-3xl text-black py-6">Bánh {{$cake->name}}</h4>
                         <span class="block font-normal text-xl text-red-400">{{$cake->price}}</span>
                         <span class="block py-6 mr-4 font-light text-base text-gray-400">{{$cake->desc}}</span>
+                        @if(count($cakeDetails)>0)
                             <p>Chọn vị:</p>
-                        <div class="flex flex-wrap">
-                            <button class="inline-lock px-6 py-1 m-1 text-gray-700 focus:bg-gray-300 rounded-lg border-2" >
-                                Dâu
-                            </button>
-                            <button class="inline-lock px-6 py-1 m-1 text-gray-700 focus:bg-gray-300 rounded-lg border-2" >
+                            <div class="flex flex-wrap">
+                                @foreach($cakeDetails as $cakeDetail)
+                                    <button class="inline-lock px-6 py-1 m-1 text-gray-700 focus:bg-gray-300 rounded-lg border-2" >
+                                        {{$cakeDetail['flavor']}}</button>
+                                    </button>
+                                @endforeach
+                            </div>
+                        @endif
+                            
+                            {{-- <button class="inline-lock px-6 py-1 m-1 text-gray-700 focus:bg-gray-300 rounded-lg border-2" >
                                 Chocolate
                             </button>
                             <button class="inline-lock px-6 py-1 m-1 text-gray-700 focus:bg-gray-300 rounded-lg border-2" >
@@ -77,8 +84,7 @@
                             </button>
                             <button class="inline-lock px-6 py-1 m-1 text-gray-700 focus:bg-gray-300 rounded-lg border-2" >
                                 Cherry
-                            </button>
-                        </div>
+                            </button> --}}
                         <span>Số lượng</span>
                         <input class="w-20 h-10 mx-3 rounded-lg" type="number" min="0">
                         <button class="block px-6 py-3 m-3 text-white bg-red-400 hover:bg-red-500 rounded-lg transition-colors">Thêm vào giỏ hàng</button>

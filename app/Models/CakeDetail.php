@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class OrderItem extends Model
+class CakeDetail extends Model
 {
     use HasFactory;
     /**
@@ -13,12 +13,10 @@ class OrderItem extends Model
      *
      * @var string[]
      */
-    protected $table = 'order_items';
+    // protected $table = 'cakes';
     protected $fillable = [
-        'order_id',
         'cake_id',
-        'quantity',
-        'note'
+        'flavor',
+        'quantity'
     ];
-    public $timestamp = true;
 }

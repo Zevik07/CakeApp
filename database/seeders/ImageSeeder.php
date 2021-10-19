@@ -65,7 +65,7 @@ class ImageSeeder extends Seeder
             ],
             [
                 'type' => 'thumnail',
-                'url' => 'https://lh3.googleusercontent.com/proxy/XrmjAbPB4BujZcAqhmrbEeyW5hOf04e7RCfY_dkiPl1Plzj_fUc3L6f9ux__pmHyV8xpTy3bWtW9JXQKP_aIJ4UFps0kXFeHbi03QzTro6WOn-7Bfark1fyGvYT-sV_R7jHyo8sevDxikEgaWCAiZl6i7y8wQ9GrY2SyNAzSnkjAcD1KwWPGfjw',
+                'url' => 'https://cdn.tgdd.vn/Files/2021/08/31/1379394/cach-lam-banh-macaron-nhan-kem-pho-mai-thom-ngon-dep-mat-don-gian-202108312359103668.jpg',
                 'imageable_id' => 3,
                 'imageable_type' => 'cake'
             ],

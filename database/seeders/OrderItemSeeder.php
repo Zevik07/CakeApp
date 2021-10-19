@@ -22,24 +22,26 @@ class OrderItemSeeder extends Seeder
             [
                 'order_id'=>1,
                 'cake_id'=>1,
-                'quantity'=>3
+                'quantity'=>3,
+                'note'=>'Hương Chocolate'
             ],
             [
                 'order_id'=>1,
                 'cake_id'=>2,
-                'quantity'=>3
-
+                'quantity'=>3,
+                'note'=>'Hương Matcha'
             ],
             [
                 'order_id'=>2,
                 'cake_id'=>3,
-                'quantity'=>3
-
+                'quantity'=>3,
+                'note'=>'Hương Matcha'
             ],
             [
                 'order_id'=>2,
                 'cake_id'=>4,
-                'quantity'=>3
+                'quantity'=>3,
+                'note'=>'Hương Matcha'
 
             ]
         ];
