@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Image;
 
 class Cake extends Model
 {
@@ -13,12 +14,25 @@ class Cake extends Model
      *
      * @var string[]
      */
-    protected $table = 'cakes';
+    // protected $table = 'cakes';
     protected $fillable = [
         'name',
         'desc',
         'price',
         'quantity'
     ];
-    public $timestamp = true;
+    // public $timestamp = true;
+
+    /**
+     * Get all of the user's image.
+     */
+    public function images()
+    {
+        return $this->morphMany(Image::class, 'imageable');
+    }
+    
+    public function thumb()
+    {
+        return $this->images()->where('type', 'thumb')->first();
+    }
 }

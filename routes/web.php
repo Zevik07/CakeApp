@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\CakeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,16 +15,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'index']);
 
-Route::get('/cake-detail', function () {
-    return view('cake-detail');
-});
-Route::get('/cart', function () {
-    return view('cart');
-}); 
+// Route::get('/cake-detail', function () {
+//     return view('cake-detail');
+// });
+
+Route::resource('cake', CakeController::class);
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
