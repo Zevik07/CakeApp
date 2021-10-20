@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Cake;
+use App\Models\Image;
+use App\Models\CakeDetail;
 
 class CakeController extends Controller
 {
@@ -14,16 +16,8 @@ class CakeController extends Controller
      */
     public function index()
     {
-        
-    }
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function view()
-    {
-        
+
+        // return view('cake');
     }
 
     /**
@@ -55,7 +49,23 @@ class CakeController extends Controller
      */
     public function show($id)
     {
-        //
+        // $cake = Cake::where('id', $id);
+        // $name = $cake->name;
+        // $desc = $cake->desc;
+        // $price = $cake->price;
+        // $images = Cake::where('imageable_id',$id);
+        // $cake = Cake::find(1);
+        // $images = Image::where('imageable_id',$id);
+        return view('cake',[
+            // $name,
+            // $desc,
+            // $price,
+            // $images
+            'cake' =>Cake::findOrFail($id),
+            'images' =>Cake::findOrFail($id)->images,
+            'cakeDetails' =>CakeDetail::where('cake_id',$id)->get()
+        ]);
+        
     }
 
     /**
