@@ -89,14 +89,14 @@
                             </div>
                             <div class="col-xl-12">
                                 <div class="item"> 
-                                    <p class="reset">Tin nhan</p> 
+                                    <p class="reset">Tin nhắn</p> 
                                     <textarea></textarea>
                                 </div>
                             </div>
                         </div>
                         <div class="control-button">
-                                <a href="" title="Gui thong tin">Gui thong tin</a>
-                                <a href="" title="Gui thong tin">Chon them san pham</a>
+                                <a href="" title="Gui thong tin">Gửi thông tin</a>
+                                <a href="" title="Gui thong tin">Chọn thêm sản phẩm</a>
                             </div>
                     </div>
                 </div>

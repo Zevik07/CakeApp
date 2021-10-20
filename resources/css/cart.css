@@ -24,10 +24,15 @@
     border-top: 1px solid #dee2e6;
 
 }
-th {
+.title th {
     
     text-align: center;
 }
+.list th {
+    
+    text-align: center;
+}
+
 .row {
     display: -ms-flexbox;
     display: flex;
@@ -54,7 +59,7 @@ p {
     margin-top: 0;
     margin-bottom: 1rem;
 }
-span{
+.red{
 	color: red;
 }
 .item i {
