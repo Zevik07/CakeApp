@@ -21,9 +21,13 @@ Route::get('/', function () {
 Route::get('/cake-detail', function () {
     return view('cake-detail');
 });
+Route::get('/cart', function () {
+    return view('cart');
+}); 
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
+
