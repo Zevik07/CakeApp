@@ -132,7 +132,7 @@
                 <div class="owl-menu-item owl-carousel owl-theme">
                     <div class="item slide" data-slide-index="0">
                         @php
-                            var_dump($data);
+                            
                         @endphp
                         <div href="#" class='card card1'>
                             <a href="#">

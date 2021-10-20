@@ -11,7 +11,6 @@ class HomeController extends Controller
 {
     function index()
     {
-        $data = new CakeResource(Cake::first());
-        return view('welcome', ['data' => $data]);
+        return view('welcome', );
     }
 }
