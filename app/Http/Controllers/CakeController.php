@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Cake;
 use App\Models\Image;
+use App\Models\CakeDetail;
 
 class CakeController extends Controller
 {
@@ -61,7 +62,8 @@ class CakeController extends Controller
             // $price,
             // $images
             'cake' =>Cake::findOrFail($id),
-            'images' =>Cake::findOrFail($id)->images()->get()
+            'images' =>Cake::findOrFail($id)->images,
+            'cakeDetails' =>CakeDetail::where('cake_id',$id)->get()
         ]);
         
     }
