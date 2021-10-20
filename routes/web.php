@@ -17,9 +17,9 @@ use App\Http\Controllers\CakeController;
 
 Route::get('/', [HomeController::class, 'index']);
 
-// Route::get('/cake-detail', function () {
-//     return view('cake-detail');
-// });
+Route::get('/cart', function () {
+    return view('cart');
+});
 
 Route::resource('cake', CakeController::class);
 

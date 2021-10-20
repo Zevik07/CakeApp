@@ -1,119 +1,120 @@
-
-.title{
-	background: #a0b63d;
-    color: #fff;
-    text-transform: uppercase;
-    font-size: 15px;
-    font-weight: 500;
-    border: 1px solid #fff;
-}
-.table th {
-    vertical-align: bottom;
-    border-bottom: 1px solid #dee2e6;
-    height: 30px;
-    width: 200px;
-
-}
-.list{
-	background: #dee2e6;
-}
-.table td, .table th {
-    border: 1px solid #dee2e6;
-    padding: .75rem;
-    vertical-align: top;
-    border-top: 1px solid #dee2e6;
-
-}
-.title th {
+#cart-page{
+    .title{
+        background: #a0b63d;
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 15px;
+        font-weight: 500;
+        border: 1px solid #fff;
+    }
+    .table th {
+        vertical-align: bottom;
+        border-bottom: 1px solid #dee2e6;
+        height: 30px;
+        width: 200px;
     
-    text-align: center;
-}
-.list th {
+    }
+    .list{
+        background: #dee2e6;
+    }
+    .table td, .table th {
+        border: 1px solid #dee2e6;
+        padding: .75rem;
+        vertical-align: top;
+        border-top: 1px solid #dee2e6;
     
-    text-align: center;
-}
-
-.row {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    margin-right: -15px;
-    margin-left: 20px;
-}
-.col-xl-6 {
-    -ms-flex: 0 0 50%;
-    flex: 0 0 50%;
-    max-width: 50%;
-}
-.item {
-    margin-top: 10px;
-}
-.reset {
-    padding: 0;
-    margin: 0;
-    border: 0;
-    font-size: 100%;
-}
-p {
-    margin-top: 0;
-    margin-bottom: 1rem;
-}
-.red{
-	color: red;
-}
-.item i {
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    background: #a0b63d;
-    color: #fff;
-    z-index: 99;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.required{
-	height: 35px;
-	width: 500px;
-	margin-left: 40px;
-}
-.form{
-	border: 1px solid #e4e4e4;
-	height: 600px;
-	margin-top: 30px;
-	padding: 30px 26px;
-}
-.item textarea {
-    width: 100%;
-    height: 153px;
-    width: 1150px;
-    border: 1px solid #eee;
-}
-textarea {
-    overflow: auto;
-    resize: vertical;
-    margin: 0;
-    font-family: inherit;
-    font-size: inherit;
-    line-height: inherit;
-}
-.control-button{
-	text-align: center;
-	margin-top: 30px;
-
-}
-.control-button a {
-    display: inline-block;
-    font-size: 16px;
-    font-weight: 700;
-    color: #fff;
-    text-decoration: none;
-    text-transform: uppercase;
-    background: #a0b63d;
-    text-align: center;
-    border-radius: 25px;
-    padding: 8px 25px;
+    }
+    .title th {
+        
+        text-align: center;
+    }
+    .list th {
+        
+        text-align: center;
+    }
+    
+    .row {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        margin-right: -15px;
+        margin-left: 20px;
+    }
+    .col-xl-6 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .item {
+        margin-top: 10px;
+    }
+    .reset {
+        padding: 0;
+        margin: 0;
+        border: 0;
+        font-size: 100%;
+    }
+    p {
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+    .red{
+        color: red;
+    }
+    .item i {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        background: #a0b63d;
+        color: #fff;
+        z-index: 99;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .required{
+        height: 35px;
+        width: 500px;
+        margin-left: 40px;
+    }
+    .form{
+        border: 1px solid #e4e4e4;
+        height: 600px;
+        margin-top: 30px;
+        padding: 30px 26px;
+    }
+    .item textarea {
+        width: 100%;
+        height: 153px;
+        width: 1150px;
+        border: 1px solid #eee;
+    }
+    textarea {
+        overflow: auto;
+        resize: vertical;
+        margin: 0;
+        font-family: inherit;
+        font-size: inherit;
+        line-height: inherit;
+    }
+    .control-button{
+        text-align: center;
+        margin-top: 30px;
+    
+    }
+    .control-button a {
+        display: inline-block;
+        font-size: 16px;
+        font-weight: 700;
+        color: #fff;
+        text-decoration: none;
+        text-transform: uppercase;
+        background: #a0b63d;
+        text-align: center;
+        border-radius: 25px;
+        padding: 8px 25px;
+    }
 }
 
 
