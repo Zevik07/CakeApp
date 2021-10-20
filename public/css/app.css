@@ -32137,6 +32137,12 @@ select {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Style for cake details page */
+
+/* Style for cart page */
+
+/* Dont code here */
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
