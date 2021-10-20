@@ -359,7 +359,7 @@ banner
   border-radius: 50%;
   text-align:center;
   font-size: 36px;
-  font-family: 'FontAwesome';
+  font-family: "Font Awesome 6 Free";
   color:#FFF;
   z-index:5;
   outline: none;
@@ -372,7 +372,10 @@ banner
 }
 
 .Modern-Slider .NextArrow:before{
-  content:'\f105';
+  content:'\f054';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  display: inline-block;
 }
 
 .Modern-Slider .PrevArrow {
@@ -388,7 +391,7 @@ banner
   border-radius: 50%;
   text-align:center;
   font-size: 36px;
-  font-family: 'FontAwesome';
+  font-family: "Font Awesome 6 Free";
   color:#FFF;
   z-index:5;
   outline: none;
@@ -401,7 +404,10 @@ banner
 }
 
 .Modern-Slider .PrevArrow:before{
-  content:'\f104';
+  content:'\f053';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  display: inline-block;
 }
 
 ul.slick-dots {
@@ -599,9 +605,18 @@ menu
 }
 
 #menu .item.slide {
+  display: block;
   padding-bottom: 20px;
+  cursor: pointer;
 }
 
+#menu .item.slide .card{
+  padding-bottom: 20px;
+  cursor: pointer;
+}
+#menu .item.slide .card a{
+  display: block;
+}
 /*
 ---------------------------------------------
 chefs

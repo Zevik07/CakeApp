@@ -16,7 +16,7 @@ class ImageSeeder extends Seeder
     {
         $images = [
             [
-                'type' => 'thumnail',
+                'type' => 'thumb',
                 'url' => 'https://product.hstatic.net/200000276911/product/181744784_504578530678656_8755988932493881845_n_3d856961f7294e9aab95b1af39336294_master.jpg',
                 'imageable_id' => 1,
                 'imageable_type' => 'cake'
@@ -40,7 +40,7 @@ class ImageSeeder extends Seeder
                 'imageable_type' => 'cake'
             ],
             [
-                'type' => 'thumnail',
+                'type' => 'thumb',
                 'url' => 'http://4.bp.blogspot.com/-sbpJrKlHCXA/VOmV6vxWpXI/AAAAAAAAAQY/7jPzIfW5HA0/s1600/4.jpg',
                 'imageable_id' => 2,
                 'imageable_type' => 'cake'
@@ -64,7 +64,7 @@ class ImageSeeder extends Seeder
                 'imageable_type' => 'cake'
             ],
             [
-                'type' => 'thumnail',
+                'type' => 'thumb',
                 'url' => 'https://cdn.tgdd.vn/Files/2021/08/31/1379394/cach-lam-banh-macaron-nhan-kem-pho-mai-thom-ngon-dep-mat-don-gian-202108312359103668.jpg',
                 'imageable_id' => 3,
                 'imageable_type' => 'cake'
@@ -88,7 +88,7 @@ class ImageSeeder extends Seeder
                 'imageable_type' => 'cake'
             ],
             [
-                'type' => 'thumnail',
+                'type' => 'thumb',
                 'url' => 'https://assets.epicurious.com/photos/5761d0268accf290434553aa/master/pass/panna-cotta.jpg',
                 'imageable_id' => 4,
                 'imageable_type' => 'cake'
