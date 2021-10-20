@@ -15,12 +15,12 @@ class Cake extends JsonResource
      */
     public function toArray($request)
     {
-        // return [
-        //     'id' => $this->id,
-        //     'name' => $this->name,
-        //     'desc' => $this->desc,
-        //     'price' => $this->desc,
-        //     'thumb' => 
-        // ];
+        return [
+            'id' => $this->id,
+            'name' => $this->name,
+            'desc' => $this->desc,
+            'price' => $this->desc,
+            'thumb' => $this->thumb()
+        ];
     }
 }
