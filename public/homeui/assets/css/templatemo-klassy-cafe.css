@@ -513,36 +513,22 @@ menu
 .card {
   margin: 0 auto;
   max-width: 100%;
-  min-height: 400px;
+  height: 400px;
   overflow: hidden;
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
   overflow: hidden;
 }
 
-.card1 {
-  background-image: url(../images/menu-item-01.jpg);
-}
-.card2 {
-  background-image: url(../images/menu-item-02.jpg);
-}
-.card3 {
-  background-image: url(../images/menu-item-03.jpg);
-}
-.card4 {
-  background-image: url(../images/menu-item-04.jpg);
-}
-.card5 {
-  background-image: url(../images/menu-item-05.jpg);
-}
-
 .info {
+  box-sizing: border-box;
   position: relative;
   width: 100%;
   background-color: #842029;
   border: 1px solid #842029;
-  transform: translateY(100%)
-  translateY(120px)
+  transform: 
+  translateY(320px)
   translateZ(0);
   transition: transform 0.5s ease-out;
 }
@@ -614,9 +600,7 @@ menu
   padding-bottom: 20px;
   cursor: pointer;
 }
-#menu .item.slide .card a{
-  display: block;
-}
+
 /*
 ---------------------------------------------
 chefs

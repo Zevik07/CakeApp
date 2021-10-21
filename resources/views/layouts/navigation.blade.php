@@ -12,18 +12,18 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link href="#top" :active="Request::path() == '/'">
+                    <x-nav-link href="{{ route('home') }}" :active="Request::path() == '/'">
                         Trang chủ
                     </x-nav-link>
-                    <x-nav-link href="#menu" :active="Request::path() == '/#menu'">
+                    <!-- <x-nav-link href="#menu" :active="Request::path() == '/#menu'">
                         Danh sách bánh
                     </x-nav-link>
                     <x-nav-link href="#about" :active="Request::path() == '/#about'">
                         Về chúng tôi
-                    </x-nav-link>
+                    </x-nav-link> -->
                 </div>
             </div>
-            <x-nav-link href="./cart" :active="Request::path() == '/#about'">
+            <x-nav-link href="{{ route('cart') }}" :active="Request::path() == '/#about'">
                 <div class="text-2xl text-primary-color">
                     <i class="fa-solid fa-cart-shopping pr-2"></i>
                 </div>
@@ -95,7 +95,7 @@
             <x-responsive-nav-link :active="request()->routeIs('dashboard')">
                 Trang chủ
             </x-responsive-nav-link>
-            <x-responsive-nav-link :active="request()->routeIs('dashboard')">
+            <!-- <x-responsive-nav-link :active="request()->routeIs('dashboard')">
                 Danh sách bánh
             </x-responsive-nav-link>
             <x-responsive-nav-link :active="request()->routeIs('dashboard')">
@@ -104,7 +104,7 @@
             <x-responsive-nav-link :active="request()->routeIs('dashboard')">
                 Giỏ hàng
                 <i class="fa-solid fa-cart-shopping"></i>
-            </x-responsive-nav-link>
+            </x-responsive-nav-link> -->
         </div>
     </div>
 </nav>
