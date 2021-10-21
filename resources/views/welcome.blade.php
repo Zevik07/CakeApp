@@ -130,33 +130,31 @@
         <div class="menu-item-carousel">
             <div class="col-lg-12">
                 <div class="owl-menu-item owl-carousel owl-theme">
-                    <div class="item slide" data-slide-index="0">
-                        @php
-                            
-                        @endphp
-                        <div href="#" class='card card1'>
-                            <a href="#">
-                                <div class="price"><h6>$14</h6></div>
-                                <div class='info'>
-                                    <h1 class='title'>Chocolate Cake</h1>
-                                    <p class='description'>
-                                    Đây là một loại bánh1
-                                    Đây là một loại bánh
-                                    Đây là một loại bánh
-                                    Đây là một loại bánh
-                                    </p>
-                                    <div class="main-text-button">
-                                        <div class="scroll-to-section">
-                                            <a href="#reservation">
-                                                Thêm vào giỏ bánh
-                                                <i class="fab fa-shopping-cart"></i> 
-                                            </a>
-                                        </div>
+                    @foreach ($cakes as $index => $cake)
+                    <div class="item slide" data-slide-index="{{$index}}" onclick="window.location='./cake/{{$cake->id}}'">
+                        <div class='card card1' style="background-image: url({{$cake->thumb[0]->url}})">
+                            <div class="price">
+                                <h6>{{$cake->price}} VND</h6>
+                            </div>
+                            <div class='info'>
+                                <h1 class='title'>
+                                    {{$cake->name}}
+                                </h1>
+                                <p class='description'>
+                                    {{$cake->desc}}
+                                </p>
+                                <div class="main-text-button">
+                                    <div class="scroll-to-section">
+                                        <a href="#reservation">
+                                            Thêm vào giỏ bánh
+                                            <i class="fab fa-shopping-cart"></i> 
+                                        </a>
                                     </div>
                                 </div>
-                            </a>
+                            </div>
                         </div>
                     </div>
+                    @endforeach
                 </div>
             </div>
         </div>

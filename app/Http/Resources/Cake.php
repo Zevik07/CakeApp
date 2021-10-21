@@ -18,7 +18,7 @@ class Cake extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name,
-            'desc' => $this->desc,
+            // 'desc' => $this->desc,
             'price' => $this->desc,
             'thumb' => $this->thumb()
         ];
