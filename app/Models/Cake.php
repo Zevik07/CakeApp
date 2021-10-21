@@ -33,6 +33,7 @@ class Cake extends Model
     
     public function thumb()
     {
-        return $this->images()->where('type', 'thumb')->first();
+        return $this->morphMany(Image::class, 'imageable')
+                    ->where('type', 'thumb');
     }
 }

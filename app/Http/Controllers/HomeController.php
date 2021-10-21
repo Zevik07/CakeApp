@@ -11,6 +11,11 @@ class HomeController extends Controller
 {
     function index()
     {
-        return view('welcome', );
+        $data = [
+            'cakes' => 
+                Cake::select('id', 'name', 'desc', 'price')
+                ->with('thumb')->get()
+        ];
+        return view('welcome', $data);
     }
 }

@@ -85,27 +85,6 @@
         $("#tabs").tabs();
     });
 
-	// Custom owl carousel 
-	// $('.owl-menu-item').owlCarousel({
-	// 	items:1,
-	// 	loop:false,
-	// 	dots: true,
-	// 	nav: true,
-	// 	autoplay: true,
-	// 	margin:20,
-	// 	responsive:{
-	// 		  0:{
-	// 			  items:1
-	// 		  },
-	// 		  600:{
-	// 			  items:1
-	// 		  },
-	// 		  1000:{
-	// 			  items:1
-	// 		  }
-	// 	  }
-	// })
-
 	var el = $('.owl-menu-item');
 	var carousel;
 	var carouselOptions = {
