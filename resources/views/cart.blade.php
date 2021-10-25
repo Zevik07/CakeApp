@@ -46,7 +46,7 @@
                             <div class="row">
                                 <div class="col-xl-6">
                                     <div class="item"> 
-                                        <p class="reset">Họ và tên 
+                                        <p class="reset">Họ và tên {{session('id')}} {{session('flavor')}} {{session('quantity')}} {{session('note')}}
                                             <span class="red">*</span>
                                         </p>
                                         <div>
