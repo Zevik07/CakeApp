@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CakeController;
+use App\Http\Controllers\AddToCart;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +22,10 @@ Route::get('/cart', function () {
     return view('cart');
 })->name('cart');
 
+Route::get('/cake/addtocart',[AddtoCart::class,'add']);
+
 Route::resource('cake', CakeController::class);
+
 
 require __DIR__.'/auth.php';
 
