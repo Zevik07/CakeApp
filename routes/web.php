@@ -17,6 +17,11 @@ use App\Http\Controllers\CakeController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
+Route::get('/admin', function()
+{
+    return view('dashboard');
+});
+
 Route::get('/cart', function () {
     return view('cart');
 })->name('cart');
