@@ -18,18 +18,18 @@ class AddToCart extends Controller
                 'quantity'=>$data['quantity'],
                 'note'=>$data['note'],
                 ]]);
-                Session::flash('sussces','Add to cart successfully!');
+                Session::flash('success','Add to cart successfully!');
                 return redirect()->action(
                     [HomeController::class,'index'],['name'=>'home']
                 );
         }else{
-            Session::push('session_cart',[[
+            Session::put('session_cart',[[
                 'id'=>$data['id'],
                 'flavor'=>$data['flavor'],
                 'quantity'=>$data['quantity'],
                 'note'=>$data['note'],
                 ]]);
-                Session::flash('sussces','Add to cart successfully!');
+                Session::flash('success','Add to cart successfully!');
                 return redirect()->action(
                     [HomeController::class,'index']
                 );
