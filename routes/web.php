@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CakeController;
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\CakeController as CakeAddController;
 use App\Http\Controllers\AddToCart;
 
 /*
@@ -17,6 +19,14 @@ use App\Http\Controllers\AddToCart;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+
+
+
+Route::middleware('auth')->group( function () {
+    
+});
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('/cake-add', [CakeAddController::class, 'index'])->name('cake-add');
 
 Route::get('/cart', function () {
     return view('cart');
