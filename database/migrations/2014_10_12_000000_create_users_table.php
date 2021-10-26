@@ -18,6 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('address');
             $table->string('phone');
+            $table->string('email');
             $table->string('password');
             $table->foreignId('role_id')
                 ->constrained()
