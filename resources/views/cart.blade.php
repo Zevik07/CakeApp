@@ -46,9 +46,10 @@
                             <div class="row">
                                 <div class="col-xl-6">
                                     <div class="item"> 
-                                        <p class="reset">Họ và tên {{session('id')}} {{session('flavor')}} {{session('quantity')}} {{session('note')}}
+                                        <p class="reset">Họ và tên {{Session::get('id')}}
                                             <span class="red">*</span>
                                         </p>
+                                        
                                         <div>
                                             <i class="fa fa-user"></i>
                                         </div>
