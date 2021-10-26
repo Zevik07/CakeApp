@@ -1,3 +1,3 @@
 <x-admin-layout>
-    admin main page
+    admin add cake
 </x-admin-layout>
