@@ -46,7 +46,7 @@
                             <div class="row">
                                 <div class="col-xl-6">
                                     <div class="item"> 
-                                        <p class="reset">Họ và tên {{Session::get('id')}}
+                                        <p class="reset">Họ và tên
                                             <span class="red">*</span>
                                         </p>
                                         
