@@ -19,12 +19,11 @@
     <!-- Styles -->
     <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet"> 
     
-    <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
-    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js" integrity="sha256-XF29CBwU1MWLaGEnsELogU6Y6rcc5nCkhhx89nFMIDQ=" crossorigin="anonymous"></script>
+    
+	<!-- App -->
+    <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
 
-
-    <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
 	<style>
@@ -50,7 +49,7 @@
 				
 			<div class="w-1/2 pl-2 md:pl-0">
 				<a class="text-gray-100 text-base xl:text-xl no-underline hover:no-underline font-bold"  href="#"> 
-					<i class="fas fa-moon text-blue-400 pr-3"></i> Trang quản lý
+					Trang quản lý
 				</a>
             </div>
 			<div class="w-1/2 pr-0">
@@ -195,7 +194,7 @@
 	</div> 
 	<!--/container-->
 	
-	<footer class="bg-gray-900 border-t border-gray-400 shadow">	
+	<!-- <footer class="bg-gray-900 border-t border-gray-400 shadow">	
 		<div class="container max-w-md mx-auto flex py-8">
 
 			<div class="w-full mx-auto flex flex-wrap">
@@ -223,7 +222,7 @@
 
 		
 		</div>
-	</footer>
+	</footer> -->
 
 <script>
 	
