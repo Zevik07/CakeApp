@@ -25,6 +25,7 @@ class UserSeeder extends Seeder
                 'name'=>'Ho Trung Nhan',
                 'address'=>'DH Can Tho',
                 'phone'=>'0774000828',
+                'email'=> 'nhan@gmail.com',
                 'password'=>$password,
                 'role_id'=>1,
             ],
@@ -32,6 +33,7 @@ class UserSeeder extends Seeder
                 'name'=>'Nguyen Huu Thien Phu',
                 'address'=>'DH Can Tho',
                 'phone'=>'0898007389',
+                'email'=> 'phu@gmail.com',
                 'password'=>$password,
                 'role_id'=>2,
             ],
@@ -39,6 +41,7 @@ class UserSeeder extends Seeder
                 'name'=>'Vo Van Khanh',
                 'address'=>'DH Can Tho',
                 'phone'=>'0328494707',
+                'email'=> 'khanh@gmail.com',
                 'password'=>$password,
                 'role_id'=>1,
             ]

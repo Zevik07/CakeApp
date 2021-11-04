@@ -21,15 +21,17 @@
     <!-- Font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <link rel="stylesheet" href="homeui/assets/css/templatemo-klassy-cafe.css">
-
     <!-- Owl slider -->
     <link rel="stylesheet" href="homeui/assets/css/owl-carousel.css">
+
     <link rel="stylesheet" href="homeui/assets/css/owl.theme.default.min.css">
 
     <link rel="stylesheet" href="homeui/assets/css/lightbox.css">
 
     <!--Custom Styles -->
+
+    <link rel="stylesheet" href="homeui/assets/css/templatemo-klassy-cafe.css">
+
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
     <!-- Custom Scripts -->
@@ -219,34 +221,7 @@
     <!-- ***** About Area Ends ***** -->
     
     <!-- ***** Footer Start ***** -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-xs-12">
-                    <div class="right-text-content">
-                            <ul class="social-icons">
-                                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                            </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="logo">
-                        <!-- <a href="/">CasyCake</a> -->
-                    </div>
-                </div>
-                <div class="col-lg-4 col-xs-12">
-                    <div class="left-text-content">
-                        <p>© Copyright CasyCake Co.
-                        
-                        <br>Design: PMTN</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+    @include('layouts.footer')
 
     <!-- jQuery -->
     <script src="homeui/assets/js/jquery-2.1.0.min.js"></script>
