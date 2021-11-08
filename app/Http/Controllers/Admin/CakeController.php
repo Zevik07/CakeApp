@@ -9,6 +9,6 @@ class CakeController extends Controller
 {
     function index()
     {
-        return view('cake-add');
+        return view('add-cake');
     }
 }
