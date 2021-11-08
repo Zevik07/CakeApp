@@ -34,15 +34,6 @@ class AddToCart extends Controller
                     [HomeController::class,'index']
                 );
         }
-        // Session::put('id',$data['id']);
-        // Session::put('flavor',$data['flavor']);
-        // Session::put('quantity',$data['quantity']);
-        // Session::put('note',$data['note']);
-        // $req->session()->flash('id', $data['id']);
-        // $req->session()->flash('flavor', $data['flavor']);
-        // $req->session()->flash('quantity', $data['quantity']);
-        // $req->session()->flash('note', $data['note']);
         
-        // return view('cart');
     }
 }
