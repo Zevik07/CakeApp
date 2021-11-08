@@ -6,6 +6,7 @@ use App\Http\Controllers\CakeController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\CakeController as CakeAddController;
 use App\Http\Controllers\AddToCart;
+use App\Http\Controllers\CartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,11 +28,10 @@ Route::middleware('auth')->group( function () {
     Route::get('/cake-add', [CakeAddController::class, 'index'])->name('cake-add');
 });
 
-Route::get('/cart', function () {
-    return view('cart');
-})->name('cart');
+Route::get('/cart',  [CartController::class, 'index'])->name('cart');
 
 Route::get('/cake/addtocart',[AddtoCart::class,'add']);
+//Route::get('/cart/order',[order::class,'order']);
 
 Route::resource('cake', CakeController::class);
 
