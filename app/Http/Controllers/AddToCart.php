@@ -13,11 +13,11 @@ class AddToCart extends Controller
         $data = $req->input();
         $con= Session::get('session_cart');
         if(session()->has('session_cart')){
-            foreach(Session::get('session_cart') as $item){
-                if($item["id"]==$data["id"])
-                return redirect()->action(
-                    [HomeController::class,'index'],['name'=>'home']
-                );
+            foreach(Session::get('session_cart') as $item => $value){
+                if($value["id"]==$data["id"])
+                    return redirect()->action(
+                        [HomeController::class,'index'],['name'=>'home']
+                    );
             }
             Session::push('session_cart',[
                 'id'=>$data['id'],
@@ -25,18 +25,18 @@ class AddToCart extends Controller
                 'quantity'=>$data['quantity'],
                 'note'=>$data['note'],
                 ]);
-                // Session::flash('success','Add to cart successfully!');
+                Session::flash('success','Add to cart successfully!');
                 return redirect()->action(
                     [HomeController::class,'index'],['name'=>'home']
                 );
         }else{
-            Session::put('session_cart',[
+            Session::put('session_cart',[[
                 'id'=>$data['id'],
                 'flavor'=>$data['flavor'],
                 'quantity'=>$data['quantity'],
                 'note'=>$data['note'],
-                ]);
-                // Session::flash('success','Add to cart successfully!');
+                ]]);
+                Session::flash('success','Add to cart successfully!');
                 return redirect()->action(
                     [HomeController::class,'index']
                 );

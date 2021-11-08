@@ -22,20 +22,19 @@
                                 <th>Số lượng</th>
                                 <th>Xóa</th>
                             </tr>
-                             @foreach(Session::get('session_cart') as $cart) 
+                             @foreach(Session::get('session_cart') as $cart => $value) 
                                 
                                      <tr class="list">
-                                         <th>{{$cart["id"]}}</th>
-                                         <th>Bánh ngọt</th>
-                               
-                                        <th>Status</th>
+                                         <th></th>
+                                         <th>{{$value["id"]}}</th>
+                                        <th>{{$value["flavor"]}}</th>
                                         <th>100000</th>
                                         <th>2</th>
                                         <th>	</th>
                             </tr>
                                 
                              @endforeach 
-                             {{var_dump(Session::all())}}
+                             {{var_dump(Session::get('session_cart'))}}
                         </table>
                         <form action="order" method="GET">
                         <div class="form">
