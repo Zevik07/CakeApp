@@ -44,6 +44,7 @@
                             @csrf
                             {{-- @method('PUT') --}}
                             <input type="hidden" name="id" value="{{$cake->id}}">
+                            <input type="hidden" name="name" value="{{$cake->name}}">
                             @if(count($cakeDetails)>0)
                                 <p>Chọn vị:</p>
                                 <div class="flex flex-wrap">
