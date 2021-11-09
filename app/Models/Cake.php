@@ -14,7 +14,7 @@ class Cake extends Model
      *
      * @var string[]
      */
-    // protected $table = 'cakes';
+    protected $table = 'cakes';
     protected $fillable = [
         'name',
         'desc',

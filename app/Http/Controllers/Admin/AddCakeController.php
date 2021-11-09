@@ -41,7 +41,23 @@ class AddCakeController extends Controller
      */
     public function store(Request $request)
     {
-        
+        // if(Cake::has($request->name)){
+
+        // }
+        $cake = new Cake;
+        $cake->name = $request->name;
+        $cake->price = $request->price;
+        $cake->quantity = $request->quantity;
+        $cake->desc = $request->desc;
+        $cake->save();
+        //$cake_saved = Cake::where('name',$request->name)->get();
+        //echo $cake->id;
+        $cake_detail = new CakeDetail;
+        $cake_detail->cake_id = $cake->id;
+        $cake_detail->flavor = $request->flavor;
+        $cake_detail->quantity = $request->quantity;
+        $cake_detail->save();
+        return redirect()->route('cake-add.index');
     }
 
     /**
