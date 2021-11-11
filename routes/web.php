@@ -4,9 +4,13 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CakeController;
 use App\Http\Controllers\Admin\DashboardController;
-use App\Http\Controllers\Admin\CakeController as CakeAddController;
+//use App\Http\Controllers\Admin\CakeController as CakeAddController;
 use App\Http\Controllers\AddToCart;
+<<<<<<< HEAD
+use App\Http\Controllers\Admin\AddCakeController;
+=======
 use App\Http\Controllers\CartController;
+>>>>>>> main
 
 /*
 |--------------------------------------------------------------------------
@@ -34,6 +38,8 @@ Route::get('/cake/addtocart',[AddtoCart::class,'add']);
 //Route::get('/cart/order',[order::class,'order']);
 
 Route::resource('cake', CakeController::class);
+
+Route::resource('cake-add',AddCakeController::class);
 
 
 require __DIR__.'/auth.php';

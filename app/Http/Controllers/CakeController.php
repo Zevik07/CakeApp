@@ -16,8 +16,12 @@ class CakeController extends Controller
      */
     public function index()
     {
-
-        // return view('cake');
+        // $data = [
+        //     'cake'=>
+        //         'cake' => Cake::select('id','name','price','desc'),
+        //         'cakedetail' => CakeDetail::select('flavor','quantity')
+        // ];
+        
     }
 
     /**
