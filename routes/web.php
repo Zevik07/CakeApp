@@ -6,11 +6,8 @@ use App\Http\Controllers\CakeController;
 use App\Http\Controllers\Admin\DashboardController;
 //use App\Http\Controllers\Admin\CakeController as CakeAddController;
 use App\Http\Controllers\AddToCart;
-<<<<<<< HEAD
 use App\Http\Controllers\Admin\AddCakeController;
-=======
 use App\Http\Controllers\CartController;
->>>>>>> main
 
 /*
 |--------------------------------------------------------------------------

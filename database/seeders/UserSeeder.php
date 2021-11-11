@@ -27,7 +27,7 @@ class UserSeeder extends Seeder
                 'phone'=>'0774000828',
                 'email'=> 'nhan@gmail.com',
                 'password'=>$password,
-                'role_id'=>1,
+                'role_id'=>2,
             ],
             [
                 'name'=>'Nguyen Huu Thien Phu',
@@ -43,7 +43,7 @@ class UserSeeder extends Seeder
                 'phone'=>'0328494707',
                 'email'=> 'khanh@gmail.com',
                 'password'=>$password,
-                'role_id'=>1,
+                'role_id'=>2,
             ]
         ];
         foreach ($user as $key => $value) {
