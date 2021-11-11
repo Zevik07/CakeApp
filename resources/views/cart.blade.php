@@ -22,25 +22,21 @@
                                 <th>Số lượng</th>
                                 <th>Xóa</th>
                             </tr>
-                            <tr class="list">
-                                <th>1</th>
-                                <th>Bánh ngọt</th>
-                                <th>BN123</th>
-                                <th>Status</th>
-                                <th>100000</th>
-                                <th>2</th>
-                                <th>	</th>
+                             @foreach(Session::get('session_cart') as $cart => $value) 
+                                
+                                     <tr class="list">
+                                         <th></th>
+                                         <th>{{$value["id"]}}</th>
+                                        <th>{{$value["flavor"]}}</th>
+                                        <th>100000</th>
+                                        <th>2</th>
+                                        <th>	</th>
                             </tr>
-                            <tr class="list">
-                                <th>1</th>
-                                <th>Bánh ngọt</th>
-                                <th>BN123</th>
-                                <th>Status</th>
-                                <th>100000</th>
-                                <th>2</th>
-                                <th>	</th>
-                            </tr>
+                                
+                             @endforeach 
+                             {{var_dump(Session::get('session_cart'))}}
                         </table>
+                        <form action="order" method="GET">
                         <div class="form">
                             <h2 class="titleuser">Thông tin khách hàng</h2>
                             <div class="row">
@@ -53,7 +49,7 @@
                                         <div>
                                             <i class="fa fa-user"></i>
                                         </div>
-                                        <input type="text" name="" class="required" placeholder="Ho va ten">
+                                        <input type="text" name="username" class="required" placeholder="Ho va ten">
                                     </div>
                                 </div>
                                 <div class="col-xl-6">
@@ -64,7 +60,7 @@
                                         <div>
                                             <i class="fa fa-map-marker"></i>
                                         </div>
-                                        <input type="text" name="" class="required" placeholder="Ho va ten">
+                                        <input type="text" name="address" class="required" placeholder="Ho va ten">
                                     </div>
                                 </div>
                                 <div class="col-xl-6">
@@ -75,7 +71,7 @@
                                         <div>
                                             <i class="fa fa-phone"></i>
                                         </div>
-                                        <input type="text" name="" class="required" placeholder="Ho va ten">
+                                        <input type="text" name="phone" class="required" placeholder="Ho va ten">
                                     </div>
                                 </div>
                                 <div class="col-xl-6">
@@ -86,7 +82,7 @@
                                         <div>
                                             <i class="fa fa-envelope-o"></i>
                                         </div>
-                                        <input type="text" name="" class="required" placeholder="Ho va ten">
+                                        <input type="text" name="email" class="required" placeholder="Ho va ten">
                                     </div>
                                 </div>
                                 <div class="col-xl-12">
@@ -101,6 +97,7 @@
                                     <a href="" title="Gui thong tin">Chọn thêm sản phẩm</a>
                                 </div>
                         </div>
+                        </form>
                     </div>
                     </div>
                 </div>
