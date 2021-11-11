@@ -9,9 +9,9 @@ use Illuminate\Support\Facades\Session;
 class AddToCart extends Controller
 {
     function add(Request $req){
-        // return $req->input();
+         //return $req->input();
         $data = $req->input();
-        $con= Session::get('session_cart');
+        $con = Session::get('session_cart');
         if(session()->has('session_cart')){
             foreach(Session::get('session_cart') as $item => $value){
                 if($value["id"]==$data["id"])
@@ -21,6 +21,7 @@ class AddToCart extends Controller
             }
             Session::push('session_cart',[
                 'id'=>$data['id'],
+                'name'=>$data['name'],
                 'flavor'=>$data['flavor'],
                 'quantity'=>$data['quantity'],
                 'note'=>$data['note'],
@@ -30,8 +31,9 @@ class AddToCart extends Controller
                     [HomeController::class,'index'],['name'=>'home']
                 );
         }else{
-            Session::put('session_cart',[[
+            $session = Session::put('session_cart',[[
                 'id'=>$data['id'],
+                'name'=>$data['name'],
                 'flavor'=>$data['flavor'],
                 'quantity'=>$data['quantity'],
                 'note'=>$data['note'],
