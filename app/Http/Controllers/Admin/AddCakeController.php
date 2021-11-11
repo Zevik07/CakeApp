@@ -88,18 +88,18 @@ class AddCakeController extends Controller
             $cake->save();
             return redirect()->route('cake-add.index');
         }else if($request->has('delete')){
-            $cake_detail = CakeDetail::find($request->id);
-            $id = $cake_detail->cake_id;
-            $cake_detail->delete();
-            $cake = Cake::find($id);
-            if(CakeDetail::where('cake_id',$id)){
-            return redirect()->route('cake-add.index');
-            }else{
-                $cake->delete();
-            }
-            
+                $cake_detail = CakeDetail::find($request->id);
+                $id = $cake_detail->cake_id;
+                $cake_detail->delete();
+                $cake = Cake::find($id);
+                if(CakeDetail::where('cake_id',$id)){
+                    return redirect()->route('cake-add.index');
+                }else{
+                    $cake->delete();
+                    return redirect()->route('cake-add.index');
+                }
         }
-        
+         
     }
 
     /**
@@ -133,7 +133,7 @@ class AddCakeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        echo $request->name;;
+        echo $request->name;
     }
 
     /**

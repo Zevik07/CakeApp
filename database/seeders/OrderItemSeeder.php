@@ -23,25 +23,25 @@ class OrderItemSeeder extends Seeder
                 'order_id'=>1,
                 'cake_detail_id'=>1,
                 'quantity'=>3,
-                'note'=>'Hương Chocolate'
+                'note'=>'Giao từ 1h-3h chiều'
             ],
             [
                 'order_id'=>1,
                 'cake_detail_id'=>5,
                 'quantity'=>3,
-                'note'=>'Hương Matcha'
+                'note'=>'Giao cả ngày'
             ],
             [
                 'order_id'=>2,
                 'cake_detail_id'=>1,
                 'quantity'=>3,
-                'note'=>'Hương Matcha'
+                'note'=>'Gửi bánh dưới quầy lễ tân'
             ],
             [
                 'order_id'=>2,
                 'cake_detail_id'=>10,
                 'quantity'=>3,
-                'note'=>'Hương Matcha'
+                'note'=>'Gửi bánh chú bảo vệ'
 
             ]
         ];

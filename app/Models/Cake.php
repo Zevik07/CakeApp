@@ -19,7 +19,6 @@ class Cake extends Model
         'name',
         'desc',
         'price',
-        'quantity'
     ];
     // public $timestamp = true;
 
