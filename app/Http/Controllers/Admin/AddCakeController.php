@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Cake;
 use App\Models\Image;
 use App\Models\CakeDetail;
+use Illuminate\Support\Facades\DB;
 
 class AddCakeController extends Controller
 {
@@ -41,23 +42,64 @@ class AddCakeController extends Controller
      */
     public function store(Request $request)
     {
-        // if(Cake::has($request->name)){
-
-        // }
-        $cake = new Cake;
-        $cake->name = $request->name;
-        $cake->price = $request->price;
-        $cake->quantity = $request->quantity;
-        $cake->desc = $request->desc;
-        $cake->save();
-        //$cake_saved = Cake::where('name',$request->name)->get();
-        //echo $cake->id;
-        $cake_detail = new CakeDetail;
-        $cake_detail->cake_id = $cake->id;
-        $cake_detail->flavor = $request->flavor;
-        $cake_detail->quantity = $request->quantity;
-        $cake_detail->save();
-        return redirect()->route('cake-add.index');
+        if($request->has('add')){
+            
+        //     if(Cake::where('name','=',$request->name)->exists()){
+        //         //$name = $request->name;
+        //         $cake = Cake::where('name','=',$request->name);
+        //         //var_dump($cake);
+        //         echo $cake->id;
+        //         // $cake_detail = new CakeDetail;
+        //         // $cake_detail->cake_id = $cake->id;
+        //         // $cake_detail->flavor = $request->flavor;
+        //         // $cake_detail->quantity = $request->quantity;
+        //         // $cake_detail->save();
+        //         // return redirect()->route('cake-add.index');
+        //    }else{
+               //Save cake
+               $cake = new Cake;
+               $cake->name = $request->name;
+               $cake->price = $request->price;
+               $cake->quantity = $request->quantity;
+               $cake->desc = $request->desc;
+               $cake->save();
+               //Save cake detail
+               $cake_detail = new CakeDetail;
+               $cake_detail->cake_id = $cake->id;
+               $cake_detail->flavor = $request->flavor;
+               $cake_detail->quantity = $request->quantity;
+               $cake_detail->save();
+               return redirect()->route('cake-add.index');
+           //}
+        }else if($request->has('edit')){
+            $id = $request->id;
+            //Update Cake Details
+            $cake_detail = CakeDetail::findOrFail($id);
+            $cake_detail->flavor = $request->flavor;
+            $cake_detail->quantity = $request->quantity;
+            $cake_detail->save();
+            $cake_id = $cake_detail->cake_id;
+            //Update Cake
+            $cake = Cake::find($cake_id);
+            $cake->name = $request->name;
+            $cake->price = $request->price;
+            $cake->quantity = $cake->quantity + $request->quantity;
+            $cake->desc = $request->desc;
+            $cake->save();
+            return redirect()->route('cake-add.index');
+        }else if($request->has('delete')){
+            $cake_detail = CakeDetail::find($request->id);
+            $id = $cake_detail->cake_id;
+            $cake_detail->delete();
+            $cake = Cake::find($id);
+            if(CakeDetail::where('cake_id',$id)){
+            return redirect()->route('cake-add.index');
+            }else{
+                $cake->delete();
+            }
+            
+        }
+        
     }
 
     /**
@@ -79,7 +121,7 @@ class AddCakeController extends Controller
      */
     public function edit($id)
     {
-        //
+        
     }
 
     /**
@@ -91,7 +133,7 @@ class AddCakeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        echo $request->name;;
     }
 
     /**

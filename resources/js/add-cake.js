@@ -28,6 +28,7 @@ $(document).ready(function() {
             }
         });
         //console.log(data.id);
+        $('#input-id').val(data.id);
         $('#input-name').val(data.name);
         $('#input-flavor').val(data.flavor);
         $('#input-price').val(data.price);
@@ -36,5 +37,7 @@ $(document).ready(function() {
         $('#id-delete').val(data.id);
         $('#form-edit-area').removeClass("hidden");
     });
+
+    
 });
 
