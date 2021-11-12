@@ -1,7 +1,7 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
+const colors = require('tailwindcss/colors');
 
 module.exports = {
-    important: true,
     
     purge: [
         './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
@@ -16,7 +16,15 @@ module.exports = {
             },
         },
         textColor: {
-            'primary-color': '#842029',
+            primary_color: '#842029',
+            transparent: 'transparent',
+            current: 'currentColor',
+            black: colors.black,
+            white: colors.white,
+            gray: colors.trueGray,
+            indigo: colors.indigo,
+            red: colors.rose,
+            yellow: colors.amber,
         }
     },
 

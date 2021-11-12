@@ -25,83 +25,74 @@
     <script src="{{ asset('js/admin.js') }}" defer></script>
 
 	<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-	
+
 	<style>
-		/* .bg-black-alt  {
-			background:#191919;
-		}
-		.text-black-alt  {
-			color:#191919;
-		}
-		.border-black-alt {
-			border-color: #191919;
-		} */
-		
+
 	</style>
-
 </head>
-<body class="text-white bg-black-alt font-sans leading-normal tracking-normal">
+<body class="bg-white font-sans leading-normal tracking-normal">
 
-    <nav id="header" class="bg-gray-900 fixed w-full z-10 top-0 shadow">
+    <nav id="header" class="bg-white fixed w-full z-10 top-0 shadow text-primary_color">
 	
-
 		<div class="w-full container mx-auto flex flex-wrap items-center mt-0 pt-3 pb-3 md:pb-0">
 				
 			<div class="w-1/2 pl-2 md:pl-0">
-				<a class="text-gray-100 text-base xl:text-xl no-underline hover:no-underline font-bold"  href="#"> 
+				<a class=" text-base xl:text-xl no-underline hover:no-underline font-bold"  href="#"> 
 					Trang quản lý
 				</a>
             </div>
 			<div class="w-1/2 pr-0">
 				<div class="flex relative inline-block float-right">
-
 					@auth
-					<div class="relative text-sm text-gray-100">
+					<div class="relative text-sm">
 						<button id="userButton" class="flex items-center focus:outline-none mr-3">
-							<img class="w-8 h-8 rounded-full mr-4" src="http://i.pravatar.cc/300" alt="Avatar of User"> <span class="hidden md:inline-block text-gray-100">Hi, {{ Auth::user()->name }}</span>
-							<svg class="pl-2 h-2 fill-current text-gray-100" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129 129" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 129 129"><g><path d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z"/></g></svg>
+							<!-- <img class="w-8 h-8 rounded-full mr-4" src="http://i.pravatar.cc/300" alt="Avatar of User">  -->
+							<span class="hidden md:inline-block">Chào, {{ Auth::user()->name }}</span>
+							<svg class="pl-2 h-2 fill-current" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129 129" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 129 129"><g><path d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z"/></g></svg>
 						</button>
-						<div id="userMenu" class="text-lg bg-gray-900 rounded shadow-md mt-2 absolute mt-12 top-0 right-0 min-w-full overflow-auto z-30 invisible">
+						<div id="userMenu" class="bg-white rounded-sm shadow-lg mt-2 absolute mt-5 top-0 right-0 min-w-full overflow-auto z-30 invisible">
 							<ul class="list-reset">
-							<li><a href="#" class="px-4 py-2 block text-gray-100 hover:bg-gray-800 no-underline hover:no-underline">Tài khoản</a></li>
-							<li><hr class="border-t mx-2 border-gray-400"></li>
-							<li class="text-white">
-								<form method="POST" action="{{ route('logout') }}">
-									@csrf
-
-									<x-dropdown-link :href="route('logout')"
-											onclick="event.preventDefault();
-														this.closest('form').submit();">
-										{{ __('Log Out') }}	
-									</x-dropdown-link>
-								</form>
-								sdf
-							</li>
-							<!-- <li><a href="{{ route('logout') }}" class="px-4 py-2 block text-gray-100 hover:bg-gray-800 no-underline hover:no-underline">Đăng xuất</a></li> -->
+								<!-- <li><a href="#" class="px-4 py-2 block hover:bg-gray-800 no-underline hover:no-underline">Tài khoản</a></li> -->
+								<li><hr class="border-t mx-2 border-red-400"></li>
+								<li class="text-white">
+									<form method="POST" action="{{ route('logout') }}">
+										@csrf
+										<x-dropdown-link :href="route('logout')" class="text-black"
+												onclick="event.preventDefault();
+															this.closest('form').submit();">
+											{{ __('Đăng xuất') }}	
+										</x-dropdown-link>
+									</form>
+								</li>
+								<!-- <li><a href="{{ route('logout') }}" class="px-4 py-2 block text-gray-100 hover:bg-gray-800 no-underline hover:no-underline">Đăng xuất</a></li> -->
 							</ul>
 						</div>
 					</div>
 					@endauth
 
 					<div class="block lg:hidden pr-4">
-					<button id="nav-toggle" class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-100 hover:border-teal-500 appearance-none focus:outline-none">
-						<svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
-					</button>
-				</div>
+						<button id="nav-toggle" class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-100 hover:border-teal-500 appearance-none focus:outline-none">
+							<svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+						</button>
+					</div>
 				</div>
 
 			</div>
 
 
-			<div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 bg-gray-900 z-20" id="nav-content">
-				<ul class="list-reset lg:flex flex-1 items-center px-4 md:px-0">
+			<div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 z-20" id="nav-content">
+				<ul class="text-gray-400 list-reset lg:flex flex-1 items-center px-4 md:px-0">
 					<li class="mr-6 my-2 md:my-0">
-                        <a href="#" class="block py-1 md:py-3 pl-1 align-middle text-blue-400 no-underline hover:text-gray-100 border-b-2 border-blue-400 hover:border-blue-400">
-                            <i class="fas fa-home fa-fw mr-3 text-blue-400"></i><span class="pb-1 md:pb-0 text-lg">Danh sách đơn đặt hàng</span>
+                        <a href=" {{ route('cake-management.index') }} " 
+						class="block py-1 md:py-3 pl-1 align-middle no-underline hover:text-primary_color hover:text-primary_color
+						{{ request()->is('admin/cake-management') ? 'text-primary_color' : '' }}">
+                            <i class="fas fa-home fa-fw mr-3 text-blue-400"></i><span class="pb-1 md:pb-0 text-lg">Đơn đặt hàng</span>
                         </a>
                     </li>
 					<li class="mr-6 my-2 md:my-0">
-                        <a href="#" class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-100 border-b-2 border-gray-900  hover:border-pink-400">
+                        <a href="{{ route('admin-dashboard') }}" 
+						class="block py-1 md:py-3 pl-1 align-middle no-underline hover:text-primary_color
+						{{ request()->is('admin/dashboard') ? 'text-primary_color' : '' }}">
                             <i class="fas fa-tasks fa-fw mr-3"></i><span class="pb-1 md:pb-0 text-lg">Quản lý bánh</span>
                         </a>
                     </li>
@@ -126,61 +117,8 @@
 	<div class="container w-full mx-auto pt-20">
 		
 		<div class="w-full px-4 md:px-0 md:mt-8 mb-16 text-white leading-normal">
-			
-			<!--Console Content-->
-			
-			<div class="flex flex-wrap">
-                <div class="w-full md:w-1/2 xl:w-1/3 p-3">
-                    <!--Metric Card-->
-                    <div class="bg-gray-900 border border-gray-800 rounded shadow p-2">
-                        <div class="flex flex-row items-center">
-                            <div class="flex-shrink pr-4">
-                                <div class="rounded p-3 bg-green-600"><i class="fa fa-wallet fa-2x fa-fw fa-inverse"></i></div>
-                            </div>
-                            <div class="flex-1 text-right md:text-center">
-                                <h5 class="font-bold uppercase text-gray-400">Tổng lợi nhuận</h5>
-                                <h3 class="font-bold text-3xl text-gray-600">$3249 <span class="text-green-500"><i class="fas fa-caret-up"></i></span></h3>
-                            </div>
-                        </div>
-                    </div>
-                    <!--/Metric Card-->
-                </div>
-                <div class="w-full md:w-1/2 xl:w-1/3 p-3">
-                    <!--Metric Card-->
-                    <div class="bg-gray-900 border border-gray-800 rounded shadow p-2">
-                        <div class="flex flex-row items-center">
-                            <div class="flex-shrink pr-4">
-                                <div class="rounded p-3 bg-pink-600"><i class="fas fa-users fa-2x fa-fw fa-inverse"></i></div>
-                            </div>
-                            <div class="flex-1 text-right md:text-center">
-                                <h5 class="font-bold uppercase text-gray-400">Tổng khách</h5>
-                                <h3 class="font-bold text-3xl text-gray-600">249 <span class="text-pink-500"><i class="fas fa-exchange-alt"></i></span></h3>
-                            </div>
-                        </div>
-                    </div>
-                    <!--/Metric Card-->
-                </div>
-                <div class="w-full md:w-1/2 xl:w-1/3 p-3">
-                    <!--Metric Card-->
-                    <div class="bg-gray-900 border border-gray-800 rounded shadow p-2">
-                        <div class="flex flex-row items-center">
-                            <div class="flex-shrink pr-4">
-                                <div class="rounded p-3 bg-yellow-600"><i class="fas fa-user-plus fa-2x fa-fw fa-inverse"></i></div>
-                            </div>
-                            <div class="flex-1 text-right md:text-center">
-                                <h5 class="font-bold uppercase text-gray-400">Tổng bánh</h5>
-                                <h3 class="font-bold text-3xl text-gray-600">2 <span class="text-yellow-600"><i class="fas fa-caret-up"></i></span></h3>
-                            </div>
-                        </div>
-                    </div>
-                    <!--/Metric Card-->
-                </div>
-            </div>
 
-			<!--Divider-->
-			<hr class="border-b-2 border-gray-600 my-8 mx-4">
-
-            <div class="flex flex-row flex-wrap flex-grow mt-2 color:white">
+            <div class="text-gray-700 flex flex-row flex-wrap flex-grow mt-2 color:white">
 
                {{$slot}}
 

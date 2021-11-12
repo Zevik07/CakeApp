@@ -30,7 +30,7 @@
                             <tr class="">
                                 <td style="color:black" class="px-6 py-4 whitespace-no-wrap text-center border-b border-gray-200">1</td>
                                 <td style="color:black" class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                    <?php var_dump($orders)  ?>
+                                    <?php   ?>
                                     {{-- @foreach($orders->user as $user)
                                         @if($order->id == $user->id)['id'])
                                             <ul>

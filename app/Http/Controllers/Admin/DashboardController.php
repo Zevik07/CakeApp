@@ -18,13 +18,13 @@ class DashboardController extends Controller
     function index()
     {
         $orders = Order::all();
-        //$users = User::with($orders);
+        // $users = User::with($orders);
         // $users = User::with(['orders']);
-        //$users = User::all();
+        // $users = User::all();
         
         //return OrderResource::collection($orders->paginate(perPage:50))->response();
-        return OrderResource::collection($orders)->response();
     
         // View ở trong admin/dashboarc
+        return view('admin.dashboard', ['order' => OrderResource::collection($orders)]);
     }
 }
