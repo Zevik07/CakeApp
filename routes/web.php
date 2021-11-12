@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\CakeManagementController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CakeController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,8 +22,12 @@ use App\Http\Controllers\CartController;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/cart',  [CartController::class, 'index'])->name('cart');
+Route::get('/order',  [OrderController::class, 'getForm'])->name('ordercake');
+Route::get('/detele/{id}',  [CartController::class, 'detele'])->name('detelecake');
 
 Route::resource('cake', CakeController::class);
+// Route::get('get-form', 'OrderController@getForm');
+// Route::post('handle-form', 'OrderController@handleRequest');
 
 Route::middleware('auth')->group( function () {
     Route::get('admin/dashboard', [DashboardController::class, 'index'])->name('admin-dashboard');
