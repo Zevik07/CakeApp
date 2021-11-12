@@ -39,7 +39,7 @@
                 <div id="cart-page">
                     <div class="body-cart">
                     <div class="wp-content-cart">
-                    <form action="{{route('ordercake')}}" method="GET" name="formcake">
+                    <form action="{{route('order')}}" method="GET" name="formcake">
                         <table class="table table-bordered">
                             <tr class="title">
                                 <th>STT</th>

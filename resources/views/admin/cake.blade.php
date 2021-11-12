@@ -46,7 +46,7 @@
     <!--Form add new start-->
     <div id="form-add-area" class="w-1/3 p-3 mx-auto hidden">
         <h2 class="text-3xl font-bold m-5 text-purple-700">Thêm bánh</h2>
-            <form id="form-add" action="{{ route('cake-add.store') }}" method="post">
+            <form id="form-add" action="{{ route('cake-management.store') }}" method="post">
                 @csrf
                 <div>
                     <label style="color:white" class="block mb-2 font-bold">Tên</label>
@@ -79,7 +79,7 @@
     <!--Form edit start-->
     <div id="form-edit-area" class="w-1/3 p-3 mx-auto hidden">
         <h2 class="text-3xl font-bold m-5 text-purple-700">Sửa bánh</h2>
-            <form id="form-edit" action="{{route('cake-add.store')}}" method="post">
+            <form id="form-edit" action="{{route('cake-management.store')}}" method="post">
                 @csrf
                 <div>
                     <input value name="id" id="input-id" style="color:black" type="text" readonly class="w-full border-2 border-gray-200 p-1 rounded outline-none focus:border-blue-600">

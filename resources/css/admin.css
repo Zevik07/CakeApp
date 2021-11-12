@@ -1,2 +1,5 @@
-@import './cake-add.css';
-@import './order-list.css';
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';    
+@import './admin/dashboard.css';
+@import './admin/cake-management.css';

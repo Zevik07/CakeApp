@@ -1,4 +1,3 @@
-require('./bootstrap');
 require('alpinejs');
+require('./bootstrap');
 require('./cake-detail');
-require('./add-cake');

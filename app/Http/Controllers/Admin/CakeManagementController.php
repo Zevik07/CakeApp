@@ -17,7 +17,7 @@ class CakeManagementController extends Controller
      */
     public function index()
     {
-        return view('add-cake',[
+        return view('admin/cake', [
             'cakes' =>Cake::All(),
             'details' =>CakeDetail::All()
         ]);

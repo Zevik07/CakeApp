@@ -24,5 +24,7 @@ class DashboardController extends Controller
         
         //return OrderResource::collection($orders->paginate(perPage:50))->response();
         return OrderResource::collection($orders)->response();
+    
+        // View ở trong admin/dashboarc
     }
 }

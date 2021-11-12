@@ -21,17 +21,17 @@ use App\Http\Controllers\OrderController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('/cart',  [CartController::class, 'index'])->name('cart');
-Route::get('/order',  [OrderController::class, 'getForm'])->name('ordercake');
-Route::get('/detele/{id}',  [CartController::class, 'detele'])->name('detelecake');
-
 Route::resource('cake', CakeController::class);
-// Route::get('get-form', 'OrderController@getForm');
-// Route::post('handle-form', 'OrderController@handleRequest');
+
+Route::get('/cart',  [CartController::class, 'index'])->name('cart');
+
+Route::get('/order',  [OrderController::class, 'getForm'])->name('order');
+
+Route::get('/detele/{id}',  [CartController::class, 'detele'])->name('detelecake');
 
 Route::middleware('auth')->group( function () {
     Route::get('admin/dashboard', [DashboardController::class, 'index'])->name('admin-dashboard');
-    Route::get('admin/cake', [CakeAddController::class, 'index'])->name('admin-cake');
+    Route::resource('admin/cake-management', CakeManagementController::class);
 });
 
 require __DIR__.'/auth.php';

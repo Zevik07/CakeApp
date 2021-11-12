@@ -16,18 +16,18 @@
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     
-    <!-- Styles -->
-    <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet"> 
-    
+	<!-- Chart -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js" integrity="sha256-XF29CBwU1MWLaGEnsELogU6Y6rcc5nCkhhx89nFMIDQ=" crossorigin="anonymous"></script>
     
 	<!-- App -->
     <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
 
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/admin.js') }}" defer></script>
+
 	<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+	
 	<style>
-		.bg-black-alt  {
+		/* .bg-black-alt  {
 			background:#191919;
 		}
 		.text-black-alt  {
@@ -35,12 +35,12 @@
 		}
 		.border-black-alt {
 			border-color: #191919;
-		}
+		} */
 		
 	</style>
 
 </head>
-<body class="bg-black-alt font-sans leading-normal tracking-normal">
+<body class="text-white bg-black-alt font-sans leading-normal tracking-normal">
 
     <nav id="header" class="bg-gray-900 fixed w-full z-10 top-0 shadow">
 	

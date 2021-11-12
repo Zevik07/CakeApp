@@ -88,7 +88,7 @@ class CakeController extends Controller
         // $images = Cake::where('imageable_id',$id);
         // $cake = Cake::find(1);
         // $images = Image::where('imageable_id',$id);
-        return view('cake',[
+        return view('cake-detail',[
             // $name,
             // $desc,
             // $price,
