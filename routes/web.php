@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\CakeController as CakeAddController;
 use App\Http\Controllers\AddToCart;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,11 +30,15 @@ Route::middleware('auth')->group( function () {
 });
 
 Route::get('/cart',  [CartController::class, 'index'])->name('cart');
+Route::get('/order',  [OrderController::class, 'getForm'])->name('ordercake');
+Route::get('/detele/{id}',  [CartController::class, 'detele'])->name('detelecake');
 
 Route::get('/cake/addtocart',[AddtoCart::class,'add']);
 //Route::get('/cart/order',[order::class,'order']);
 
 Route::resource('cake', CakeController::class);
+// Route::get('get-form', 'OrderController@getForm');
+// Route::post('handle-form', 'OrderController@handleRequest');
 
 
 require __DIR__.'/auth.php';

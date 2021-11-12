@@ -18,8 +18,8 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('address');
             $table->string('phone');
-            $table->string('email');
-            $table->string('password');
+            $table->string('email')->nullable();
+            $table->string('password')->nullable();
             $table->foreignId('role_id')
                 ->constrained()
                 ->onUpdate('cascade')

@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Session;
 
 class CartController extends Controller
 {   
+    
     // function order(Request $req){
     //     $data=$req->input();
     //     Session::put('username',$data['username']);
@@ -25,4 +26,21 @@ class CartController extends Controller
     function index(){
         return view('cart');
     }
+    public function detele(Request $request){
+        $id = $request['id'];
+        $cart =$request->session()->get('session_cart'); 
+        foreach($cart as $index => $valuedetele){
+            if($valuedetele['id']== $id){
+                
+                unset($cart[$index]); 
+                 
+                 
+                 
+                 }
+                 
+            }
+        $request->session()->set('session_cart', $cart);
+            
+            
+         }
 }

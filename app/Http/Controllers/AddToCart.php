@@ -13,11 +13,19 @@ class AddToCart extends Controller
         $data = $req->input();
         $con= Session::get('session_cart');
         if(session()->has('session_cart')){
+<<<<<<< Updated upstream
             foreach(Session::get('session_cart') as $item){
                 if($item["id"]==$data["id"])
                 return redirect()->action(
                     [HomeController::class,'index'],['name'=>'home']
                 );
+=======
+            foreach(Session::get('session_cart') as $item => $value){
+                // if($value["id"]==$data["id"])
+                //     return redirect()->action(
+                //         [HomeController::class,'index'],['name'=>'home']
+                //     );
+>>>>>>> Stashed changes
             }
             Session::push('session_cart',[
                 'id'=>$data['id'],
