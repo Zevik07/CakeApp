@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use App\Models\Cake;
 use App\Models\Image;
@@ -16,11 +17,6 @@ class CakeController extends Controller
      */
     public function index()
     {
-        // $data = [
-        //     'cake'=>
-        //         'cake' => Cake::select('id','name','price','desc'),
-        //         'cakedetail' => CakeDetail::select('flavor','quantity')
-        // ];
         
     }
 
@@ -40,9 +36,41 @@ class CakeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $req)
     {
-        //
+        $data = $req->input();
+        $con = Session::get('session_cart');
+        if(session()->has('session_cart')){
+            foreach(Session::get('session_cart') as $item => $value){
+                if($value["id"]==$data["id"])
+                    return redirect()->action(
+                        [HomeController::class,'index'],['name'=>'home']
+                    );
+            }
+            Session::push('session_cart',[
+                'id'=>$data['id'],
+                'name'=>$data['name'],
+                'flavor'=>$data['flavor'],
+                'quantity'=>$data['quantity'],
+                'note'=>$data['note'],
+                ]);
+                Session::flash('success','Add to cart successfully!');
+                return redirect()->action(
+                    [HomeController::class,'index'],['name'=>'home']
+                );
+        }else{
+            $session = Session::put('session_cart',[[
+                'id'=>$data['id'],
+                'name'=>$data['name'],
+                'flavor'=>$data['flavor'],
+                'quantity'=>$data['quantity'],
+                'note'=>$data['note'],
+                ]]);
+                Session::flash('success','Add to cart successfully!');
+                return redirect()->action(
+                    [HomeController::class,'index']
+                );
+        } 
     }
 
     /**

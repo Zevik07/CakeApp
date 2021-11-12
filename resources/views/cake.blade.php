@@ -40,7 +40,7 @@
                         <h4 class="font-semibold text-3xl text-black py-6">Bánh {{$cake->name}}</h4>
                         <span class="block font-normal text-xl text-red-400">{{$cake->price}}</span>
                         <span class="block py-6 mr-4 font-light text-base text-gray-400">{{$cake->desc}}</span>
-                        <form action="addtocart" method="GET">
+                        <form action="{{ route('cake.store') }}" method="POST">
                             @csrf
                             {{-- @method('PUT') --}}
                             <input type="hidden" name="id" value="{{$cake->id}}">

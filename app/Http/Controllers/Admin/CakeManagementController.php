@@ -8,7 +8,7 @@ use App\Models\Cake;
 use App\Models\Image;
 use App\Models\CakeDetail;
 
-class AddCakeController extends Controller
+class CakeManagementController extends Controller
 {
     /**
      * Display a listing of the resource.
