@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 use App\Models\Cake;
 use App\Models\Image;
 use App\Models\CakeDetail;
-use Illuminate\Support\Facades\DB;
 
 class AddCakeController extends Controller
 {

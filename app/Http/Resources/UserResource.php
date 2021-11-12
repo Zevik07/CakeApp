@@ -1,11 +1,10 @@
 <?php
 
 namespace App\Http\Resources;
-use App\Models\Images;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class Cake extends JsonResource
+class UserResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -16,12 +15,11 @@ class Cake extends JsonResource
     public function toArray($request)
     {
         return [
-            'id' => $this->id,
-            'name' => $this->name,
-            // 'desc' => $this->desc,
-            'price' => $this->desc,
-            'thumb' => $this->thumb(),
-            'cake_details' => CakeDetailResource::collection($this->whenLoaded('cake_details'))
+            'id' =>$this->id,
+            'name' =>$this->name,
+            'address' =>$this->address,
+            'phone' => $this->phone,
+            'orders' => OrderResource::collection($this->whenLoaded('orders'))
         ];
     }
 }
