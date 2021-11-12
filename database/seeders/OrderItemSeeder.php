@@ -23,27 +23,76 @@ class OrderItemSeeder extends Seeder
                 'order_id'=>1,
                 'cake_detail_id'=>1,
                 'quantity'=>3,
-                'note'=>'Hương Chocolate'
+                'note'=>'Giao từ 1h-3h chiều'
             ],
             [
                 'order_id'=>1,
+                'cake_detail_id'=>2,
+                'quantity'=>3,
+                'note'=>'Giao cả ngày'
+            ],
+            [
+                'order_id'=>2,
+                'cake_detail_id'=>3,
+                'quantity'=>3,
+                'note'=>'Gửi bánh dưới quầy lễ tân'
+            ],
+            [
+                'order_id'=>3,
+                'cake_detail_id'=>4,
+                'quantity'=>3,
+                'note'=>'Gửi bánh chú bảo vệ'
+            ],
+            [
+                'order_id'=>4,
                 'cake_detail_id'=>5,
                 'quantity'=>3,
-                'note'=>'Hương Matcha'
+                'note'=>'Gửi bánh dưới quầy lễ tân'
             ],
             [
-                'order_id'=>2,
-                'cake_detail_id'=>1,
+                'order_id'=>5,
+                'cake_detail_id'=>6,
                 'quantity'=>3,
-                'note'=>'Hương Matcha'
+                'note'=>'Gửi bánh chú bảo vệ'
             ],
             [
-                'order_id'=>2,
+                'order_id'=>6,
+                'cake_detail_id'=>7,
+                'quantity'=>3,
+                'note'=>'Gửi bánh dưới quầy lễ tân'
+            ],
+            [
+                'order_id'=>7,
+                'cake_detail_id'=>8,
+                'quantity'=>3,
+                'note'=>'Gửi bánh chú bảo vệ'
+            ],
+            [
+                'order_id'=>8,
+                'cake_detail_id'=>9,
+                'quantity'=>3,
+                'note'=>'Gửi bánh dưới quầy lễ tân'
+            ],
+            [
+                'order_id'=>9,
                 'cake_detail_id'=>10,
                 'quantity'=>3,
-                'note'=>'Hương Matcha'
-
-            ]
+                'note'=>'Gửi bánh chú bảo vệ'
+            ],
+            [
+                'order_id'=>10,
+                'cake_detail_id'=>11,
+                'quantity'=>3,
+                'note'=>'Gửi bánh dưới quầy lễ tân'
+            ],
+            [
+                'order_id'=>11,
+                'cake_detail_id'=>12,
+                'quantity'=>3,
+                'note'=>'Gửi bánh chú bảo vệ'
+            ],
+            
+            
         ];
         foreach ($Orders as $key => $value) {
             OrderItem::create($value);

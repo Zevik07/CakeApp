@@ -19,6 +19,8 @@ class CreateOrdersTable extends Migration
                 ->constrained()
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
+            //$table->integer('user_id');
+            $table->text('note');
             $table->string('status');
             $table->timestamps();
         });

@@ -50,42 +50,37 @@
                                 <th>Số lượng</th>
                                 <th>Xóa</th>
                             </tr>
-<<<<<<< Updated upstream
-                             @foreach(Session::get('session_cart') as $cart) 
+                             @foreach(Session::get('session_cart') as $cart => $value) 
                                 
                                      <tr class="list">
-                                         <th>{{$cart["id"]}}</th>
-                                         <th>Bánh ngọt</th>
-                               
-                                        <th>Status</th>
+                                         <th></th>
+                                         <th>{{$value["id"]}}</th>
+                                        <th>{{$value["flavor"]}}</th>
                                         <th>100000</th>
                                         <th>2</th>
                                         <th>	</th>
                             </tr>
                                 
                              @endforeach 
-                             {{var_dump(Session::all())}}
-=======
-                            @if (session()->has('session_cart'))
-                             @foreach(Session::get('session_cart') as $cart => $value) 
-                             <?php 
-                             $name = DB::table('cakes')->where('id', '=', $value["id"] )->value('name');
-                             $price = DB::table('cakes')->where('id', '=', $value["id"] )->value('price');
-                             $i++;
-                             ?>
-                             <tr class="list">
-                                         <th><?php echo $i ?></th>
-                                         <th><?php echo $name ?>	</th>
-                                         <th> {{$value["id"]}} </th>
-                                        <th>{{$value["flavor"]}}</th>
-                                        <th><?php echo $price ?></th>
-                                        <th>{{$value["quantity"]}}</th>
-                                        <th><a href="{{route('detelecake', ['id' => $value['id']])}}">Xóa</a></th>
-                            </tr>
-                                
-                             @endforeach 
+                              @if (session()->has('session_cart'))
+                               @foreach(Session::get('session_cart') as $cart => $value) 
+                               <?php 
+                               $name = DB::table('cakes')->where('id', '=', $value["id"] )->value('name');
+                               $price = DB::table('cakes')->where('id', '=', $value["id"] )->value('price');
+                               $i++;
+                               ?>
+                               <tr class="list">
+                                           <th><?php echo $i ?></th>
+                                           <th><?php echo $name ?>	</th>
+                                           <th> {{$value["id"]}} </th>
+                                          <th>{{$value["flavor"]}}</th>
+                                          <th><?php echo $price ?></th>
+                                          <th>{{$value["quantity"]}}</th>
+                                          <th><a href="{{route('detelecake', ['id' => $value['id']])}}">Xóa</a></th>
+                              </tr>
+
+                               @endforeach 
                              @endif
->>>>>>> Stashed changes
                         </table>
                         
                        

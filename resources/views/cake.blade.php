@@ -40,10 +40,11 @@
                         <h4 class="font-semibold text-3xl text-black py-6">Bánh {{$cake->name}}</h4>
                         <span class="block font-normal text-xl text-red-400">{{$cake->price}}</span>
                         <span class="block py-6 mr-4 font-light text-base text-gray-400">{{$cake->desc}}</span>
-                        <form action="addtocart" method="GET">
+                        <form action="{{ route('cake.store') }}" method="POST">
                             @csrf
                             {{-- @method('PUT') --}}
                             <input type="hidden" name="id" value="{{$cake->id}}">
+                            <input type="hidden" name="name" value="{{$cake->name}}">
                             @if(count($cakeDetails)>0)
                                 <p>Chọn vị:</p>
                                 <div class="flex flex-wrap">
@@ -59,7 +60,7 @@
                             <input class="w-20 h-10 mx-3 rounded-lg" name="quantity" type="number" min="0">
                             <br>
                             <label for="note">Ghi chú</label>
-                            <textarea class="mx-3 mt-3 rounded-lg" name="note" type="text" rows="3" cols="30"></textarea>
+                            <textarea class="mx-3 mt-3 rounded-lg" name="note" type="text" rows="4" cols="30"></textarea>
                             <button class="block px-6 py-3 m-3 text-white bg-red-400 hover:bg-red-500 rounded-lg transition-colors">Thêm vào giỏ hàng</button>
                         </form>
                         <hr>
