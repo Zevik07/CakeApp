@@ -55,7 +55,6 @@ class CakeDetailSeeder extends Seeder
                 'flavor' => 'Cherry',
                 'quantity' =>5
             ],
-            //
             [
                 'cake_id' => 3,
                 'flavor' => 'Strawberry',
@@ -155,6 +154,67 @@ class CakeDetailSeeder extends Seeder
             [
                 'cake_id' => 7,
                 'flavor' => 'Strawberry',
+                'quantity' =>5
+            ],
+            //
+            [
+                'cake_id' => 8,
+                'flavor' => 'Chocolate',
+                'quantity' =>5
+            ],
+            [
+                'cake_id' => 8,
+                'flavor' => 'Matcha',
+                'quantity' =>5
+            ],
+            [
+                'cake_id' => 8,
+                'flavor' => 'Strawberry',
+                'quantity' =>5
+            ],
+            [
+                'cake_id' => 8,
+                'flavor' => 'Passion fruits',
+                'quantity' =>5
+            ],
+            [
+                'cake_id' => 9,
+                'flavor' => 'Strawberry',
+                'quantity' =>5
+            ],
+            [
+                'cake_id' => 9,
+                'flavor' => 'Chocolate',
+                'quantity' =>5
+            ],
+            [
+                'cake_id' => 9,
+                'flavor' => 'Matcha',
+                'quantity' =>5
+            ],
+            [
+                'cake_id' => 9,
+                'flavor' => 'Cherry',
+                'quantity' =>5
+            ],
+            [
+                'cake_id' => 10,
+                'flavor' => 'Chocolate',
+                'quantity' =>5
+            ],
+            [
+                'cake_id' => 10,
+                'flavor' => 'Matcha',
+                'quantity' =>5
+            ],
+            [
+                'cake_id' => 10,
+                'flavor' => 'Strawberry',
+                'quantity' =>5
+            ],
+            [
+                'cake_id' => 10,
+                'flavor' => 'Passion fruits',
                 'quantity' =>5
             ],
         ];

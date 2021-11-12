@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Image;
+use App\Models\CakeDetail;
 
 class Cake extends Model
 {
@@ -34,5 +35,10 @@ class Cake extends Model
     {
         return $this->morphMany(Image::class, 'imageable')
                     ->where('type', 'thumb');
+    }
+
+    public function cake_details()
+    {
+        return $this->hasMany(CakeDetail::class,'cake_id');
     }
 }

@@ -19,4 +19,11 @@ class CakeDetail extends Model
         'flavor',
         'quantity'
     ];
+    
+    public function cake(){
+        return $this->belongsTo(Cake::class,'cake_id');
+    }
+    public function order_item(){
+        return $this->belongsTo(OrderItem::class,'cake_detail_id');
+    }
 }
