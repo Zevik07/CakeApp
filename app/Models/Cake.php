@@ -39,6 +39,6 @@ class Cake extends Model
 
     public function cake_details()
     {
-        return $this->hasMany(CakeDetail::class,'cake_id');
+        return $this->hasMany(CakeDetail::class);
     }
 }

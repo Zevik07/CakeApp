@@ -1,116 +1,115 @@
 <x-admin-layout>
-    <div id="table-area" class=" w-full p-3 mx-auto">
-        <h2 class="text-3xl font-bold mb-10 text-purple-700">Danh sách bánh</h2>
-        <table class="table-fixed mx-auto">
-            <thead>
-                <tr>
-                    <th class="border border-white"> </th>
-                    {{-- <th class="border border-white">STT</th> --}}
-                    <th class="border border-white">Tên</th>
-                    <th class="border border-white">Hương vị</th>
-                    <th class="border border-white">Giá</th>
-                    <th class="border border-white">Số lượng</th>
-                    <th class="border border-white">Mô tả</th>
-                </tr>
-            </thead>
-            <tbody>
+    <style>
+        .table {
+            border-spacing: 0 15px;
+        }
 
-                    @foreach($cakes as $cake)
-                        @foreach($details as $detail)
-                            @if($detail['cake_id']==$cake['id'])
-                                <tr class="parent">
-                                    <input class="info_id" type="hidden" value="{{$detail['id']}}" name="id">
-                                    <td class="p-2 border border-white">
-                                        <input id={{$detail['id']}} class="radio-check" type="radio" value="{{$detail['id']}}" name="check">
-                                        
-                                    </td>
-                                    {{-- <td class="info_detail p-2 border border-white">{{$detail['id']}}</td> --}}
-                                    <td class="info_name p-2 border border-white">{{$cake['name']}}</td>
-                                    <td class="info_flavor p-2 border border-white">{{$detail['flavor']}}</td>
-                                    <td class="info_price p-2 border border-white">{{$cake['price']}}</td>
-                                    <td class="info_quantity p-2 border border-white">{{$detail['quantity']}}</td>
-                                    <td class="info_desc p-2 border border-white">{{$cake['desc']}}</td>
-                                </tr>
-                            @endif
-                        @endforeach
+        i {
+            font-size: 1rem !important;
+        }
+
+        .table tr {
+            border-radius: 20px;
+        }
+
+        tr td:nth-child(n + 6),
+        tr th:nth-child(n + 6) {
+            border-radius: 0 0.625rem 0.625rem 0;
+        }
+
+        tr td:nth-child(1),
+        tr th:nth-child(1) {
+            border-radius: 0.625rem 0 0 0.625rem;
+        }
+    </style>
+    <div class="flex w-full items-center justify-center bg-white">
+        <div class="w-full">
+            <div class="overflow-auto lg:overflow-visible">
+            <div class="flex lg:justify-between border-b-2 border-fuchsia-900 pb-1">
+                <h2 class="text-2xl text-gray-500 font-bold">Danh sách bánh</h2>
+                <!-- <div class="text-center flex-auto">
+                    <input
+                        type="text"
+                        name="search"
+                        placeholder="Tìm kiếm..."
+                        class="
+                        rounded
+                        w-1/3
+                        py-2
+                        border-b-2 border-blue-600
+                        outline-none
+                        focus:border-yellow-400
+                        "
+                    />
+                </div> -->
+
+                <div>
+                    <a href="#">
+                        <button
+                        class="
+                            bg-primary
+                            text-white
+                            py-1
+                            px-3
+                            sm
+                            rounded-full
+                        "
+                        >
+                        Thêm
+                        </button>
+                    </a>
+                   
+                </div>
+            </div>
+            <table class="w-full table text-gray-400 border-separate space-y-6 text-sm">
+                <thead class="bg-primary text-white">
+                    <tr>
+                        <th class="p-3 text-left">Mã</th>
+                        <th class="p-3 text-left">Tên</th>
+                        <th class="p-3 text-left">Mô tả</th>
+                        <th class="p-3 text-left">Số lượng còn</th>
+                        <th class="p-3 text-left">Ngày cập nhật</th>
+                        <th class="p-3 text-center">Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($cakes as $cake)
+                        <tr class="bg-primary-300 lg:text-black">
+                            <td class="p-3 font-medium capitalize">Gazi Rahad</td>
+                            <td class="p-3">gazi.rahad871@gmail.com</td>
+                            <td class="p-3">01648349009</td>
+                            <td class="p-3 uppercase">admin</td>
+
+                            <td class="p-3">
+                                <span class="bg-green-400 text-gray-50 rounded-md px-2"
+                                    >ACTIVE</span
+                                >
+                            </td>
+                            <td class="p-3 text-center">
+                                <a href="#" class="text-gray-500 hover:text-gray-100 mr-2">
+                                    <i class="material-icons-outlined text-base">Xem</i>
+                                </a>
+                                <a href="#" class="text-yellow-400 hover:text-gray-100 mx-2">
+                                    <i class="material-icons-outlined text-base">Sửa</i>
+                                </a>
+                                <a
+                                    href="#"
+                                    class="text-red-400 hover:text-gray-100 ml-2"
+                                >
+                                    <i class="material-icons-round text-base">Xóa</i>
+                                </a>
+                            </td>
+                        </tr>
                     @endforeach
-                
-            </tbody>
-        </table>
-        <div class="p-5 mx-auto">
-            <button class="btn-add bg-blue-700 hover:bg-blue-700 text-white font-bold py-2 px-4 mx-auto rounded-full">Thêm</button>
-            <button class="btn-edit bg-blue-700 hover:bg-blue-700 text-white font-bold py-2 px-4 mx-auto rounded-full">Sửa</button>
-            {{-- <button class="btn-delete bg-blue-700 hover:bg-blue-700 text-white font-bold py-2 px-4 mx-auto rounded-full">Xóa</button> --}}
+                    {{ $cakes->links() }}
+                </tbody>
+            </table>
+            </div>
         </div>
     </div>
-    <!--Form add new start-->
-    <div id="form-add-area" class="w-1/3 p-3 mx-auto hidden">
-        <h2 class="text-3xl font-bold m-5 text-purple-700">Thêm bánh</h2>
-            <form id="form-add" action="{{ route('cake-management.store') }}" method="post">
-                @csrf
-                <div>
-                    <label style="color:white" class="block mb-2 font-bold">Tên</label>
-                    <input name="name" style="color:black" type="text" class="w-full border-2 border-gray-200 p-1 rounded outline-none focus:border-blue-600">
-                </div>
-                <div>
-                    <label style="color:white" class="mb-2 font-bold">Hương vị</label>
-                    <input name="flavor" style="color:black" type="text" class="w-full border-2 border-gray-200 p-1 rounded outline-none focus:border-blue-600">
-                </div>
-                <div>
-                    <label style="color:white" class="block mb-2 font-bold">Giá</label>
-                    <input name="price" style="color:black" type="text" class="w-full border-2 border-gray-200 p-1 rounded outline-none focus:border-blue-600">
-                </div>
-                <div>
-                    <label style="color:white" class="block mb-2 font-bold">Số lượng</label>
-                    <input name="quantity" style="color:black" type="text" class="w-full border-2 border-gray-200 p-1 rounded outline-none focus:border-blue-600">
-                </div>
-                <div>
-                    <label style="color:white" class="block mb-2 font-bold">Mô tả</label>
-                    <textarea name="desc" style="color:black" type="text-area" rows="3" class="w-full border-2 border-gray-200 p-1 rounded outline-none focus:border-blue-600"></textarea>
-                </div>
-            </form>
-            <div class="float-right">
-                <button class="btn-cancel bg-gray-400 hover:bg-gray-800 text-white font-bold py-2 px-4 rounded-full">Hủy</button>
-                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" form="form-add" value="add" type="submit" name="add">Lưu</button>
-            </div>
+    <div class="d-flex">
+        <div class="mx-auto">
+            {{ $cakes->links() }}
+        </div>
     </div>
-    <!--Form add new end-->
-
-    <!--Form edit start-->
-    <div id="form-edit-area" class="w-1/3 p-3 mx-auto hidden">
-        <h2 class="text-3xl font-bold m-5 text-purple-700">Sửa bánh</h2>
-            <form id="form-edit" action="{{route('cake-management.store')}}" method="post">
-                @csrf
-                <div>
-                    <input value name="id" id="input-id" style="color:black" type="text" readonly class="w-full border-2 border-gray-200 p-1 rounded outline-none focus:border-blue-600">
-                </div>
-                <div>
-                    <label style="color:white" class="block mb-2 font-bold">Tên</label>
-                    <input value name="name" id="input-name" style="color:black" type="text" class="w-full border-2 border-gray-200 p-1 rounded outline-none focus:border-blue-600">
-                </div>
-                <div>
-                    <label style="color:white" class="mb-2 font-bold">Hương vị</label>
-                    <input value name="flavor" id="input-flavor" style="color:black" type="text" class="w-full border-2 border-gray-200 p-1 rounded outline-none focus:border-blue-600">
-                </div>
-                <div>
-                    <label style="color:white" class="block mb-2 font-bold">Giá</label>
-                    <input value name="price" id="input-price" style="color:black" type="text" class="w-full border-2 border-gray-200 p-1 rounded outline-none focus:border-blue-600">
-                </div>
-                <div>
-                    <label style="color:white" class="block mb-2 font-bold">Số lượng</label>
-                    <input value name="quantity" id="input-quantity" style="color:black" type="text" class="w-full border-2 border-gray-200 p-1 rounded outline-none focus:border-blue-600">
-                </div>
-                <div>
-                    <label style="color:white" class="block mb-2 font-bold">Mô tả</label>
-                    <textarea value name="desc" id="input-desc" style="color:black" type="text-area" rows="3" class="w-full border-2 border-gray-200 p-1 rounded outline-none focus:border-blue-600"></textarea>
-                </div>
-            </form>
-            <div class="float-right">
-                <button class="btn-cancel bg-gray-400 hover:bg-gray-800 text-white font-bold py-2 px-4 rounded-full">Hủy</button>
-                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" form="form-edit" type="submit" name="edit" value="edit">Lưu</button>
-                <button class="bg-red-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" form="form-edit" type="submit" name="delete" value="delete">Xóa</button>
-            </div>
-    </div>
-    <!--Form edit end-->
-    
 </x-admin-layout>

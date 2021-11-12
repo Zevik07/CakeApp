@@ -17,10 +17,11 @@ class CakeManagementController extends Controller
      */
     public function index()
     {
-        return view('admin/cake', [
-            'cakes' =>Cake::All(),
-            'details' =>CakeDetail::All()
-        ]);
+        $cakes = Cake::paginate(2);
+        // return view('admin.cake', [
+        //     'cakes' => $cakes
+        // ]);
+        return view('admin/cake')->with('cakes', Cake::paginate(2));
     }
 
     /**

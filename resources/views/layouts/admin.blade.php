@@ -83,16 +83,16 @@
 			<div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 z-20" id="nav-content">
 				<ul class="text-gray-400 list-reset lg:flex flex-1 items-center px-4 md:px-0">
 					<li class="mr-6 my-2 md:my-0">
-                        <a href=" {{ route('cake-management.index') }} " 
+                        <a href=" {{ route('dashboard.index') }} " 
 						class="block py-1 md:py-3 pl-1 align-middle no-underline hover:text-primary_color hover:text-primary_color
-						{{ request()->is('admin/cake-management') ? 'text-primary_color' : '' }}">
+						{{ request()->is('admin/dashboard') ? 'text-primary_color' : '' }}">
                             <i class="fas fa-home fa-fw mr-3 text-blue-400"></i><span class="pb-1 md:pb-0 text-lg">Đơn đặt hàng</span>
                         </a>
                     </li>
 					<li class="mr-6 my-2 md:my-0">
-                        <a href="{{ route('admin-dashboard') }}" 
+                        <a href="{{ route('cake-management.index') }}" 
 						class="block py-1 md:py-3 pl-1 align-middle no-underline hover:text-primary_color
-						{{ request()->is('admin/dashboard') ? 'text-primary_color' : '' }}">
+						{{ request()->is('admin/cake-management') ? 'text-primary_color' : '' }}">
                             <i class="fas fa-tasks fa-fw mr-3"></i><span class="pb-1 md:pb-0 text-lg">Quản lý bánh</span>
                         </a>
                     </li>

@@ -30,7 +30,7 @@ Route::get('/order',  [OrderController::class, 'getForm'])->name('order');
 Route::get('/detele/{id}',  [CartController::class, 'detele'])->name('detelecake');
 
 Route::middleware('auth')->group( function () {
-    Route::get('admin/dashboard', [DashboardController::class, 'index'])->name('admin-dashboard');
+    Route::resource('admin/dashboard', DashboardController::class);
     Route::resource('admin/cake-management', CakeManagementController::class);
 });
 

@@ -25,7 +25,12 @@ module.exports = {
             indigo: colors.indigo,
             red: colors.rose,
             yellow: colors.amber,
-        }
+        },
+        backgroundColor: defaultTheme => ({
+            ...defaultTheme('colors'),
+            'primary': '#842029',
+            'primary-300': 'rgba(131, 32, 40, 0.15)'
+        })
     },
 
     variants: {
@@ -34,5 +39,8 @@ module.exports = {
         },
     },
 
-    plugins: [require('@tailwindcss/forms')],
+    plugins: [
+        require('tailwindcss-plugins/pagination'),
+        require('@tailwindcss/forms'),
+    ],
 };
