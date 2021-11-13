@@ -49,16 +49,19 @@
                                 <th>Hương vị</th>
                                 <th>Giá bán</th>
                                 <th>Số lượng</th>
-                                <th>Tổng tiền</th>
+                                <th>Tổng</th>
                                 <th>Xóa</th>
                             </tr>     
-                            
+                            <?php 
+                                $tongtien=0;
+                            ?>
                               @if (session()->has('session_cart'))
                                @foreach(Session::get('session_cart') as $cart => $value) 
                                <?php 
                                $name = DB::table('cakes')->where('id', '=', $value["id"] )->value('name');
                                $price = DB::table('cakes')->where('id', '=', $value["id"] )->value('price');
                                $tong=$price * $value["quantity"];
+                               $tongtien=$tongtien+$tong;
                                $i++;
                                ?>
                                <tr class="list">
@@ -73,6 +76,11 @@
 
                                @endforeach 
                              @endif
+                                <tr class="list">
+                                    <td colspan="5" class="price"><b>Tổng số tiền</b></td>
+                                    <td class="pricenumber"><b><?php echo $tongtien ?></b></td>
+                                    <td></td>
+                                </tr>
                         </table>
                         @if (!session()->has('session_cart'))<?php echo '
                              

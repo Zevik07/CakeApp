@@ -118,6 +118,12 @@
     .notcake{
         text-align: center;
     }
+    .price{
+        text-align: right;
+    }
+    .pricenumber{
+       text-align: center;
+    }
    
 }
 
