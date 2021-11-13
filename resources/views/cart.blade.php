@@ -4,8 +4,7 @@
         var struser=document.formcake.username.value;
         var straddress=document.formcake.address.value;
         var strgmail=document.formcake.email.value;
-        var strgmail1=document.formcake.textarea.value;
-        if(str.length== 0 || strgmail.length == 0 || struser.length == 0 || straddress.length == 0 || strgmail1.length==0){
+        if(str.length== 0 || strgmail.length == 0 || struser.length == 0 || straddress.length == 0){
             alert("Vui lòng nhập đầy đủ thông tin"); 
         }
 
@@ -47,10 +46,10 @@
                             <tr class="title">
                                 <th>STT</th>
                                 <th>Tên sản phẩm</th>
-                                <th>Mã sản phẩm</th>
-                                <th>Tình trạng</th>
+                                <th>Hương vị</th>
                                 <th>Giá bán</th>
                                 <th>Số lượng</th>
+                                <th>Tổng tiền</th>
                                 <th>Xóa</th>
                             </tr>     
                             
@@ -59,15 +58,16 @@
                                <?php 
                                $name = DB::table('cakes')->where('id', '=', $value["id"] )->value('name');
                                $price = DB::table('cakes')->where('id', '=', $value["id"] )->value('price');
+                               $tong=$price * $value["quantity"];
                                $i++;
                                ?>
                                <tr class="list">
                                            <th><?php echo $i ?></th>
                                            <th><?php echo $name ?>	</th>
-                                           <th> {{$value["id"]}} </th>
                                           <th>{{$value["flavor"]}}</th>
                                           <th><?php echo $price ?></th>
                                           <th>{{$value["quantity"]}}</th>
+                                          <th><?php echo $tong ?></th>
                                           <th><a href="{{route('detelecake', ['id' => $value['id']])}}">Xóa</a></th>
                               </tr>
 
