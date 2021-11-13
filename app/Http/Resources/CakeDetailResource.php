@@ -20,8 +20,6 @@ class CakeDetailResource extends JsonResource
             'id' =>$this->id,
             'flavor' => $this->flavor,
             'quantity' => $this->quantity,
-            'cake' => new Cake($this->cake),
-            'order_item' => new OrderItemResource($this->order_item)
         ];
     }
 }

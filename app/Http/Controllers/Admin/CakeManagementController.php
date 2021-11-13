@@ -19,7 +19,7 @@ class CakeManagementController extends Controller
     public function index()
     {
         $cakes = 
-            CakeResource::collection(Cake::paginate(1));
+            CakeResource::collection(Cake::paginate(3));
 
         return view('admin/cake')
             ->with('cakes',  $cakes);
