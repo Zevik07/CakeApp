@@ -1,22 +1,22 @@
 // Modal event
+let $ = document.querySelector.bind(document);
 var openmodal = document.querySelectorAll('.modal-open')
 
 for (var i = 0; i < openmodal.length; i++) {
     openmodal[i].addEventListener('click', function(event){
         event.preventDefault()
         toggleModal()
+        fetchData(this)
     })
 }
-
+//Close
 const overlay = document.querySelector('.modal-overlay')
 overlay.addEventListener('click', toggleModal)
-
 var closemodal = document.querySelectorAll('.modal-close')
-
 for (var i = 0; i < closemodal.length; i++) {
     closemodal[i].addEventListener('click', toggleModal)
 }
-
+// Esc
 document.onkeydown = function(evt) {
     evt = evt || window.event
     var isEscape = false
@@ -40,3 +40,6 @@ function toggleModal () {
 }
 
 // Fetch data
+function fetchData(btn) {
+    let id = btn.dataset.id;
+}
