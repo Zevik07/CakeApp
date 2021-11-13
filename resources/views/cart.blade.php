@@ -4,7 +4,8 @@
         var struser=document.formcake.username.value;
         var straddress=document.formcake.address.value;
         var strgmail=document.formcake.email.value;
-        if(str.length== 0 || strgmail.length == 0 || struser.length == 0 || straddresslength == 0){
+        var strgmail1=document.formcake.textarea.value;
+        if(str.length== 0 || strgmail.length == 0 || struser.length == 0 || straddress.length == 0 || strgmail1.length==0){
             alert("Vui lòng nhập đầy đủ thông tin"); 
         }
 
@@ -23,6 +24,8 @@
 		}
     }
 </script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
@@ -70,13 +73,13 @@
 
                                @endforeach 
                              @endif
-                             @if (!session()->has('session_cart'))<?php echo '
-                             <tr>
-                                <td colspan="6">Không có sản phẩm nào trong giỏ hàng<td>
-                             </tr> ';
+                        </table>
+                        @if (!session()->has('session_cart'))<?php echo '
+                             
+                                <h1 class="notcake">Không có sản phẩm nào trong giỏ hàng</h1>
+                              ';
                              ?>
                         @endif
-                        </table>
                         @if (session()->has('session_cart')) <?php echo '
                         <div class="form">
                             <h2 class="titleuser">Thông tin khách hàng</h2>
@@ -121,15 +124,15 @@
                                             <span class="red">*</span>
                                         </p>
                                         <div class="icon">
-                                            <i class="fa fa-envelope-o"></i>
+                                            <i><ion-icon name="mail-outline"></ion-icon></i>
                                         </div>
                                         <input type="text" name="email" class="required" placeholder="Email">
                                     </div>
                                 </div>
                                 <div class="col-xl-12">
                                     <div class="item"> 
-                                        <p class="reset">Tin nhắn</p> 
-                                        <textarea></textarea>
+                                        <p class="reset">Ghi chú</p> 
+                                        <textarea name="textarea"></textarea>
                                     </div>
                                 </div>
                             </div>

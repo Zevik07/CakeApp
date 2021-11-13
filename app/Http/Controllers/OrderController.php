@@ -15,7 +15,7 @@ class OrderController extends Controller
     public function getForm(Request $request){
        $value= $request->all();
        $subtring=substr($value['email'],strlen($value['email'])-10,strlen($value['email']));
-      if($value['username']!="" && $value['address']!="" &&  $value['phone']!="" && $value['email']!="" && $subtring=="@gmail.com" && ctype_digit($value['phone'])){
+      if($value['textarea']!="" && $value['username']!="" && $value['address']!="" &&  $value['phone']!="" && $value['email']!="" && $subtring=="@gmail.com" && ctype_digit($value['phone'])){
        $user= User::Create([
            'name' => $value['username'],
            'address' => $value['address'],
@@ -26,18 +26,20 @@ class OrderController extends Controller
        ]);
        $order = Order::Create([
            'user_id' =>$user['id'],
-           'status' => "processing"
+           'note' => $value['textarea'],
+           'status' => 'Đang xử lý'
        ]);
        foreach(Session::get('session_cart') as $cart_order => $valueorder) {
        $order_item = OrderItem::Create([
             'order_id' => $order['id'],
             'cake_detail_id' => $valueorder['id'],
             'quantity' => $valueorder['quantity'],
-            'note' => $valueorder['note']
+            'note' => '1'
            
        ]);
     }
 }
+        
         return back()->withInput();
         
     }
