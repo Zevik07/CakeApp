@@ -1,5 +1,7 @@
+const { forEach } = require("lodash");
+
 // Modal event
-let $ = document.querySelector.bind(document);
+const $ = document.querySelector.bind(document);
 var openmodal = document.querySelectorAll('.modal-open')
 
 for (var i = 0; i < openmodal.length; i++) {
@@ -7,9 +9,10 @@ for (var i = 0; i < openmodal.length; i++) {
         event.preventDefault()
         toggleModal()
         fetchData(this)
+        setCtrl(this)
     })
 }
-//Close
+// Close
 const overlay = document.querySelector('.modal-overlay')
 overlay.addEventListener('click', toggleModal)
 var closemodal = document.querySelectorAll('.modal-close')
@@ -30,7 +33,6 @@ document.onkeydown = function(evt) {
     }
 };
 
-
 function toggleModal () {
     const body = document.querySelector('body')
     const modal = document.querySelector('.modal')
@@ -39,7 +41,38 @@ function toggleModal () {
     body.classList.toggle('modal-active')
 }
 
-// Fetch data
+// Fetch data 
 function fetchData(btn) {
     let id = btn.dataset.id;
+    url = window.location.pathname + "/" + id;
+    fetch(url, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+    })
+    .then(response => response.json())
+    .then(data => {
+        $("#cake-name").value = data.name;
+        $("#cake-desc").value = data.name;
+        $("#cake-price").value = data.price;
+
+        //flavor
+        $("#cake-flavor").value = "";
+        data.cake_details.forEach(element => {
+            $("#cake-flavor").value +=  element.flavor + '\r\n';
+        });
+        // Load img
+        $("#cake-imgs").innerHTML = "";
+        data.imgs.forEach((element, index) => {
+            let img = document.createElement("img");
+            img.src = element.url;
+            img.classList = "object-cover bg-gray-300 mx-1";
+            $("#cake-imgs").append(img);
+        });
+    })
+}
+function setCtrl(btn) {
+    console.log(btn.classList);
+    const modal = document.querySelector('.modal')
 }

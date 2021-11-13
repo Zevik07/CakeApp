@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Relations\Relation;
 
@@ -25,6 +26,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        JsonResource::withoutWrapping();
         Relation::MorphMap([
             'user' => 'App\Models\User',
             'cake' => 'App\Models\Cake'

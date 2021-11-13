@@ -15,13 +15,12 @@ class Cake extends Model
      *
      * @var string[]
      */
-    protected $table = 'cakes';
+
     protected $fillable = [
         'name',
         'desc',
         'price',
     ];
-    // public $timestamp = true;
 
     /**
      * Get all of the user's image.

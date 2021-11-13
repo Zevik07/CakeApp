@@ -111,7 +111,7 @@ class CakeManagementController extends Controller
      */
     public function show($id)
     {
-        return new CakeResource(Cake::where('id', $id));
+        return new CakeResource(Cake::findOrFail($id));
     }
 
     /**
