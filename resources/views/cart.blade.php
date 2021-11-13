@@ -49,19 +49,8 @@
                                 <th>Giá bán</th>
                                 <th>Số lượng</th>
                                 <th>Xóa</th>
-                            </tr>
-                             @foreach(Session::get('session_cart') as $cart => $value) 
-                                
-                                     <tr class="list">
-                                         <th></th>
-                                         <th>{{$value["id"]}}</th>
-                                        <th>{{$value["flavor"]}}</th>
-                                        <th>100000</th>
-                                        <th>2</th>
-                                        <th>	</th>
-                            </tr>
-                                
-                             @endforeach 
+                            </tr>     
+                            
                               @if (session()->has('session_cart'))
                                @foreach(Session::get('session_cart') as $cart => $value) 
                                <?php 
@@ -81,10 +70,14 @@
 
                                @endforeach 
                              @endif
+                             @if (!session()->has('session_cart'))<?php echo '
+                             <tr>
+                                <td colspan="6">Không có sản phẩm nào trong giỏ hàng<td>
+                             </tr> ';
+                             ?>
+                        @endif
                         </table>
-                        
-                       
-    
+                        @if (session()->has('session_cart')) <?php echo '
                         <div class="form">
                             <h2 class="titleuser">Thông tin khách hàng</h2>
                             <div class="row">
@@ -143,7 +136,9 @@
                             <div class="control-button">
                                     <button class="button" onclick="check()" type="submit">Gửi thông tin</button>
                                 </div>
-                        </div>
+                        </div>';
+                        ?>
+                        @endif
                         </form>
                        
                     </div>
