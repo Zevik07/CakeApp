@@ -15,7 +15,7 @@ class OrderController extends Controller
     public function getForm(Request $request){
        $value= $request->all();
        $subtring=substr($value['email'],strlen($value['email'])-10,strlen($value['email']));
-      if($value['textarea']!="" && $value['username']!="" && $value['address']!="" &&  $value['phone']!="" && $value['email']!="" && $subtring=="@gmail.com" && ctype_digit($value['phone'])){
+      if($value['username']!="" && $value['address']!="" &&  $value['phone']!="" && $value['email']!="" && $subtring=="@gmail.com" && ctype_digit($value['phone'])){
        $user= User::Create([
            'name' => $value['username'],
            'address' => $value['address'],
@@ -38,6 +38,8 @@ class OrderController extends Controller
            
        ]);
     }
+        
+        $request->session()->flush();
 }
         
         return back()->withInput();
