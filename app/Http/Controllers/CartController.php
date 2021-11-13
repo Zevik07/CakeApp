@@ -39,8 +39,9 @@ class CartController extends Controller
                  }
                  
             }
-        $request->session()->set('session_cart', $cart);
             
-            
+        $request->Session()->put('session_cart', $cart);
+          
+        return back()->withInput();
          }
 }
