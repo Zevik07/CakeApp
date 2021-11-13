@@ -20,7 +20,7 @@ class CreateOrdersTable extends Migration
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
             //$table->integer('user_id');
-            $table->text('note');
+            $table->text('note')->nullable();
             $table->string('status');
             $table->timestamps();
         });

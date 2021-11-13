@@ -23,7 +23,7 @@ class CreateOrderItemsTable extends Migration
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
             $table->integer('quantity');
-            $table->string('note');
+            $table->string('note')->nullable();
             $table->timestamps();
         });
     }
