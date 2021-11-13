@@ -30,7 +30,10 @@ module.exports = {
             ...defaultTheme('colors'),
             'primary': '#842029',
             'primary-300': 'rgba(131, 32, 40, 0.15)'
-        })
+        }),
+        pagination: defaultTheme => ({
+            
+        }),
     },
 
     variants: {

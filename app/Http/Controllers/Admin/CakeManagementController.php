@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Cake;
 use App\Models\Image;
 use App\Models\CakeDetail;
+use App\Http\Resources\Cake as CakeResource;
 
 class CakeManagementController extends Controller
 {
@@ -17,11 +18,11 @@ class CakeManagementController extends Controller
      */
     public function index()
     {
-        $cakes = Cake::paginate(2);
-        // return view('admin.cake', [
-        //     'cakes' => $cakes
-        // ]);
-        return view('admin/cake')->with('cakes', Cake::paginate(2));
+        $cakes = 
+            CakeResource::collection(Cake::paginate(1));
+
+        return view('admin/cake')
+            ->with('cakes',  $cakes);
     }
 
     /**

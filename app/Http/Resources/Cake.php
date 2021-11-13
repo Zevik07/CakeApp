@@ -18,10 +18,11 @@ class Cake extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name,
-            // 'desc' => $this->desc,
-            'price' => $this->desc,
-            'thumb' => $this->thumb(),
-            'cake_details' => CakeDetailResource::collection($this->whenLoaded('cake_details'))
+            'desc' => $this->desc,
+            'price' => $this->price,
+            'quantity' => $this->cake_details()->count(),
+            'created_at' => $this->created_at,
+            'updated_at' => $this->updated_at,
         ];
     }
 }
