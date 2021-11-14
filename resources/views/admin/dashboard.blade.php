@@ -95,4 +95,7 @@
             </div>
         </div>
     </div>
+    <div class="mt-4 mx-auto">
+        {{ $orders->links() }}
+    </div>
 </x-admin-layout>

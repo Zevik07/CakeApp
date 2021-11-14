@@ -18,204 +18,140 @@ class CakeDetailSeeder extends Seeder
             [
                 'cake_id' => 1,
                 'flavor' => 'Chocolate',
-                'quantity' =>5
             ],
             [
                 'cake_id' => 1,
                 'flavor' => 'Matcha',
-                'quantity' =>5
             ],
             [
                 'cake_id' => 1,
                 'flavor' => 'Strawberry',
-                'quantity' =>5
             ],
             [
                 'cake_id' => 1,
                 'flavor' => 'Passion fruits',
-                'quantity' =>5
             ],
             [
                 'cake_id' => 2,
                 'flavor' => 'Strawberry',
-                'quantity' =>5
             ],
             [
                 'cake_id' => 2,
                 'flavor' => 'Chocolate',
-                'quantity' =>5
             ],
             [
                 'cake_id' => 2,
                 'flavor' => 'Matcha',
-                'quantity' =>5
             ],
             [
                 'cake_id' => 2,
                 'flavor' => 'Cherry',
-                'quantity' =>5
             ],
             [
                 'cake_id' => 3,
                 'flavor' => 'Strawberry',
-                'quantity' =>5
             ],
             [
                 'cake_id' => 3,
                 'flavor' => 'Chocolate',
-                'quantity' =>5
             ],
             [
                 'cake_id' => 3,
                 'flavor' => 'Matcha',
-                'quantity' =>5
             ],
             [
                 'cake_id' => 3,
                 'flavor' => 'Cherry',
-                'quantity' =>5
             ],
             [
                 'cake_id' => 4,
                 'flavor' => 'Mulberry',
-                'quantity' =>5
             ],
             [
                 'cake_id' => 4,
                 'flavor' => 'Rose',
-                'quantity' =>5
             ],
             [
                 'cake_id' => 4,
                 'flavor' => 'Corn',
-                'quantity' =>5
             ],
             [
                 'cake_id' => 4,
                 'flavor' => 'Strawberry',
-                'quantity' =>5
             ],
             //
             [
                 'cake_id' => 5,
-                'flavor' => 'Chocolate',
-                'quantity' =>5
+                'flavor' => 'Truyền thống',
             ],
             [
                 'cake_id' => 5,
-                'flavor' => 'Matcha',
-                'quantity' =>5
-            ],
-            [
-                'cake_id' => 5,
-                'flavor' => 'Strawberry',
-                'quantity' =>5
-            ],
-            [
-                'cake_id' => 5,
-                'flavor' => 'Passion fruits',
-                'quantity' =>5
-            ],
-            [
-                'cake_id' => 6,
-                'flavor' => 'Strawberry',
-                'quantity' =>5
-            ],
-            [
-                'cake_id' => 6,
-                'flavor' => 'Chocolate',
-                'quantity' =>5
-            ],
-            [
-                'cake_id' => 6,
-                'flavor' => 'Matcha',
-                'quantity' =>5
-            ],
-            [
-                'cake_id' => 6,
-                'flavor' => 'Cherry',
-                'quantity' =>5
-            ],
-            [
-                'cake_id' => 7,
                 'flavor' => 'Mulberry',
-                'quantity' =>5
             ],
             [
-                'cake_id' => 7,
-                'flavor' => 'Rose',
-                'quantity' =>5
-            ],
-            [
-                'cake_id' => 7,
-                'flavor' => 'Corn',
-                'quantity' =>5
-            ],
-            [
-                'cake_id' => 7,
+                'cake_id' => 5,
                 'flavor' => 'Strawberry',
-                'quantity' =>5
+            ],
+            [
+                'cake_id' => 5,
+                'flavor' => 'Blue Berries',
+            ],
+            [
+                'cake_id' => 6,
+                'flavor' => 'Truyền thống',
+            ],
+            [
+                'cake_id' => 7,
+                'flavor' => 'Truyền thống',
             ],
             //
             [
                 'cake_id' => 8,
                 'flavor' => 'Chocolate',
-                'quantity' =>5
             ],
             [
                 'cake_id' => 8,
-                'flavor' => 'Matcha',
-                'quantity' =>5
+                'flavor' => 'Bule Berries',
             ],
             [
                 'cake_id' => 8,
-                'flavor' => 'Strawberry',
-                'quantity' =>5
+                'flavor' => 'Raisins',
             ],
             [
                 'cake_id' => 8,
-                'flavor' => 'Passion fruits',
-                'quantity' =>5
+                'flavor' => 'Cereals',
             ],
             [
                 'cake_id' => 9,
                 'flavor' => 'Strawberry',
-                'quantity' =>5
             ],
             [
                 'cake_id' => 9,
                 'flavor' => 'Chocolate',
-                'quantity' =>5
             ],
             [
                 'cake_id' => 9,
                 'flavor' => 'Matcha',
-                'quantity' =>5
             ],
             [
                 'cake_id' => 9,
                 'flavor' => 'Cherry',
-                'quantity' =>5
             ],
             [
                 'cake_id' => 10,
                 'flavor' => 'Chocolate',
-                'quantity' =>5
             ],
             [
                 'cake_id' => 10,
                 'flavor' => 'Matcha',
-                'quantity' =>5
             ],
             [
                 'cake_id' => 10,
                 'flavor' => 'Strawberry',
-                'quantity' =>5
             ],
             [
                 'cake_id' => 10,
-                'flavor' => 'Passion fruits',
-                'quantity' =>5
+                'flavor' => 'Candy',
             ],
         ];
         foreach ($details as $key => $value){

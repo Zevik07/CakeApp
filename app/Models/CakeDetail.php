@@ -17,7 +17,6 @@ class CakeDetail extends Model
     protected $fillable = [
         'cake_id',
         'flavor',
-        'quantity'
     ];
     
     public function cake(){
