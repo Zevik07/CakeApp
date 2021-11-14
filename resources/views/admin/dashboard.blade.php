@@ -2,41 +2,41 @@
     <div class="w-full p-3 mx-auto mt-8">
         <div class="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
             <div class="align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-gray-200">
-                <table class="min-w-full mx-auto table-fixed overflow-x-scroll">
-                    <thead>
-                        <th class="w-12 px-6 py-3 border-b border-gray-200 bg-gray-50 text-center text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                <table class="min-w-full mx-auto table text-gray-400 border-separate text-sm overflow-x-scroll">
+                    <thead class="bg-primary text-white">
+                        <th class="w-12 px-6 py-3 border-b border-gray-200 text-center text-xs leading-4 font-medium uppercase tracking-wider">
                             Mã đơn hàng
                         </th>
-                        <th class=" px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                        <th class=" px-6 py-3 border-b border-gray-200 text-left text-xs leading-4 font-medium uppercase tracking-wider">
                             Khách hàng
                         </th>
-                        <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                        <th class="px-6 py-3 border-b border-gray-200 text-left text-xs leading-4 font-medium uppercase tracking-wider">
                             Danh sách bánh
                         </th>
-                        <th class="w-32 px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                        <th class="w-32 px-6 py-3 border-b border-gray-200 text-left text-xs leading-4 font-medium uppercase tracking-wider">
                             Số lượng
                         </th>
-                        <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                        <th class="px-6 py-3 border-b border-gray-200 text-left text-xs leading-4 font-medium uppercase tracking-wider">
                             Ghi chú
                         </th>
-                        <th class="w-40 px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                        <th class="w-40 px-6 py-3 border-b border-gray-200 text-left text-xs leading-4 font-medium uppercase tracking-wider">
                             Trạng thái
                         </th>
-                        <th class="px-6 py-3 border-b border-gray-200 bg-gray-50"></th>
-                        <th class="px-6 py-3 border-b border-gray-200 bg-gray-50"></th>
+                        <th class="px-6 py-3 border-b border-gray-200"></th>
+                        <th class="px-6 py-3 border-b border-gray-200"></th>
                     </thead>
-                    <tbody class="bg-white">
+                    <tbody>
                         @foreach ($orders as $order)
-                            <tr class="">
-                                <td style="color:black" class="w-12 px-6 py-4 whitespace-nowrap text-center border-b border-gray-200">{{$order->id}}</td>
-                                <td style="color:black" class="px-6 py-4 whitespace-nowrap border-b border-gray-200">
+                            <tr class="bg-primary-300 lg:text-black">
+                                <td class="w-12 px-6 py-4 whitespace-nowrap text-center border-b border-gray-200">{{$order->id}}</td>
+                                <td class="px-6 py-4 whitespace-nowrap border-b border-gray-200">
                                     <ul>
                                         <li>{{$order->user->name}}</li>
                                         <li>{{$order->user->address}}</li>
                                         <li>{{$order->user->phone}}</li>
                                     </ul>    
                                 </td>
-                                <td style="color:black" class="px-6 py-4 whitespace-nowrap border-b border-gray-200"> 
+                                <td class="px-6 py-4 whitespace-nowrap border-b border-gray-200"> 
                                     <ul>
                                         @foreach($order->order_items as $order_item)
                                             @foreach($cakes as $cake)
@@ -49,14 +49,14 @@
                                         @endforeach
                                     </ul>
                                 </td>
-                                <td style="color:black" class="w-32 px-6 py-4 whitespace-nowrap border-b border-gray-200">
+                                <td class="w-32 px-6 py-4 whitespace-nowrap border-b border-gray-200">
                                     <ul>
                                         @foreach($order->order_items as $order_item)
                                         <li>{{$order_item->quantity}}</li>
                                         @endforeach
                                     </ul>
                                 </td>
-                                <td style="color:black" class="px-6 py-4 whitespace-nowrap border-b border-gray-200">{{$order->note}}</td>
+                                <td class="px-6 py-4 whitespace-nowrap border-b border-gray-200">{{$order->note}}</td>
                                 @if ($order->status == 'Đang xử lý')
                                     <td style="color:blue" class="w-40 px-6 py-4 whitespace-nowrap border-b border-gray-200">{{$order->status}}</td>
                                     <td style="color:black" class="w-12 px-6 py-4 text-right border-b border-gray-200 text-sm leading-5 font-medium">
