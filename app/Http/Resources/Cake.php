@@ -15,6 +15,7 @@ class Cake extends JsonResource
      */
     public function toArray($request)
     {
+        $order = $this->whenLoaded('order');
         return [
             'id' => $this->id,
             'name' => $this->name,
