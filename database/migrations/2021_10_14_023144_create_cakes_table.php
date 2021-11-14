@@ -17,7 +17,7 @@ class CreateCakesTable extends Migration
             $table->id();
             $table->string('name');
             $table->text('desc');
-            $table->decimal('price', $precision = 19, $scale = 2);
+            $table->decimal('price');
             $table->timestamps();
         });
     }
