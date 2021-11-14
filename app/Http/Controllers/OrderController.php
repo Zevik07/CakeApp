@@ -38,8 +38,9 @@ class OrderController extends Controller
            
        ]);
     }
-        
+         Session::flash('success1','Đã đặt hàng thành công');
         $request->session()->flush();
+        return back()->with('success1','Đã đặt hàng thành công');
 }
         
         return back()->withInput();
