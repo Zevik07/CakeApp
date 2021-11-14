@@ -103,7 +103,7 @@
                                 </div>
                             </div>
                             <!--Body-->
-                            <form class="w-full modal-form" method action>
+                            <form class="w-full modal-form" method action enctype="multipart/form-data">
                                 @csrf
                                 @method('patch')
                                 <div class="flex flex-wrap -mx-3 mb-6">
@@ -139,7 +139,7 @@
                                         name="flavors" id="" cols="30" rows="3" placeholder="Mô tả"></textarea>
                                     </div>
                                 </div>
-                                <div class="flex flex-wrap -mx-3 mb-2 ">
+                                <div class="-mx-3 mb-2 ">
                                     <div class="w-full px-3 mb-6 md:mb-0 ">
                                         <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-city">
                                             Hình ảnh
@@ -147,8 +147,12 @@
                                         <div id="cake-imgs" class="w-full flex justify-start overflow-x-scroll">
 
                                         </div>
-                                        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"  
-                                        type="button" value="Chọn ảnh">
+                                        <label for="images" 
+                                        class="w-48 mt-2 appearance-none block bg-gray-200 text-center text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+                                        Chọn ảnh</label>
+                                        <input id="images"
+                                        class="hidden"
+                                        type="file" name="images[]" multiple accept="image/*">
                                     </div>
                                 </div>
                                 <div class="flex justify-end pt-2">

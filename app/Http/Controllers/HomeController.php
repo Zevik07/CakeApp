@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Resources\Cake as CakeResource;
 use App\Models\Cake;
+use App\Http\Resources\Cake as CakeResource;
 
 use Illuminate\Http\Request;
 
@@ -13,8 +13,7 @@ class HomeController extends Controller
     {
         $data = [
             'cakes' => 
-                Cake::select('id', 'name', 'desc', 'price')
-                ->with('thumb')->get()
+                Cake::all()
         ];
         return view('welcome', $data);
     }

@@ -29,11 +29,10 @@ class Cake extends Model
     {
         return $this->morphMany(Image::class, 'imageable');
     }
-    
+
     public function thumb()
     {
-        return $this->morphMany(Image::class, 'imageable')
-                    ->where('type', 'thumb');
+        return $this->images()->first();
     }
 
     public function cake_details()

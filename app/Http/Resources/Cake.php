@@ -26,6 +26,7 @@ class Cake extends JsonResource
             'updated_at' => $this->updated_at,
             'cake_details' => $this->cake_details,
             'imgs' => $this->images,
+            'thumb' => $this->images()->first(),
         ];
     }
 }

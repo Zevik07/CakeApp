@@ -96,9 +96,14 @@ function setCtrl(btn) {
                 let id = btn.dataset.id;
                 url = window.location.pathname + "/" + id;
 
+                // Nhớ validate
+
+
+                
                 form.action = url
                 form.method = "POST" 
                 form.submit();
+
             }
 
             break;

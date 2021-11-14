@@ -40,27 +40,6 @@
 </head>
     
 <body>
-
-    @if (session('success'))
-        <div class="modal" role="dialog">
-            <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                <h5 class="modal-title">Notification</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                </div>
-                <div class="modal-body">
-                <p>{{ session('success') }}</p>
-                </div>
-                <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-            </div>
-        </div>
-    @endif
     <!-- ***** Preloader Start ***** -->
     <div id="preloader">
         <div class="jumper">
@@ -150,12 +129,13 @@
                 </div>
             </div>
         </div>
+
         <div class="menu-item-carousel">
             <div class="col-lg-12">
                 <div class="owl-menu-item owl-carousel owl-theme">
                     @foreach ($cakes as $index => $cake)
                     <div class="item slide" data-slide-index="{{$index}}" onclick="window.location='./cake/{{$cake->id}}'">
-                        <div class='card card1' style="background-image: url({{$cake->thumb[0]->url}})">
+                        <div class='card card1' style="background-image: url({{$cake->thumb()->url}})">
                             <div class="price">
                                 <h6>{{$cake->price}} VND</h6>
                             </div>
@@ -166,14 +146,14 @@
                                 <p class='description'>
                                     {{$cake->desc}}
                                 </p>
-                                <div class="main-text-button">
+                                <!-- <div class="main-text-button">
                                     <div class="scroll-to-section">
                                         <a href="#reservation">
                                             Thêm vào giỏ bánh
                                             <i class="fab fa-shopping-cart"></i> 
                                         </a>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
