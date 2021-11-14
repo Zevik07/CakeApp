@@ -18,15 +18,20 @@ class DashboardController extends Controller
 {
     function index()
     {
-        $orders = Order::all();
-        // $users = User::with($orders);
-        // $users = User::with(['orders']);
-        // $users = User::all();
+        $orders = Order::paginate(5);
+        // $orders = Order::colection(Order::paginate(5));
         $cakes = Cake::all();
         //return OrderResource::collection($orders->paginate(perPage:50))->response();
         
         // View ở trong admin/dashboarc
-        return view('admin.dashboard', ['orders' => OrderResource::collection($orders),'cakes' => CakeResource::collection($cakes)]);
+        return view('admin.dashboard', [
+            'orders' => OrderResource::collection($orders),
+            'cakes' => CakeResource::collection($cakes)]);
+        // return view('admin/dashboard')
+        //     ->with([
+        //         'orders' => $orders,
+        //         'cakes' => CakeResource::collection($cakes)
+        //     ]);
     }
     public function update(Request $request, $id)
     {
