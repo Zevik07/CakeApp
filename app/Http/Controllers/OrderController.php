@@ -33,6 +33,7 @@ class OrderController extends Controller
        $order_item = OrderItem::Create([
             'order_id' => $order['id'],
             'cake_detail_id' => $valueorder['id'],
+            'price' => $valueorder['price'],
             'quantity' => $valueorder['quantity'],
             'note' => '1'
            

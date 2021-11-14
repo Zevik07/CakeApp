@@ -59,8 +59,8 @@
                                @foreach(Session::get('session_cart') as $cart => $value) 
                                <?php 
                                $name = DB::table('cakes')->where('id', '=', $value["id"] )->value('name');
-                               $price = DB::table('cakes')->where('id', '=', $value["id"] )->value('price');
-                               $tong=$price * $value["quantity"];
+                               
+                               $tong=$value["price"] * $value["quantity"];
                                $tongtien=$tongtien+$tong;
                                $i++;
                                ?>
@@ -68,7 +68,7 @@
                                            <th><?php echo $i ?></th>
                                            <th><?php echo $name ?>	</th>
                                           <th>{{$value["flavor"]}}</th>
-                                          <th><?php echo $price ?></th>
+                                          <th>{{$value["price"]}}</th>
                                           <th>{{$value["quantity"]}}</th>
                                           <th><?php echo $tong ?></th>
                                           <th><a href="{{route('detelecake', ['id' => $value['id']])}}">Xóa</a></th>
