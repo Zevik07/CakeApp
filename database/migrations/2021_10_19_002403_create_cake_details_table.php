@@ -20,7 +20,6 @@ class CreateCakeDetailsTable extends Migration
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
             $table->string('flavor');
-            $table->integer('quantity');
             $table->timestamps();
         });
     }
