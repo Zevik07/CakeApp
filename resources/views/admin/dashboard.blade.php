@@ -22,8 +22,8 @@
                         <th class="w-40 px-6 py-3 border-b border-gray-200 text-left text-xs leading-4 font-medium uppercase tracking-wider">
                             Trạng thái
                         </th>
-                        <th class="px-6 py-3 border-b border-gray-200"></th>
-                        <th class="px-6 py-3 border-b border-gray-200"></th>
+                        <th colspan=2 class="px-6 py-3 border-b border-gray-200">Thao tác</th>
+                        
                     </thead>
                     <tbody>
                         @foreach ($orders as $order)
@@ -59,7 +59,7 @@
                                 <td class="px-6 py-4 whitespace-nowrap border-b border-gray-200">{{$order->note}}</td>
                                 @if ($order->status == 'Đang xử lý')
                                     <td style="color:blue" class="w-40 px-6 py-4 whitespace-nowrap border-b border-gray-200">{{$order->status}}</td>
-                                    <td style="color:black" class="w-12 px-6 py-4 text-right border-b border-gray-200 text-sm leading-5 font-medium">
+                                    <td style="color:black" class="w-32 px-6 py-4 text-center border-b border-gray-200 text-base leading-5 font-medium">
                                         <form action="{{ route('dashboard.update',$order->id) }}" method="post">
                                             @csrf
                                             <input type="hidden" name="_method" value="PUT">
@@ -67,7 +67,7 @@
                                             <button class="text-indigo-600 hover:text-indigo-900">Duyệt</button>
                                         </form>
                                     </td>
-                                    <td style="color:black" class="w-12 px-6 py-4 text-right border-b border-gray-200 text-sm leading-5 font-medium">
+                                    <td style="color:black" class="w-32 px-6 py-4 text-center border-b border-gray-200 text-base leading-5 font-medium">
                                         <form action="{{route('dashboard.destroy',$order->id)}}" method="post">
                                             @csrf
                                             <input type="hidden" name="_method" value="DELETE">
@@ -76,10 +76,10 @@
                                     </td>
                                 @else
                                     <td style="color:red" class="w-40 px-6 py-4 whitespace-nowrap border-b border-gray-200">{{$order->status}}</td>
-                                    <td class="w-32 px-6 py-4 text-right border-b border-gray-200 text-sm leading-5 font-medium">
+                                    <td class="w-32 px-6 py-4 text-center border-b border-gray-200 text-base leading-5 font-medium">
                                         <a class="text-pink-600">Đã duyệt</a>
                                     </td>
-                                    <td style="color:black" class="w-12 px-6 py-4 text-right border-b border-gray-200 text-sm leading-5 font-medium">
+                                    <td style="color:black" class="w-32 px-6 py-4 text-center border-b border-gray-200 text-base leading-5 font-medium">
                                         <form action="{{route('dashboard.destroy',$order->id)}}" method="post">
                                             @csrf
                                             <input type="hidden" name="_method" value="DELETE">

@@ -18,6 +18,7 @@ class OrderItemResource extends JsonResource
         return 
         [
             'quantity' => $this->quantity,
+            'price' => $this->quantity,
             'note' => $this->note,
             'order' => new OrderResource($this->order),
             'cake_details' => CakeDetailResource::collection($this->whenLoaded('cake_details'))

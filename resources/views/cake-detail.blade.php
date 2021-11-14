@@ -45,6 +45,7 @@
                             {{-- @method('PUT') --}}
                             <input type="hidden" name="id" value="{{$cake->id}}">
                             <input type="hidden" name="name" value="{{$cake->name}}">
+                            <input type="hidden" name="price" value="{{$cake->price}}">
                             @if(count($cakeDetails)>0)
                                 <p>Chọn vị:</p>
                                 <div class="flex flex-wrap">
