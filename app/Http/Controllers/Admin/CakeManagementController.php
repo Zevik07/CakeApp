@@ -134,7 +134,22 @@ class CakeManagementController extends Controller
      */
     public function update(Request $request, $id)
     {
-        echo $request->name;
+        $data = $request->input();
+        $cake = Cake::findOrFail($id);
+        $result = $cake->update($data);
+
+        // Update flavor
+        $cake->cake_details()->delete();
+        $flavors = explode(PHP_EOL, $data["flavors"]);
+        foreach ($flavors as $key => $value) {
+            CakeDetail::create([
+                'cake_id' => $id,
+                'flavor' => $value
+            ]);
+        }
+
+        return response()
+            ->json(['status' => 'success', 'msg' => $flavors]);
     }
 
     /**

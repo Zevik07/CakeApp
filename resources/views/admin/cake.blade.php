@@ -62,13 +62,13 @@
                                 <td class="p-3 uppercase">{{ date('d-m-Y', strtotime($cake->updated_at)) }}</td>
     
                                 <td class="p-3 text-center">
-                                    <button type="button" data-id="{{ $cake->id }}" class="cake-view modal-open text-gray-500 hover:text-gray-100 mr-2">
+                                    <button method="cake-view" type="button" data-id="{{ $cake->id }}" class="cake-view modal-open text-gray-500 hover:text-gray-100 mr-2">
                                         <i class="text-base">Xem</i>
                                     </button>
-                                    <button href="#" data-id="{{ $cake->id }}" class="cake-edit modal-open text-yellow-400 hover:text-gray-100 mx-2">
+                                    <button method="cake-edit" href="#" data-id="{{ $cake->id }}" class="cake-edit modal-open text-yellow-400 hover:text-gray-100 mx-2">
                                         <i class="text-base">Sửa</i>
                                     </button>
-                                    <button href="#" class="cake-viewtext-red-400 hover:text-gray-100 ml-2">
+                                    <button method="cake-delete" href="#" class="cake-viewtext-red-400 hover:text-gray-100 ml-2">
                                         <i class="text-base">Xóa</i>
                                     </button>
                                 </td>
@@ -79,9 +79,8 @@
                     </tbody>
                 </table>
                 <!-- Modal -->
-                <div class="z-50 modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-start justify-center overflow-y-scroll">
-                    <div class="modal-overlay absolute w-full bg-gray-800 opacity-50 top-0 left-0 right-0">
-                        
+                <div class="z-50 modal pb-10 opacity-0 pointer-events-none absolute w-full h-auto top-0  left-0 right-0 flex items-start justify-center">
+                    <div class="modal-overlay fixed bg-gray-800 opacity-50 top-0 left-0 right-0 bottom-0">
                     </div>
                     <div class="modal-container mt-10 bg-white w-1/2 mx-auto rounded shadow-lg z-50 ">
                         <div class="modal-close absolute top-0 right-0 cursor-pointer flex flex-col items-center mt-4 mr-4 text-white text-sm z-50">
@@ -104,7 +103,9 @@
                                 </div>
                             </div>
                             <!--Body-->
-                            <form class="w-full">
+                            <form class="w-full modal-form" method action>
+                                @csrf
+                                @method('patch')
                                 <div class="flex flex-wrap -mx-3 mb-6">
                                     <div class="w-full px-3 mb-6 md:mb-0">
                                         <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
@@ -151,7 +152,9 @@
                                     </div>
                                 </div>
                                 <div class="flex justify-end pt-2">
-                                    <button class="modal-close px-4 bg-indigo-500 p-3 rounded-lg text-white hover:bg-indigo-400">Đóng</button>
+                                    <button type="submit"
+                                    class="modal-save px-4 bg-primary p-3 rounded-lg text-white hover:bg-primary-700">Lưu</button>
+                                    <button class="modal-close ml-2 px-4 bg-gray-400 p-3 rounded-lg text-white hover:bg-gray-300">Đóng</button>
                                 </div>
                             </form>
                             <!--Footer-->

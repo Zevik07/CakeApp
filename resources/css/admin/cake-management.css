@@ -5,13 +5,6 @@ body.modal-active {
     overflow-x: hidden;
     overflow-y: visible !important;
 }
-.modal-overlay{
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: calc(100vh + 100px);
-}
 #cake-imgs img {
     height: 200px;
     width: 200px;

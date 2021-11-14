@@ -17,7 +17,10 @@ const overlay = document.querySelector('.modal-overlay')
 overlay.addEventListener('click', toggleModal)
 var closemodal = document.querySelectorAll('.modal-close')
 for (var i = 0; i < closemodal.length; i++) {
-    closemodal[i].addEventListener('click', toggleModal)
+    closemodal[i].addEventListener('click', function (e) {
+        toggleModal()
+        e.preventDefault()
+    })
 }
 // Esc
 document.onkeydown = function(evt) {
@@ -29,7 +32,7 @@ document.onkeydown = function(evt) {
     isEscape = (evt.keyCode === 27)
     }
     if (isEscape && document.body.classList.contains('modal-active')) {
-    toggleModal()
+        toggleModal()
     }
 };
 
@@ -54,7 +57,7 @@ function fetchData(btn) {
     .then(response => response.json())
     .then(data => {
         $("#cake-name").value = data.name;
-        $("#cake-desc").value = data.name;
+        $("#cake-desc").value = data.desc;
         $("#cake-price").value = data.price;
 
         //flavor
@@ -73,6 +76,34 @@ function fetchData(btn) {
     })
 }
 function setCtrl(btn) {
-    console.log(btn.classList);
-    const modal = document.querySelector('.modal')
+    const method = btn.getAttribute("method");
+    const btnSave = $(".modal .modal-save");
+    const btnClose = $(".modal button.modal-close");
+    const form = $(".modal-form");
+    if (!method) return;
+
+    switch (method) {
+        case 'cake-view':
+            btnSave.classList.add("hidden");
+            btnClose.classList.remove("hidden");
+            break;
+        case 'cake-edit':
+            btnSave.classList.remove("hidden");
+            btnClose.classList.remove("hidden");
+
+            btnSave.onclick = function () {
+                //Form method
+                let id = btn.dataset.id;
+                url = window.location.pathname + "/" + id;
+
+                form.action = url
+                form.method = "POST" 
+                form.submit();
+            }
+
+            break;
+    
+        default:
+            break;
+    }
 }

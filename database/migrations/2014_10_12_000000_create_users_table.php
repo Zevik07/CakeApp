@@ -16,11 +16,11 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('address');
-            $table->string('phone');
+            $table->string('address')->nullable();
+            $table->string('phone')->nullable();
             $table->string('email')->nullable();
             $table->string('password')->nullable();
-            $table->foreignId('role_id')
+            $table->foreignId('role_id')->default('2')
                 ->constrained()
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
