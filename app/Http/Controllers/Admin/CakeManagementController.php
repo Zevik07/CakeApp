@@ -19,7 +19,7 @@ class CakeManagementController extends Controller
     public function index()
     {
         $cakes = 
-            CakeResource::collection(Cake::paginate(1));
+            CakeResource::collection(Cake::paginate(3));
 
         return view('admin/cake')
             ->with('cakes',  $cakes);
@@ -111,7 +111,7 @@ class CakeManagementController extends Controller
      */
     public function show($id)
     {
-        //
+        return new CakeResource(Cake::findOrFail($id));
     }
 
     /**
@@ -134,7 +134,43 @@ class CakeManagementController extends Controller
      */
     public function update(Request $request, $id)
     {
-        echo $request->name;
+        $data = $request->input();
+        $cake = Cake::findOrFail($id);
+        $result = $cake->update($data);
+
+        // Update flavor
+        $cake->cake_details()->delete();
+        $flavors = explode(PHP_EOL, $data["flavors"]);
+        foreach ($flavors as $key => $value) {
+            CakeDetail::create([
+                'cake_id' => $id,
+                'flavor' => $value
+            ]);
+        }
+        // Insert image
+        $imgs = $request->file('images');
+        if (!empty($imgs))
+            foreach($request->file('images') as $image)
+            {
+                if ($image->isValid()) {
+                    $name = $image->hashName();
+                    $path = 
+                        Storage::disk('public')->putFile('images', $image);
+                    $url = Storage::url($path);
+                    //Insert to DB
+                    $image = [
+                        'name' => $name,
+                        'url' => $url,
+                        'imageable_id' => $id,
+                        'imageable_type' => 'cake',
+                        'type' => $request->input('type')
+                    ];
+                    $imgResponse[] = new ImageResource(Image::create($image));
+                } 
+            }
+
+        return response()
+            ->json(['status' => 'success', 'msg' => $flavors]);
     }
 
     /**

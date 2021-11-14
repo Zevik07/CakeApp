@@ -15,6 +15,7 @@ class Cake extends JsonResource
      */
     public function toArray($request)
     {
+        $order = $this->whenLoaded('order');
         return [
             'id' => $this->id,
             'name' => $this->name,
@@ -23,6 +24,9 @@ class Cake extends JsonResource
             'quantity' => $this->cake_details()->count(),
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
+            'cake_details' => $this->cake_details,
+            'imgs' => $this->images,
+            'thumb' => $this->images()->first(),
         ];
     }
 }

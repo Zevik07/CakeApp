@@ -52,7 +52,7 @@
                 </thead>
                 <tbody>
                     @foreach ($cakes as $cake)
-                        <div class="cake-item" x-data="{ 'showModal': false }">
+                        <div class="cake-item">
                             <tr class="cake bg-primary-300 lg:text-black">
                                 <td class="cake-id p-3 font-medium capitalize">{{ $cake->id }}</td>
                                 <td class="p-3">{{ $cake->name }}</td>
@@ -62,53 +62,110 @@
                                 <td class="p-3 uppercase">{{ date('d-m-Y', strtotime($cake->updated_at)) }}</td>
     
                                 <td class="p-3 text-center">
-                                    <button type="button" x-on:click="isModalOpen = true" class="text-gray-500 hover:text-gray-100 mr-2">
+                                    <button method="cake-view" type="button" data-id="{{ $cake->id }}" class="cake-view modal-open text-gray-500 hover:text-gray-100 mr-2">
                                         <i class="text-base">Xem</i>
                                     </button>
-                                    <button href="#" class="text-yellow-400 hover:text-gray-100 mx-2">
+                                    <button method="cake-edit" href="#" data-id="{{ $cake->id }}" class="cake-edit modal-open text-yellow-400 hover:text-gray-100 mx-2">
                                         <i class="text-base">Sửa</i>
                                     </button>
-                                    <button href="#" class="text-red-400 hover:text-gray-100 ml-2">
+                                    <button method="cake-delete" href="#" class="cake-viewtext-red-400 hover:text-gray-100 ml-2">
                                         <i class="text-base">Xóa</i>
                                     </button>
                                 </td>
                             </tr>
-                            <!-- Modal -->
-                            <div class="mx-auto w-full bg-gray-100 flex items-center justify-center h-screen" x-show="showModal" @keydown.escape="showModal = false" x-cloak>
 
-                                <div class="flex flex-wrap p-4 h-full items-center">
-
-                                    <button type="button" class="bg-transparent border border-gray-500 hover:border-indigo-500 text-gray-500 hover:text-indigo-500 font-bold py-2 px-4 rounded-full" @click="showModal = true">Open modal</button>
-
-                                    <!--Overlay-->
-                                    <div class="overflow-auto" style="background-color: rgba(0,0,0,0.5)" x-show="showModal" :class="{ 'absolute inset-0 z-10 flex items-center justify-center': showModal }">
-                                        <!--Dialog-->
-                                        <div class="bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg py-4 text-left px-6" x-show="showModal" @click.away="showModal = false" x-transition>
-                                            <!-- content -->
-                                            <p>Modal content can go here</p>
-                                            <p>...</p>
-                                            <p>...</p>
-                                            <p>...</p>
-                                            <p>...</p>
-
-                                            <!--Footer-->
-                                            <div class="flex justify-end pt-2">
-                                                <button class="px-4 bg-transparent p-3 rounded-lg text-indigo-500 hover:bg-gray-100 hover:text-indigo-400 mr-2" @click="alert('Additional Action');">Action</button>
-                                                <button class="modal-close px-4 bg-indigo-500 p-3 rounded-lg text-white hover:bg-indigo-400" @click="showModal = false">Close</button>
-                                            </div>
-
+                        </div>
+                        @endforeach
+                    </tbody>
+                </table>
+                <!-- Modal -->
+                <div class="z-50 modal pb-10 opacity-0 pointer-events-none absolute w-full h-auto top-0  left-0 right-0 flex items-start justify-center">
+                    <div class="modal-overlay fixed bg-gray-800 opacity-50 top-0 left-0 right-0 bottom-0">
+                    </div>
+                    <div class="modal-container mt-10 bg-white w-1/2 mx-auto rounded shadow-lg z-50 ">
+                        <div class="modal-close absolute top-0 right-0 cursor-pointer flex flex-col items-center mt-4 mr-4 text-white text-sm z-50">
+                            <svg class="fill-current text-white" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+                            <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
+                            </svg>
+                            <span class="text-sm">(Esc)</span>
+                        </div>
+                        <!-- Add margin if you want to see some of the overlay behind the modal-->
+                        <div class="modal-content py-4 text-left px-6">
+                            <!--Title-->
+                            <div class="flex justify-between items-center pb-3">
+                                <p class="text-2xl font-bold">
+                                    Thông tin bánh
+                                </p>
+                                <div class="modal-close cursor-pointer z-50">
+                                    <svg class="fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+                                    <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <!--Body-->
+                            <form class="w-full modal-form" method action enctype="multipart/form-data">
+                                @csrf
+                                @method('patch')
+                                <div class="flex flex-wrap -mx-3 mb-6">
+                                    <div class="w-full px-3 mb-6 md:mb-0">
+                                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
+                                            Tên bánh
+                                        </label>
+                                        <input id="cake-name" class="appearance-none block w-full text-gray-700 border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"  
+                                        type="text" placeholder="Nhập tên bánh"
+                                        name="name">
+                                        <!-- <p class="text-red-500 text-xs italic">Please fill out this field.</p> -->
+                                    </div>
+                                    <div class="w-full px-3">
+                                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
+                                            Mô tả
+                                        </label>
+                                        <textarea class="ppearance-none block w-full text-gray-700 border border-gray-200 rounded mb-3  py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" 
+                                        name="desc" id="cake-desc" cols="30" rows="3" placeholder="Mô tả"></textarea>
+                                    </div>
+                                    <div class="w-full px-3 mb-6 md:mb-0">
+                                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
+                                            Giá bán
+                                        </label>
+                                        <input id="cake-price" class="appearance-none block w-full text-gray-700 border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"  
+                                        type="number" placeholder="Nhập giá bánh"
+                                        name="price">  
+                                    </div>
+                                    <div class="w-full px-3">
+                                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
+                                            Các vị bánh
+                                        </label>
+                                        <textarea id="cake-flavor" class="ppearance-none block w-full text-gray-700 border border-gray-200 rounded mb-3  py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" 
+                                        name="flavors" id="" cols="30" rows="3" placeholder="Mô tả"></textarea>
+                                    </div>
+                                </div>
+                                <div class="-mx-3 mb-2 ">
+                                    <div class="w-full px-3 mb-6 md:mb-0 ">
+                                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-city">
+                                            Hình ảnh
+                                        </label>
+                                        <div id="cake-imgs" class="w-full flex justify-start overflow-x-scroll">
 
                                         </div>
-                                        <!--/Dialog -->
-                                    </div><!-- /Overlay -->
-
+                                        <label for="images" 
+                                        class="w-48 mt-2 appearance-none block bg-gray-200 text-center text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+                                        Chọn ảnh</label>
+                                        <input id="images"
+                                        class="hidden"
+                                        type="file" name="images[]" multiple accept="image/*">
+                                    </div>
                                 </div>
-
-                            </div>
+                                <div class="flex justify-end pt-2">
+                                    <button type="submit"
+                                    class="modal-save px-4 bg-primary p-3 rounded-lg text-white hover:bg-primary-700">Lưu</button>
+                                    <button class="modal-close ml-2 px-4 bg-gray-400 p-3 rounded-lg text-white hover:bg-gray-300">Đóng</button>
+                                </div>
+                            </form>
+                            <!--Footer-->
+                            
                         </div>
-                    @endforeach
-                </tbody>
-            </table>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -116,8 +173,6 @@
         {{ $cakes->links() }}
     </div>
 
-    
-    <div class="hidden opacity-25 fixed inset-0 z-40 bg-black" id="modal-id-backdrop"></div>
     <script type="text/javascript">
         
     </script>
