@@ -8,6 +8,9 @@ use App\Models\Cake;
 use App\Models\Image;
 use App\Models\CakeDetail;
 use App\Http\Resources\Cake as CakeResource;
+use Illuminate\Support\Facades\Storage;
+use Validator;
+use Exception;
 
 class CakeManagementController extends Controller
 {
@@ -32,7 +35,7 @@ class CakeManagementController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -43,64 +46,42 @@ class CakeManagementController extends Controller
      */
     public function store(Request $request)
     {
-        if($request->has('add')){
-            
-        //     if(Cake::where('name','=',$request->name)->exists()){
-        //         //$name = $request->name;
-        //         $cake = Cake::where('name','=',$request->name);
-        //         //var_dump($cake);
-        //         echo $cake->id;
-        //         // $cake_detail = new CakeDetail;
-        //         // $cake_detail->cake_id = $cake->id;
-        //         // $cake_detail->flavor = $request->flavor;
-        //         // $cake_detail->quantity = $request->quantity;
-        //         // $cake_detail->save();
-        //         // return redirect()->route('cake-add.index');
-        //    }else{
-               //Save cake
-               $cake = new Cake;
-               $cake->name = $request->name;
-               $cake->price = $request->price;
-               $cake->quantity = $request->quantity;
-               $cake->desc = $request->desc;
-               $cake->save();
-               //Save cake detail
-               $cake_detail = new CakeDetail;
-               $cake_detail->cake_id = $cake->id;
-               $cake_detail->flavor = $request->flavor;
-               $cake_detail->quantity = $request->quantity;
-               $cake_detail->save();
-               return redirect()->route('cake-add.index');
-           //}
-        }else if($request->has('edit')){
-            $id = $request->id;
-            //Update Cake Details
-            $cake_detail = CakeDetail::findOrFail($id);
-            $cake_detail->flavor = $request->flavor;
-            $cake_detail->quantity = $request->quantity;
-            $cake_detail->save();
-            $cake_id = $cake_detail->cake_id;
-            //Update Cake
-            $cake = Cake::find($cake_id);
-            $cake->name = $request->name;
-            $cake->price = $request->price;
-            $cake->quantity = $cake->quantity + $request->quantity;
-            $cake->desc = $request->desc;
-            $cake->save();
-            return redirect()->route('cake-add.index');
-        }else if($request->has('delete')){
-                $cake_detail = CakeDetail::find($request->id);
-                $id = $cake_detail->cake_id;
-                $cake_detail->delete();
-                $cake = Cake::find($id);
-                if(CakeDetail::where('cake_id',$id)){
-                    return redirect()->route('cake-add.index');
-                }else{
-                    $cake->delete();
-                    return redirect()->route('cake-add.index');
-                }
+        $data = $request->input();
+        $cakeResult = Cake::create($data);
+
+        $flavors = explode(PHP_EOL, $data["flavors"]);
+        foreach ($flavors as $key => $value) {
+            CakeDetail::create([
+                'cake_id' => $cakeResult->id,
+                'flavor' => $value
+            ]);
         }
-         
+
+        $imgResult = [];
+        if (($request->hasfile('images')))
+        {
+            $imgs = $request->file('images');
+            foreach($imgs as $image)
+            {
+                if ($image->isValid()) {
+                    $name = $image->hashName();
+                    $path = 
+                        Storage::disk('public')->putFile('images', $image);
+                    $url = env('APP_URL',false).Storage::url($path);
+                    // //Insert to DB
+                    $image = [
+                        'name' => $name,
+                        'url' => $url,
+                        'imageable_id' => $cakeResult->id,
+                        'imageable_type' => 'cake',
+                    ];
+                    Image::create($image);
+                    $imgResult[] = $url;
+                } 
+            }
+        }
+
+        return back()->withInput();
     }
 
     /**
@@ -148,29 +129,31 @@ class CakeManagementController extends Controller
             ]);
         }
         // Insert image
-        $imgs = $request->file('images');
-        if (!empty($imgs))
-            foreach($request->file('images') as $image)
+        $imgResult = [];
+        if (($request->hasfile('images')))
+        {
+            $imgs = $request->file('images');
+            foreach($imgs as $image)
             {
                 if ($image->isValid()) {
                     $name = $image->hashName();
                     $path = 
                         Storage::disk('public')->putFile('images', $image);
-                    $url = Storage::url($path);
-                    //Insert to DB
+                    $url = env('APP_URL',false).Storage::url($path);
+                    // //Insert to DB
                     $image = [
                         'name' => $name,
                         'url' => $url,
                         'imageable_id' => $id,
                         'imageable_type' => 'cake',
-                        'type' => $request->input('type')
                     ];
-                    $imgResponse[] = new ImageResource(Image::create($image));
+                    Image::create($image);
+                    $imgResult[] = $url;
                 } 
             }
+        }
 
-        return response()
-            ->json(['status' => 'success', 'msg' => $flavors]);
+        return back()->withInput();
     }
 
     /**
@@ -181,6 +164,7 @@ class CakeManagementController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $result = Cake::where('id', $id)->delete();
+        return response()->json(['status' => 'success']);
     }
 }
