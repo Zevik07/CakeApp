@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Cake;
@@ -38,12 +39,14 @@ class DashboardController extends Controller
         $order = Order::find($id);
         $order->status = $request->status;
         $order->save();
+        Session::flash('confirm','Duyệt đơn hàng thành công!!!!');
         return redirect('admin/dashboard');
     }
     public function destroy($id)
     {
         $order = Order::find($id);
         $order->delete();
-        return redirect('admin/dashboard');
+        //Session::flash('delete','Xóa đơn hàng thành công!!!');
+        //return redirect('admin/dashboard');
     }
 }
