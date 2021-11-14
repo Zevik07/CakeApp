@@ -50,6 +50,7 @@ class CakeController extends Controller
             Session::push('session_cart',[
                 'id'=>$data['id'],
                 'name'=>$data['name'],
+                'price'=>$data['price'],
                 'flavor'=>$data['flavor'],
                 'quantity'=>$data['quantity'],
                 'note'=>$data['note'],
@@ -62,6 +63,7 @@ class CakeController extends Controller
             $session = Session::put('session_cart',[[
                 'id'=>$data['id'],
                 'name'=>$data['name'],
+                'price'=>$data['price'],
                 'flavor'=>$data['flavor'],
                 'quantity'=>$data['quantity'],
                 'note'=>$data['note'],

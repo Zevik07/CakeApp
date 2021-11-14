@@ -22,6 +22,7 @@ class CreateOrderItemsTable extends Migration
                 ->constrained()
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
+            $table->decimal('price');
             $table->integer('quantity');
             $table->string('note')->nullable();
             $table->timestamps();

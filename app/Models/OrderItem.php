@@ -20,6 +20,7 @@ class OrderItem extends Model
         'order_id',
         'cake_detail_id',
         'quantity',
+        'price',
         'note'
     ];
     public $timestamp = true;
