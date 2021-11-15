@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Session;
+use App\Http\Controllers\Redirect;
 use Illuminate\Http\Request;
 use App\Models\Cake;
 use App\Models\Image;
@@ -43,9 +44,7 @@ class CakeController extends Controller
         if(session()->has('session_cart')){
             foreach(Session::get('session_cart') as $item => $value){
                 if($value["id"]==$data["id"])
-                    return redirect()->action(
-                        [HomeController::class,'index'],['name'=>'home']
-                    );
+                    return back()->with('success','Add to cart successfully!');
             }
             Session::push('session_cart',[
                 'id'=>$data['id'],
@@ -56,9 +55,7 @@ class CakeController extends Controller
                 'note'=>$data['note'],
                 ]);
                 Session::flash('success','Add to cart successfully!');
-                return redirect()->action(
-                    [HomeController::class,'index'],['name'=>'home']
-                );
+                return back()->with('success','Add to cart successfully!');
         }else{
             $session = Session::put('session_cart',[[
                 'id'=>$data['id'],
@@ -69,9 +66,7 @@ class CakeController extends Controller
                 'note'=>$data['note'],
                 ]]);
                 Session::flash('success','Add to cart successfully!');
-                return redirect()->action(
-                    [HomeController::class,'index']
-                );
+                return back()->with('success','Add to cart successfully!');
         } 
     }
 

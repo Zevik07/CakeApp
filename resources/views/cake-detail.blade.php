@@ -10,28 +10,24 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="grid grid-cols-2 gap-x-3">
                     <div class="w-full h-auto p-4">
-                        <!-- <div id="mainImg" class="w-96 h-96 mb-3 mx-auto rounded-lg"></div> -->
+                        <img id="mainImg" class="w-96 h-96 mb-3 mx-auto rounded-lg object-fill" src="{{$images[0]->url}}" alt="">
+                            
 
-                        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                        {{-- <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
                                 @foreach($images as $image)
-                                <div class="carousel-item active">
-                                    <!-- <img class="w-96 h-96 mb-3 mx-auto rounded-lg object-fill" src="http://4.bp.blogspot.com/-sbpJrKlHCXA/VOmV6vxWpXI/AAAAAAAAAQY/7jPzIfW5HA0/s1600/4.jpg" alt=""> -->
-                                    <img class="w-96 h-96 mb-3 mx-auto rounded-lg object-fill" src="{{$image['url']}}" alt="">
-                                    {{-- <div class="carousel-caption d-none d-md-block">
-                                        
-                                        <h4 class="text-semibold text-white">{{  }}</h4>      
-                                    </div> --}}
-                                </div>  
+                                    <div class="carousel-item active">
+                                        <img class="w-96 h-96 mb-3 mx-auto rounded-lg object-fill" src="{{$image['url']}}" alt="">
+                                    </div>  
                                 @endforeach
                                 
                             </div>
-                        </div>
+                        </div> --}}
 
                        <!--Other Image-->
                         <div class="w-full h-32 grid grid-cols-4 gap-x-1">
                             @foreach ($images as $image)
-                                <img class="sub-img w-full h-full mb-3 mx-auto overflow-auto rounded-lg object-cover border-2" src="{{$image['url']}}" alt="">                           
+                                <img onclick="changeImage(this)" class="sub-img w-full h-full mb-3 mx-auto overflow-auto rounded-lg object-cover border-2" src="{{$image['url']}}" alt="">                           
                             @endforeach
                         </div>
                         <!--Other Imange end-->
@@ -60,8 +56,8 @@
                             <label for="quantity">Số lượng</label>
                             <input class="w-20 h-10 mx-3 rounded-lg" name="quantity" type="number" min="0">
                             <br>
-                            <label for="note">Ghi chú</label>
-                            <textarea class="mx-3 mt-3 rounded-lg" name="note" type="text" rows="4" cols="30"></textarea>
+                            <label class="hidden" for="note">Ghi chú</label>
+                            <textarea class="hidden mx-3 mt-3 rounded-lg" name="note" type="text" rows="4" cols="30"></textarea>
                             <button class="block px-6 py-3 m-3 text-white bg-red-400 hover:bg-red-500 rounded-lg transition-colors">Thêm vào giỏ hàng</button>
                         </form>
                         <hr>
@@ -72,4 +68,19 @@
         </div>
     </div>
 
+    @if(Session::has('success'))
+        <script>
+            swal("Thành công","{!! Session::get('confirm') !!}","success",{
+                button:"OK",
+            });
+        </script>
+    @endif
+
+<script>
+    function changeImage(change) {
+        
+        var src = change.src
+        document.getElementById("mainImg").src = src;
+    }
+</script>
 </x-app-layout>
