@@ -1,12 +1,15 @@
 .modal {
     transition: opacity 0.25s ease;
 }
-body.modal-active {
+.modal-noti{
+    transition: opacity 0.25s ease;
+}
+/* body.modal-active {
     overflow-x: hidden;
     overflow-y: visible !important;
-}
+} */
 #cake-imgs img {
     height: 200px;
     width: 200px;
     object-fit: cover;
-}
+}   
