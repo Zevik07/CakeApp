@@ -33,13 +33,15 @@ class OrderController extends Controller
        $order_item = OrderItem::Create([
             'order_id' => $order['id'],
             'cake_detail_id' => $valueorder['id'],
+            'price' => $valueorder['price'],
             'quantity' => $valueorder['quantity'],
             'note' => '1'
            
        ]);
     }
-        
+         Session::flash('success1','Đã đặt hàng thành công');
         $request->session()->flush();
+        return back()->with('success1','Đã đặt hàng thành công');
 }
         
         return back()->withInput();
