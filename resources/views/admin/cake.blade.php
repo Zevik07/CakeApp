@@ -207,8 +207,8 @@
         var openmodal = document.querySelectorAll('.modal-open')
 
         for (var i = 0; i < openmodal.length; i++) {
-            openmodal[i].addEventListener('click', function(event){
-                event.preventDefault()
+            openmodal[i].addEventListener('click', function(e){
+                e.preventDefault()
                 toggleModal()
                 setCtrl(this)
             })
@@ -296,9 +296,10 @@
                     btnClose.classList.remove("hidden");
                     $("#img-choose").classList.remove("hidden")
 
-                    btnSave.onclick = function () {
+                    btnSave.onclick = function (e) {
                         
                         if (!validateForm()) {
+                            e.preventDefault();
                             return;
                         }
                         //Form method
@@ -319,6 +320,7 @@
                     $("#cake-desc").value = "";
                     $("#cake-price").value = "";
                     $("#cake-imgs").innerHTML = "";
+                    $("#file-upload-filename").innerHTML = ""
 
                     //flavor
                     $("#cake-flavor").value = "";
@@ -332,11 +334,13 @@
                     form.action = url
                     form.method = "POST" 
                     
-                    $(".modal-noti-submit").onclick = function () {
+                    $(".modal-noti-submit").onclick = function (e) {
                         if (!validateForm()) {
+                            e.preventDefault();
                             return;
                         }
-                        form.submit();
+                        else
+                            form.submit();
                     }
                     
                     break;
@@ -410,7 +414,7 @@
             !price ||
             !flavor.trim())
             {
-                alert("Các trường không được phép để trống");
+                alert("Các trường không được phép để trống")
                 return false
             }
             return true

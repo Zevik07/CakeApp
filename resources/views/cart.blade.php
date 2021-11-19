@@ -68,7 +68,7 @@ $i = 0;
                               @if (session()->has('session_cart'))
                                @foreach(Session::get('session_cart') as $cart => $value)
                                 <?php
-                                    $flavor_name = DB::table('cake_details')->where('id', '=', $value["id"])->value('name');
+                                    $flavor_name = DB::table('cake_details')->where('id', '=', $value["id"])->value('flavor');
                                     $tong = $value["price"] * $value["quantity"];
                                     $tongtien = $tongtien + $tong;
                                     $i++;
