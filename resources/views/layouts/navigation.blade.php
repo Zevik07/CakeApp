@@ -20,7 +20,7 @@
                 <div class="text-2xl text-primary-color">
                     <i class="fa-solid fa-cart-shopping pr-2"></i>
                 </div>
-                Giỏ bánh
+                Giỏ hàng
             </x-nav-link>
             <!-- Hamburger -->
             <div class="-mr-2 flex items-center sm:hidden">
