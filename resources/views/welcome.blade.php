@@ -15,28 +15,21 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" type="text/css" href="homeui/assets/css/bootstrap.min.css">
-
     <!-- Font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="homeui/assets/css/bootstrap.min.css">
 
     <!-- Owl slider -->
     <link rel="stylesheet" href="homeui/assets/css/owl-carousel.css">
 
     <link rel="stylesheet" href="homeui/assets/css/owl.theme.default.min.css">
 
-    <link rel="stylesheet" href="homeui/assets/css/lightbox.css">
-
     <!--Custom Styles -->
-
     <link rel="stylesheet" href="homeui/assets/css/templatemo-klassy-cafe.css">
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-
-    <!-- Custom Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
 </head>
     
 <body>
@@ -73,7 +66,7 @@
                             <h4>CasyCake</h4>
                             <h6>THE BEST EXPERIENCE</h6>
                             <div class="main-white-button scroll-to-section">
-                                <a href="#menu">Chọn bánh</a>
+                                <a class="main-page-button" href="#menu">Chọn bánh</a>
                             </div>
                         </div>
                     </div>
@@ -171,11 +164,20 @@
                 <div class="col-lg-6 col-md-6 col-xs-12">
                     <div class="left-text-content">
                         <div class="section-heading">
-                            <h6>Về chúng tôi</h6>
-                            <h2>Mang đến những chiếc bánh thật ngon</h2>
+                            <h6>
+                                Về chúng tôi
+                            </h6>
+                            <h2>
+                                Mang đến những chiếc bánh thật ngon
+                            </h2>
                         </div>
                         <p>
-                            CasyCake được thành lập vào 2021
+                            CasyCake là thương hiệu bánh ngọt Việt. 
+                            Được thành lập từ năm 2021 tại quận Ninh Kiều, Cần Thơ. 
+                            Các sản phẩm CasyCake được làm từ các nguyên liệu nhập khẩu của các nước có truyền thống làm bánh như: 
+                            Newzeland, Mỹ, Pháp, Bỉ. 
+                            Với hương vị thơm ngon đặc trưng của các loại kem, bơ, sữa, phô mai, hạt hạnh nhân, chocolate... 
+                            dưới bàn tay khéo léo của những người thợ làm bánh giàu kinh nghiệm. 
                         </p>
                         <div class="row">
                             <div class="col-6">
@@ -212,15 +214,8 @@
 
     <!-- Plugins -->
     <script src="homeui/assets/js/owl-carousel.js"></script>
-    <script src="homeui/assets/js/accordions.js"></script>
-    <script src="homeui/assets/js/datepicker.js"></script>
-    <script src="homeui/assets/js/scrollreveal.min.js"></script>
-    <script src="homeui/assets/js/waypoints.min.js"></script>
     <script src="homeui/assets/js/jquery.counterup.min.js"></script>
-    <script src="homeui/assets/js/imgfix.min.js"></script> 
     <script src="homeui/assets/js/slick.js"></script> 
-    <script src="homeui/assets/js/lightbox.js"></script> 
-    <script src="homeui/assets/js/isotope.js"></script> 
     
     <!-- Global Init -->
     <script src="homeui/assets/js/custom.js"></script>

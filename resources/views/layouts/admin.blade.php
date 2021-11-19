@@ -22,12 +22,6 @@
     
 	<!-- App -->
     <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
-
-    <script src="{{ asset('js/admin.js') }}" defer></script>
-
-	<style>
-
-	</style>
 </head>
 <body class="bg-white font-sans leading-normal tracking-normal">
 
