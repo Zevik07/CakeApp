@@ -130,6 +130,8 @@ class CakeManagementController extends Controller
         }
         // Insert image
         $imgResult = [];
+        // Delete exist image
+        Cake::findOrFail($id)->images()->delete();
         if (($request->hasfile('images')))
         {
             $imgs = $request->file('images');

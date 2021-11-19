@@ -177,7 +177,8 @@ $i++;
                          </script>
 
                      @endif
-                        @if (session()->has('session_cart')) <?php echo '
+                        @if (session()->has('session_cart')) 
+                        <?php echo '
                         <div class="form">
                             <h2 class="titleuser">Thông tin khách hàng</h2>
                             <div class="row">
