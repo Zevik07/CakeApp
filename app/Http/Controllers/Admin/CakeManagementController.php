@@ -22,7 +22,7 @@ class CakeManagementController extends Controller
     public function index()
     {
         $cakes = 
-            CakeResource::collection(Cake::paginate(3));
+            CakeResource::collection(Cake::paginate(9));
 
         return view('admin/cake')
             ->with('cakes',  $cakes);
@@ -130,6 +130,8 @@ class CakeManagementController extends Controller
         }
         // Insert image
         $imgResult = [];
+        // Delete exist image
+        Cake::findOrFail($id)->images()->delete();
         if (($request->hasfile('images')))
         {
             $imgs = $request->file('images');

@@ -79,18 +79,7 @@ class CakeController extends Controller
      */
     public function show($id)
     {
-        // $cake = Cake::where('id', $id);
-        // $name = $cake->name;
-        // $desc = $cake->desc;
-        // $price = $cake->price;
-        // $images = Cake::where('imageable_id',$id);
-        // $cake = Cake::find(1);
-        // $images = Image::where('imageable_id',$id);
         return view('cake-detail',[
-            // $name,
-            // $desc,
-            // $price,
-            // $images
             'cake' =>Cake::findOrFail($id),
             'images' =>Cake::findOrFail($id)->images,
             'cakeDetails' =>CakeDetail::where('cake_id',$id)->get()

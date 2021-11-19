@@ -139,11 +139,11 @@
                                         <div id="cake-imgs" class="w-full flex justify-start overflow-x-scroll">
 
                                         </div>
-                                        <label for="file-upload" 
+                                        <label id="img-choose" for="img-upload" 
                                         class="w-48 mt-2 appearance-none block bg-gray-200 text-center text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
                                         Chọn ảnh</label>
                                         <input 
-                                        id="file-upload"
+                                        id="img-upload"
                                         class="hidden"
                                         type="file" 
                                         name="images[]"
@@ -288,13 +288,19 @@
                     fetchData(btn)
                     btnSave.classList.add("hidden");
                     btnClose.classList.remove("hidden");
+                    $("#img-choose").classList.add("hidden")
                     break;
                 case 'cake-edit':
                     fetchData(btn)
                     btnSave.classList.remove("hidden");
                     btnClose.classList.remove("hidden");
+                    $("#img-choose").classList.remove("hidden")
 
                     btnSave.onclick = function () {
+                        
+                        if (!validateForm()) {
+                            return;
+                        }
                         //Form method
                         let id = btn.dataset.id;
                         url = window.location.pathname + "/" + id;
@@ -308,9 +314,11 @@
                     }
                     break;
                 case 'cake-add':
+                    $("#img-choose").classList.remove("hidden")
                     $("#cake-name").value = "";
                     $("#cake-desc").value = "";
                     $("#cake-price").value = "";
+                    $("#cake-imgs").innerHTML = "";
 
                     //flavor
                     $("#cake-flavor").value = "";
@@ -325,6 +333,9 @@
                     form.method = "POST" 
                     
                     $(".modal-noti-submit").onclick = function () {
+                        if (!validateForm()) {
+                            return;
+                        }
                         form.submit();
                     }
                     
@@ -377,7 +388,7 @@
         });
 
         //  Image nname
-        var input = document.getElementById('file-upload');
+        var input = document.getElementById('img-upload');
         input.addEventListener('change', function () {
             var output = document.getElementById('file-upload-filename');
             var children = "";
@@ -387,7 +398,23 @@
             output.innerHTML = '<ul>'+children+'</ul>';
         });
 
-        
+        // Validate form
+        function validateForm() {
+            let name = $("#cake-name").value
+            let desc = $("#cake-desc").value
+            let price = $("#cake-price").value
+            let flavor = $("#cake-flavor").value
+
+            if (!name.trim() ||
+            !desc.trim() ||
+            !price ||
+            !flavor.trim())
+            {
+                alert("Các trường không được phép để trống");
+                return false
+            }
+            return true
+        }
 
     </script>
 </x-admin-layout>
