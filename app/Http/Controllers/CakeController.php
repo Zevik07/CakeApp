@@ -40,28 +40,29 @@ class CakeController extends Controller
     public function store(Request $req)
     {
         $data = $req->input();
+        //return $data['flavor'];
         $con = Session::get('session_cart');
         if(session()->has('session_cart')){
             foreach(Session::get('session_cart') as $item => $value){
                 if($value["id"]==$data["id"])
+                    return back()->with('fail','Add to cart failure!');
+                }
+                Session::push('session_cart',[
+                    'id'=>$data['flavor'],
+                    'name'=>$data['name'],
+                    'price'=>$data['price'],
+                    // 'flavor'=>$data['flavor'],
+                    'quantity'=>$data['quantity'],
+                    'note'=>$data['note'],
+                    ]);
+                    Session::flash('success','Add to cart successfully!');
                     return back()->with('success','Add to cart successfully!');
-            }
-            Session::push('session_cart',[
-                'id'=>$data['id'],
-                'name'=>$data['name'],
-                'price'=>$data['price'],
-                'flavor'=>$data['flavor'],
-                'quantity'=>$data['quantity'],
-                'note'=>$data['note'],
-                ]);
-                Session::flash('success','Add to cart successfully!');
-                return back()->with('success','Add to cart successfully!');
         }else{
             $session = Session::put('session_cart',[[
-                'id'=>$data['id'],
+                'id'=>$data['flavor'],
                 'name'=>$data['name'],
                 'price'=>$data['price'],
-                'flavor'=>$data['flavor'],
+                // 'flavor'=>$data['flavor'],
                 'quantity'=>$data['quantity'],
                 'note'=>$data['note'],
                 ]]);

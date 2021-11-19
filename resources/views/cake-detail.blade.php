@@ -46,7 +46,7 @@
                                 <p>Chọn vị:</p>
                                 <div class="flex flex-wrap">
                                     @foreach($cakeDetails as $cakeDetail)
-                                        <input type="radio" name="flavor" id="{{$cakeDetail['flavor']}}" value="{{$cakeDetail['flavor']}}" class="flavor-radio" >
+                                        <input type="radio" name="flavor" id="{{$cakeDetail['flavor']}}" value="{{$cakeDetail['id']}}" class="flavor-radio" >
                                         <label class="flavor-label inline-lock px-6 py-1 m-1 text-gray-700 focus:bg-gray-300 rounded-lg border-2 cursor-pointer" for="{{$cakeDetail['flavor']}}">{{$cakeDetail['flavor']}}</label>
                                         
                                     @endforeach
@@ -71,6 +71,13 @@
     @if(Session::has('success'))
         <script>
             swal("Thành công","{!! Session::get('confirm') !!}","success",{
+                button:"OK",
+            });
+        </script>
+    @endif
+    @if(Session::has('fail'))
+        <script>
+            swal("Thất bại","{!! Session::get('confirm') !!}","success",{
                 button:"OK",
             });
         </script>

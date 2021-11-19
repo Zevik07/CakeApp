@@ -46,7 +46,7 @@ class DashboardController extends Controller
     {
         $order = Order::find($id);
         $order->delete();
-        //Session::flash('delete','Xóa đơn hàng thành công!!!');
-        //return redirect('admin/dashboard');
+        Session::flash('delete','Xóa đơn hàng thành công!!!');
+        return redirect('admin/dashboard');
     }
 }

@@ -31,7 +31,7 @@
                     <tbody>
                         @foreach ($orders as $order)
                             <tr class="bg-primary-300 lg:text-black">
-                                <td class="w-12 px-6 py-4 whitespace-nowrap text-center border-b border-gray-200">{{$order->id}}</td>
+                                <td class="w-12 px-6 py-4 whitespace-nowrap text-center border-b border-gray-200">DH{{$order->id}}</td>
                                 <td class="px-6 py-4 whitespace-nowrap border-b border-gray-200">
                                     <ul>
                                         <li>{{$order->user->name}}</li>
