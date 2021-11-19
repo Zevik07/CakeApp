@@ -55,7 +55,7 @@ $i = 0;
                         <table class="table table-bordered">
                             <tr class="title">
                                 <th>STT</th>
-                                <th>Tên sản phẩm</th>
+                                <th>Tên bánh</th>
                                 <th>Hương vị</th>
                                 <th>Giá bán</th>
                                 <th>Số lượng</th>
@@ -63,26 +63,25 @@ $i = 0;
                                 <th>Xóa</th>
                             </tr>
                             <?php
-$tongtien = 0;
-?>
+                                $tongtien = 0;
+                            ?>
                               @if (session()->has('session_cart'))
                                @foreach(Session::get('session_cart') as $cart => $value)
-                               <?php
-$name = DB::table('cakes')->where('id', '=', $value["id"])->value('name');
-
-$tong = $value["price"] * $value["quantity"];
-$tongtien = $tongtien + $tong;
-$i++;
-?>
-                               <tr class="list">
-                                           <th><?php echo $i ?></th>
-                                           <th><?php echo $name ?>	</th>
-                                          <th>{{$value["flavor"]}}</th>
-                                          <th>{{$value["price"]}}</th>
-                                          <th>{{$value["quantity"]}}</th>
-                                          <th><?php echo $tong ?></th>
-                                          <th><a href="{{route('detelecake', ['id' => $value['id']])}}">Xóa</a></th>
-                              </tr>
+                                <?php
+                                    $flavor_name = DB::table('cake_details')->where('id', '=', $value["id"])->value('name');
+                                    $tong = $value["price"] * $value["quantity"];
+                                    $tongtien = $tongtien + $tong;
+                                    $i++;
+                                ?>
+                                <tr class="list">
+                                    <th><?php echo $i ?></th>
+                                    <th>{{$value["name"]}}</th>
+                                    <th>{{ $flavor_name }}</th>
+                                    <th>{{$value["price"]}}</th>
+                                    <th>{{$value["quantity"]}}</th>
+                                    <th><?php echo $tong ?></th>
+                                    <th><a href="{{route('detelecake', ['id' => $value['id']])}}">Xóa</a></th>
+                                </tr>
 
                                @endforeach
                              @endif
