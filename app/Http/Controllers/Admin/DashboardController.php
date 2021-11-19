@@ -37,5 +37,7 @@ class DashboardController extends Controller
     {
         $order = Order::find($id);
         $order->delete();
+        Session::flash('delete','Xóa đơn hàng thành công !!!');
+        return back()->withInput();
     }
 }
