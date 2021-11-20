@@ -54,7 +54,7 @@
                             @endif
                             
                             <label for="quantity">Số lượng</label>
-                            <input class="w-20 h-10 mx-3 rounded-lg" name="quantity" type="number" min="0">
+                            <input class="w-20 h-10 mx-3 rounded-lg" name="quantity" type="number" min="1" max="5">
                             <br>
                             <label class="hidden" for="note">Ghi chú</label>
                             <textarea class="hidden mx-3 mt-3 rounded-lg" name="note" type="text" rows="4" cols="30"></textarea>

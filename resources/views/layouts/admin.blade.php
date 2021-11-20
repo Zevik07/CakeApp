@@ -86,7 +86,7 @@
                         <a href="{{ route('cake-management.index') }}" 
 						class="block py-1 md:py-3 pl-1 align-middle no-underline hover:text-primary_color
 						{{ request()->is('admin/cake-management') ? 'text-primary_color' : '' }}">
-                            <i class="fas fa-tasks fa-fw mr-3"></i><span class="pb-1 md:pb-0 text-lg">Quản lý bánh</span>
+						<i class="fas fa-birthday-cake"></i><span class="ml-1 pb-1 md:pb-0 text-lg">Quản lý bánh</span>
                         </a>
                     </li>
 				</ul>
