@@ -1,4 +1,4 @@
-# Website fỏr a cake shop
+# Website for a cake shop
 
 ## Start project
 
