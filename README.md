@@ -1,4 +1,5 @@
 # Website for a cake shop
+The project's purpose is developing a cake selling website. Users can add cake into their cart and pay it, and users can perform that actions without login.
 
 ## Start project
 
